@@ -3,29 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesse sua conta - Login</title>
+    <title>Cadastre-se agora - criar conta</title>
     <link rel="stylesheet" href="../css/login_signin.css">
 </head>
 <body>
     <div class="content">
         <div class="container">
+
             <form action="">
+                
                 <fieldset>
-                    <legend><h1 class="title">Entrar</h1></legend>
+                    <legend><h1 class="title">Cadastre-se</h1></legend>
+                    <div>
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" name="nome">
+                    </div>
+
                     <div>
                         <label for="email">Email:</label>
                         <input type="email" name="email">
+                    </div>
+
+                    <div>
+                        <label for="nascimento">Insira sua data de nascimento:</label>
+                        <input type="date" name="nascimento">
                     </div>
                     
                     <div>
                         <label for="senha">Senha:</label>
                         <input type="password" name="senha">
-                        <a href="" class="forgot-password">Esqueci minha senha</a>
                     </div>
                     
+                    <div>
+                        <label for="confirm_password">Confirme a senha:</label>
+                        <input type="password" name="confirm_password">
+                    </div>
                     <button type="submit">Continuar</button>
 
                 </fieldset>
+
             </form>
         </div>
     </div>
