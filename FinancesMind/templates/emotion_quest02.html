@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se agora - criar conta</title>
+    <link rel="stylesheet" href="../assets/css/login_signin.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <form action="">
+                <fieldset>
+                    <legend><h1 class="title">"Não me sinto bem comigo mesma não importa o que eu faça"</h1></legend>
+                    <div class="range">
+                        <label for="frase">O quanto você se identifica com essa frase?</label>
+                        <div>
+                            <div class="values">
+                                <span>não me identifico</span>
+                                <span>me identifico parcialmente</span>
+                                <span>me identifico</span>
+                            </div>
+                            <input type="range" id="frase" min="0" step="5" max="10" list="answer">
+                            <datalist id="answer">
+                                <option value="0">não me identifico</option>
+                                <option value="5">me identifico parcialmente</option>
+                                <option value="10">me identifico</option>
+                            </datalist>
+                        </div>
+                        
+                    </div>
+
+                    <button type="submit">Continuar</button> 
+                </fieldset>
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
