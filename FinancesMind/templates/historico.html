@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de transações</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/historico.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+<body>
+    <header>
+        <div class="visual">
+            <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+            <h1>Finances Mind</h1>
+        </div>
+        <div class="visual">
+            <p><b>Olá, Eduarda</b></p>
+            <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
+            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
+            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div class="container">
+            <div class="h-section">
+                <h2>Histórico de transações</h2>
+                <div>
+                    <div class="input-content">
+                        <input type="text" placeholder="Pesquisar" name="filter-search">
+                    </div>
+                    <a id="filter">
+                        <p>Filtrar</p>
+                        <span class="material-symbols-outlined">filter_list</span>
+                    </a>  
+                </div>   
+            </div>
+            <div class="historico">
+                <!-- o adequado, caso tivesse back, seria se houvesse um "for" para que o elemento .transaction repetisse de acordo com os registros presentes no banco de dados. Dessa forma, a tag div também faria parte desse "for". -->
+                <div class="transaction">
+                    <h3>qua., 27 de agosto</h3>
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Compra de um pneu</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 500,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>             
+        </div>
+    </main>
+
+    <div class="filter-up">
+        <div class="content-filter">
+            <span class="material-symbols-outlined close">close</span>
+            <h4>Filtrar</h4>
+            <form action="">
+                <div>
+                    <p>Filtrar por intervalo de data</p>
+                    <div class="intervalo" >
+                        <input type="radio" name="intervalo" id="intervalo1" value="Últimos 15 dias">
+                        <label for="intervalo1" class="intervalo1">Últimos 15 dias</label>
+                        <input type="radio" name="intervalo" id="intervalo2" value="Últimos 30 dias">
+                        <label for="intervalo2" class="intervalo2">Últimos 30 dias</label>
+                    </div>
+                </div>
+                <div>
+                    <p>Customizar período</p>
+                    <div class="periodo-active1 periodo-active2" id="periodo-date">
+                        <input type="date" name="periodo" id="periodo" class="inicio">
+                        <input type="date" name="periodo" id="periodo" class="fim">
+                    </div>
+                </div>
+                <div>
+                    <p>Categoria da transação</p>
+                    <select name="categoria" id="categoria">
+                        <option value="alimentação">Alimentação</option>
+                        <option value="transporte">Transporte</option>
+                        <option value="moradia">Moradia</option>
+                        <option value="saúde">Saúde</option>
+                        <option value="lazer">Lazer</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Valor da transação</p>
+                    <div class="values">
+                        <span>0</span>
+                        <span>200</span>
+                        <span>400</span>
+                        <span>600</span>
+                        <span>800</span>
+                        <span>1000</span>
+                    </div>
+                    <input type="range" name="valor" id="valor" min="0" step="200" max="1000" list="valor">
+                    <datalist id="valor">
+                        <option value="0">0</option>
+                        <option value="100">200</option>
+                        <option value="200">400</option>
+                        <option value="300">600</option>
+                        <option value="400">800</option>
+                        <option value="500">1000</option>
+                    </datalist>
+                </div>   
+                <button type="submit">Filtrar</button>     
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let button = document.getElementById('filter')
+    let filtro = document.querySelector('.filter-up')
+    let close = document.querySelector('.close')
+
+    button.addEventListener('click', () => {
+        filtro.classList.add('active')
+        filtro.classList.remove('filter-up')
+    })
+
+    close.addEventListener('click', () => {
+        if (filtro.getAttribute('class') == 'active') {
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
+
+        } else {
+            filtro.classList.add('active')
+            filtro.classList.remove('filter-up')
+        }
+    })
+
+    let periodoInicio = document.querySelector('.inicio')
+    let periodoFim = document.querySelector('.fim')
+    let periodo = document.getElementById('periodo-date')
+    let p1 = 0
+    let p2 = 0
+
+    console.log(periodoInicio.value)
+    periodoInicio.addEventListener('blur', () => {
+        if (periodoInicio.value) {
+            periodo.classList.remove('periodo-active1')
+            p1 = 1
+        } else {
+            if (p1===1) {
+                periodo.classList.add('periodo-active1')
+            }
+        }
+    })
+
+    periodoFim.addEventListener('blur', () => {
+        if (periodoFim.value) {
+            periodo.classList.remove('periodo-active2')
+            p2 = 1
+        } else {
+            if (p2===1) {
+                periodo.classList.add('periodo-active2')
+            }
+        }
+    })
+
+</script>
+
+</html>
