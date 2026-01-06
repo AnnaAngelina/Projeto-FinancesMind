@@ -26,7 +26,7 @@ button #button {
 }
 
 h1 {
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
 
 .content {
@@ -40,17 +40,25 @@ h1 {
 
 .content > .container form {
     display: flex;
-    width: 35vw;
+    width: 40vw;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 8rem 7rem;
+    padding: 8rem 6rem;
     background-color: white;
     box-shadow: 0rem 0rem 0.5rem 0rem var(--gray_color);
     border-radius: 3rem;
 }
 
+.content:has(.signin) {
+    padding: 5rem 0;
+}
+
+.content > .quest02 form {
+    width: 50vw;
+}
+
 .container form legend > .title {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .container form > fieldset {
@@ -63,7 +71,7 @@ h1 {
 .container form > fieldset div input, .container form > fieldset div select {
     border-radius: 1rem;
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     margin-top: 0.5rem;
     border: 0.1rem solid var(--gray_color);
     font-size: 1.5rem;
@@ -114,14 +122,17 @@ form fieldset > .btns {
     margin-top: 2rem;
 }
 
-form fieldset > .btns button {
+form fieldset .btns button {
     width: fit-content;
     padding: 0.7rem 3rem;
 }
 
-form fieldset > .btns .back {
+form fieldset .btns .back {
     background-color: white;
     border: 0.1rem solid var(--gray_color);
+}
+
+form fieldset .btns .back #button {
     color: black;
 }
 
@@ -139,7 +150,7 @@ form > fieldset .legend-saldo {
     left: 0.5rem;
 }
 
-.container form fieldset .checkbox-container {
+.content .quest01 > form fieldset .checkbox-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -167,19 +178,126 @@ form > fieldset .legend-saldo {
     padding: 5rem 0;
 }
 
-.container form fieldset .range div > .values {
+.container form fieldset .range > div > .values {
     display: flex;
     justify-content: space-between;
 }
 
-.container form fieldset .range div:has(.values) {
+.container form fieldset .range > div:has(.values) {
     margin-top: 3rem;
 }
 
-.container form fieldset .range div > .values span {
+.container form fieldset .range > div > .values span {
     font-size: 1rem;
 }
 
-.container form fieldset .range div > input[type="range"] {
+.container form fieldset .range > div > input[type="range"] {
     accent-color: var(--secondary_color);
+}
+
+/* --------------- media queries --------------- */
+
+/* Dispositivos móveis */
+
+@media (max-width: 480px) {
+    .content > .container form {
+        width: 90vw;
+        padding: 8rem 4rem;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+        .container form fieldset .range > div > input[type="range"] {
+        appearance: slider-vertical;
+        width: 5rem;
+    }
+
+    .content .quest02 form fieldset .range > div {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+    }
+
+    .content .quest02 form fieldset .range > div > .values {
+        flex-direction: column;
+    }
+
+
+}
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .content > .container form {
+        width: 70vw;
+        padding: 8rem 4rem;
+    }
+
+    .content > .quest02 form {
+        width: 80vw;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title, form fieldset > .p-logout {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+/* Laptops */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content > .container form {
+        width: 50vw;
+        padding: 8rem 5rem;
+    }
+
+    .content > .quest02 form {
+        width: 55vw;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title, form fieldset > .p-logout {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+/* Telas muito grandes, TVs */
+
+@media (min-width: 1201px) {
+    .content > .container form {
+        width: 35vw;
+        padding: 8rem 6rem;
+    }
+
+    .content > .quest02 form {
+        width: 40vw;
+    }
 }
