@@ -9,25 +9,79 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
 </head>
 <body>
-    <header>
-        <div class="visual">
-            <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
-            <h1>Finances Mind</h1>
-        </div>
-        <div class="visual">
-            <p><b>Olá, Eduarda</b></p>
-            <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
-        </ul>
-    </nav>
+    <div class="normal-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <div class="visual">
+                <p><b>Olá, Eduarda</b></p>
+                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+            </div>
+        </header>
+        <nav class="navegacao">
+            <ul>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="small-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <span class="material-symbols-outlined menu-symbol">menu</span>
+        </header>
+        <nav class="nav-hidden">
+            <span class="material-symbols-outlined close">close</span>
+            <ul>
+                <li>
+                    <div class="visual">
+                        <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="30px"></a>
+                        <p>Perfil</p>
+                    </div>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Diário</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">currency_exchange</span>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Chat</span>
+                    </a>
+                </li>  
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
     <main class="content">
         <div class="container">
             <div class="h-section">
@@ -80,7 +134,7 @@
 
     <div class="filter-up">
         <div class="content-filter">
-            <span class="material-symbols-outlined close">close</span>
+            <span class="material-symbols-outlined close-filter">close</span>
             <h4>Filtrar</h4>
             <form action="">
                 <div>
@@ -136,56 +190,7 @@
 
 </body>
 
-<script>
-    let button = document.getElementById('filter')
-    let filtro = document.querySelector('.filter-up')
-    let close = document.querySelector('.close')
-
-    button.addEventListener('click', () => {
-        filtro.classList.add('active')
-        filtro.classList.remove('filter-up')
-    })
-
-    close.addEventListener('click', () => {
-        if (filtro.getAttribute('class') == 'active') {
-            filtro.classList.remove('active')
-            filtro.classList.add('filter-up')
-
-        } else {
-            filtro.classList.add('active')
-            filtro.classList.remove('filter-up')
-        }
-    })
-
-    let periodoInicio = document.querySelector('.inicio')
-    let periodoFim = document.querySelector('.fim')
-    let periodo = document.getElementById('periodo-date')
-    let p1 = 0
-    let p2 = 0
-
-    console.log(periodoInicio.value)
-    periodoInicio.addEventListener('blur', () => {
-        if (periodoInicio.value) {
-            periodo.classList.remove('periodo-active1')
-            p1 = 1
-        } else {
-            if (p1===1) {
-                periodo.classList.add('periodo-active1')
-            }
-        }
-    })
-
-    periodoFim.addEventListener('blur', () => {
-        if (periodoFim.value) {
-            periodo.classList.remove('periodo-active2')
-            p2 = 1
-        } else {
-            if (p2===1) {
-                periodo.classList.add('periodo-active2')
-            }
-        }
-    })
-
+<script src="../assets/JS/historico.js">
 </script>
 
 </html>

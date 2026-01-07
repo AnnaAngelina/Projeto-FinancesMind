@@ -7,24 +7,80 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
 </head>
 <body>
-    <header>
-        <div class="visual">
-            <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
-            <h1>Finances Mind</h1>
-        </div>
-        <div class="visual">
-            <p><b>Olá, Eduarda</b></p>
-            <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
-            <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
-        </ul>
-    </nav>
+    <div class="normal-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <div class="visual">
+                <p><b>Olá, Eduarda</b></p>
+                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+            </div>
+        </header>
+        <nav class="navegacao">
+            <ul>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="small-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <span class="material-symbols-outlined menu-symbol">menu</span>
+        </header>
+        <nav class="nav-hidden">
+            <span class="material-symbols-outlined close">close</span>
+            <ul>
+                <li>
+                    <div class="visual">
+                        <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="30px"></a>
+                        <p>Perfil</p>
+                    </div>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Diário</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">currency_exchange</span>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Chat</span>
+                    </a>
+                </li>  
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
 </body>
+<script src="../assets/JS/base.js">
+</script>
 </html>

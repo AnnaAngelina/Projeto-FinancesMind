@@ -30,19 +30,20 @@ h2, h4 {
     background-color: var(--main_color);
     display: flex;
     flex-grow: 1;
-    padding: 8rem 0;
+    padding: 8rem 0 8rem 6.5rem;
 }
 
 .content > .container {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     gap: 3rem;
 }
 
 .container > .h-section {
     display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -94,6 +95,7 @@ h2, h4 {
 .historico {
     width: 100%;
     background-color: white;
+    overflow: auto;
     border-radius: 2rem;
     padding: 2rem 4rem;
 }
@@ -283,13 +285,13 @@ body .active {
     font-size: 1.4rem;
 }
 
-.active > .content-filter > .close {
+.active > .content-filter > .close-filter {
     position: absolute;
     top: -1rem;
     right: 0;
 }
 
-.active > .content-filter > .close:hover {
+.active > .content-filter > .close-filter:hover {
     cursor: pointer;
 }
 
@@ -301,4 +303,143 @@ body .active {
     padding: 0.7rem 10%;
     color: white;
     margin-top: 1rem;
+}
+
+
+/* --------------- media queries --------------- */
+
+/* Dispositivos móveis */
+
+@media (max-width: 480px) {
+
+    h2, h4 {
+        font-size: 1.7rem;
+    }
+
+    p, strong, .h-section > div .input-content input {
+        font-size: 1.3rem;
+    }
+
+    .content {
+        padding: 8rem 0;
+    }
+
+
+    .content > .container {
+        width: 90%;
+        align-items: center;
+    }
+
+    .container > .h-section {
+        flex-direction: column;
+        align-self: flex-start;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .container > .h-section > div {
+        justify-content: space-between;
+    }
+
+    .h-section > div .input-content input {
+        width: 20rem;
+    }
+
+    .historico {
+        width: 100%;
+    }
+
+    .historico .transaction > div {
+        gap: 3rem;
+    }
+}
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    h2, h4 {
+        font-size: 1.7rem;
+    }
+
+    p, strong, .h-section > div .input-content input {
+        font-size: 1.3rem;
+    }
+
+    .content {
+        padding: 8rem 0;
+    }
+
+    .content > .container {
+        width: 90%;
+        align-items: center;
+    }
+
+    .container > .h-section {
+        flex-direction: column;
+        align-self: flex-start;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .container > .h-section > div {
+        justify-content: space-between;
+    }
+
+    .h-section > div .input-content input {
+        width: 20rem;
+    }
+
+    .historico {
+        width: 100%;
+    }
+
+    .historico .transaction > div {
+        gap: 3rem;
+    }
+
+}
+
+
+/* Laptops */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .content > .container {
+        width: 90%;
+        align-items: center;
+    }
+
+    .container > .h-section {
+        flex-direction: column;
+        align-self: flex-start;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .container > .h-section > div {
+        justify-content: space-between;
+    }
+
+    .h-section > div .input-content input {
+        width: 20rem;
+    }
+
+    .historico {
+        width: 100%;
+    }
+
+    .historico .transaction > div {
+        gap: 3rem;
+    }
+
+}
+
+/* Telas muito grandes, TVs */
+
+@media (min-width: 1201px) {
+    .content > .container {
+        width: 80%;
+        align-items: center;
+    }
 }
