@@ -32,7 +32,7 @@
     </div>
 
     <div class="small-screen">
-        <header>
+        <header class="header">
             <div class="visual">
                 <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
                 <h1>Finances Mind</h1>
@@ -82,15 +82,15 @@
         </nav>
     </div>
 
-    <main class="content">
-        <div class="container">
+    <main class="content" id="content">
+        <div class="container" id="container">
             <div class="h-section">
                 <h2>Histórico de transações</h2>
                 <div>
                     <div class="input-content">
                         <input type="text" placeholder="Pesquisar" name="filter-search">
                     </div>
-                    <a id="filter">
+                    <a onclick="filterModal(); event.stopPropagation()" id="filter">
                         <p>Filtrar</p>
                         <span class="material-symbols-outlined">filter_list</span>
                     </a>  
@@ -127,9 +127,109 @@
                             <p class="legend">lançamento</p>
                         </div>
                     </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="inf-transaction">  
+                            <span class="material-symbols-outlined">directions_car</span>
+                            <div>
+                                <p>Concerto do carro</p>
+                                <p class="legend">Carteira | <span class="despesa">Despesa</span></p>
+                            </div>
+                        </div>
+                        <div class="valor">
+                            <p><strong>R$ 45,00</strong></p>
+                            <p class="legend">lançamento</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>             
         </div>
+
     </main>
 
     <div class="filter-up">
@@ -187,6 +287,7 @@
             </form>
         </div>
     </div>
+
 
 </body>
 

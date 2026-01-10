@@ -20,6 +20,15 @@ h1 {
     font-size: 2.3rem;
 }
 
+header {
+    background-color: white;
+}
+
+.normal-screen, .small-screen {
+    position: fixed;
+    width: 100%;
+}
+
 #menu-icon {
     color: black;
     text-decoration: none;
@@ -71,7 +80,7 @@ h1 {
 
 .normal-screen .navegacao {
     box-shadow: 0.4rem 1rem 1.1rem -0.4rem var(--gray_color);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     padding: 5rem 2rem;
@@ -124,10 +133,6 @@ h1 {
 /* Dispositivos móveis */
 
 @media (max-width: 480px) {
-    body {
-        overflow: hidden;
-    }
-
     h1 {
         font-size: 1.6rem;
     }
@@ -138,16 +143,28 @@ h1 {
 
     .small-screen {
         display: block;
+        position: relative;
+    }
+
+    .small-screen:not(.header) {
+        z-index: 5;
+    }
+
+    .small-screen .menu-symbol, .small-screen .close {
+        display: block;
+        cursor: pointer;
     }
 
     .small-screen > header {
+        width: 100%;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 3rem;
         box-shadow: 0 0 1.1rem -0.1rem var(--gray_color);
-        position: relative;
+        position: fixed;
+        z-index: initial;
     }
 
     .small-screen header > .visual {
@@ -158,13 +175,26 @@ h1 {
         display: flex;
         gap: 1rem;
         align-items: center;
+        cursor: pointer;
     }
 
     .small-screen .nav-hidden {
         display: none;
     }
 
-    body:has(.nav-active)::before {
+    body:has(.nav-active) main::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--gray_color);
+        opacity: 50%;
+        filter: blur(50%);
+        position: fixed;
+        top: 0;
+        z-index: 4;
+    }
+
+    .small-screen:has(.nav-active) > header:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -173,11 +203,12 @@ h1 {
         filter: blur(50%);
         position: absolute;
         top: 0;
-        z-index: 9;
+        right: 0;
+        z-index: 6;
     }
 
     .small-screen .nav-active {
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
         display: flex;
@@ -187,7 +218,7 @@ h1 {
         box-shadow: 0.4rem 1rem 1.1rem -0.4rem var(--gray_color);
         background-color: white;
         height: 100vh;
-        z-index: 10;
+        z-index: 20;
         animation-name: menuSlide;
         animation-duration: 0.5s;
         transition: ease-in;
@@ -230,13 +261,10 @@ h1 {
     .small-screen .nav-active .close {
         display: block;
     }
+
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-    body {
-        overflow: hidden;
-    }
-
     h1 {
         font-size: 1.6rem;
     }
@@ -247,16 +275,28 @@ h1 {
 
     .small-screen {
         display: block;
+        position: relative;
+    }
+
+    .small-screen:not(.header) {
+        z-index: 5;
+    }
+
+    .small-screen .menu-symbol, .small-screen .close {
+        display: block;
+        cursor: pointer;
     }
 
     .small-screen > header {
+        width: 100%;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 3rem;
         box-shadow: 0 0 1.1rem -0.1rem var(--gray_color);
-        position: relative;
+        position: fixed;
+        z-index: initial;
     }
 
     .small-screen header > .visual {
@@ -267,13 +307,26 @@ h1 {
         display: flex;
         gap: 1rem;
         align-items: center;
+        cursor: pointer;
     }
 
     .small-screen .nav-hidden {
         display: none;
     }
 
-    body:has(.nav-active)::before {
+    body:has(.nav-active) main::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: var(--gray_color);
+        opacity: 50%;
+        filter: blur(50%);
+        position: fixed;
+        top: 0;
+        z-index: 4;
+    }
+
+    .small-screen:has(.nav-active) > header:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -282,11 +335,12 @@ h1 {
         filter: blur(50%);
         position: absolute;
         top: 0;
-        z-index: 9;
+        right: 0;
+        z-index: 6;
     }
 
     .small-screen .nav-active {
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
         display: flex;
@@ -296,7 +350,7 @@ h1 {
         box-shadow: 0.4rem 1rem 1.1rem -0.4rem var(--gray_color);
         background-color: white;
         height: 100vh;
-        z-index: 10;
+        z-index: 20;
         animation-name: menuSlide;
         animation-duration: 0.5s;
         transition: ease-in;

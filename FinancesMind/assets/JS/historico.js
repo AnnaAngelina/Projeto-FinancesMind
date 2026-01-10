@@ -1,22 +1,31 @@
 let button = document.getElementById('filter')
 let filtro = document.querySelector('.filter-up')
-let closeFilter = document.querySelector('.close-filter')
 
-button.addEventListener('click', () => {
+function filterModal() {
+    const closeFilter = document.querySelector('.close-filter')
+    const content = document.getElementById('content')
+
     filtro.classList.add('active')
     filtro.classList.remove('filter-up')
-})
 
-closeFilter.addEventListener('click', () => {
-    if (filtro.getAttribute('class') == 'active') {
-        filtro.classList.remove('active')
-        filtro.classList.add('filter-up')
+    content.addEventListener('click', (e) => {
+        if (content.contains(e.target)) {
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
+        }
+    })
 
-    } else {
-        filtro.classList.add('active')
-        filtro.classList.remove('filter-up')
-    }
-})
+    closeFilter.addEventListener('click', () => {
+        if (filtro.getAttribute('class') == 'active') {
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
+
+        } else {
+            filtro.classList.add('active')
+            filtro.classList.remove('filter-up')
+        }
+    })
+}
 
 let periodoInicio = document.querySelector('.inicio')
 let periodoFim = document.querySelector('.fim')
