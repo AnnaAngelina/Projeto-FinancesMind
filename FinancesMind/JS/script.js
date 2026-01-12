@@ -66,3 +66,17 @@ iconesAnteriorProximo.forEach(icone => {
         renderizarCalendario();
     });
 });
+
+
+const btnRegistrar = document.querySelector(".btn-registrar");
+const painelRegistro = document.querySelector(".registro-lateral");
+const fecharRegistro = document.querySelector(".fechar-registro");
+
+btnRegistrar.addEventListener("click", () => {
+  painelRegistro.classList.add("aberto");
+});
+
+fecharRegistro.addEventListener("click", () => {
+  painelRegistro.classList.remove("aberto");
+});
+

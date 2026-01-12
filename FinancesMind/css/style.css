@@ -246,3 +246,66 @@ main{
 .btn-registrar:hover {
   background-color: #164a78;
 }
+
+
+.registro-lateral {
+  position: fixed;
+  top: 0;
+  right: -420px; /* fora da tela */
+  width: 420px;
+  height: 100vh;
+  background: white;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.2);
+  transition: right 0.35s ease;
+  z-index: 100;
+}
+
+.registro-lateral.aberto {
+  right: 0;
+}
+
+.diario-fechado {
+    position: fixed;
+    top: 0;
+    right: -400px; /* fica fora da tela */
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 50;
+}
+
+.diario-aberto {
+    right: 0; /* entra na tela */
+}
+
+.registro-conteudo {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registro-conteudo h2 {
+  font-size: 2.2rem;
+}
+
+.registro-conteudo textarea {
+  height: 180px;
+  resize: none;
+  padding: 12px;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.btn-salvar {
+  background: #1E5A8F;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
