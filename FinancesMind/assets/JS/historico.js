@@ -1,5 +1,6 @@
 let button = document.getElementById('filter')
 let filtro = document.querySelector('.filter-up')
+let num = 0
 
 function filterModal() {
     const closeFilter = document.querySelector('.close-filter')
@@ -9,14 +10,18 @@ function filterModal() {
     filtro.classList.remove('filter-up')
 
     content.addEventListener('click', (e) => {
-        if (content.contains(e.target)) {
+        if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
+            console.log('ola')
             filtro.classList.remove('active')
             filtro.classList.add('filter-up')
         }
+        e.stopImmediatePropagation()
     })
 
-    closeFilter.addEventListener('click', () => {
+    closeFilter.addEventListener('click', (e) => {
+        console.log('oi')
         if (filtro.getAttribute('class') == 'active') {
+            console.log('oiiiii')
             filtro.classList.remove('active')
             filtro.classList.add('filter-up')
 
@@ -24,6 +29,7 @@ function filterModal() {
             filtro.classList.add('active')
             filtro.classList.remove('filter-up')
         }
+        e.stopImmediatePropagation()
     })
 }
 
@@ -67,7 +73,6 @@ let close = document.querySelector('.close')
 
 menu.addEventListener('click', () => {
     if (nav.getAttribute('class') == 'nav-hidden') {
-        console.log('oi')
         nav.classList.add('nav-active')
         nav.classList.remove('nav-hidden')
     } else {
