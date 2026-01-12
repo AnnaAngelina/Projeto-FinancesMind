@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --main_color: #FFF6E8;
+    --secondary_color: #1E5A8F;
+    --gray_color: #565656;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #4A76B4;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    box-shadow: 0 0 1.1rem -0.1rem var(--gray_color);
+    position: relative;
+}
+
+header .visual {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header .visual h1, header .visual p {
+    font-size: 1.6rem;
+    position: relative;
+    z-index: 5;
+}
+
+header .visual a .img {
+    border: 0;
+    border-radius: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+header .visual a .iconFM {
+    margin-left: -1.5rem;
+}
+
+header::before {
+    content: ' ';
+    height: 100%;
+    width: 5rem;
+    background-color: white;
+    position: absolute;
+    z-index: 4;
+}
+
+nav {
+    box-shadow: 0.4rem 1rem 1.1rem -0.4rem var(--gray_color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5rem 2rem;
+    background-color: white;
+    height: 100vh;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    height: 100%;
+    position: relative;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li:last-child {
+    position: absolute;
+    bottom: 0;
+}
+
+
+main{
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background: #FFF6E8;
+}
+
+.wrapper{
+  min-height: 520px;
+  width: 600px;
+  background: #fff;
+  border-radius: 40px;
+  border: 1px solid black;
+}
+
+.cabecalho_calandario{
+  display: flex;
+  align-items: center;
+  padding: 40px 30px 10px ;
+  justify-content: space-between;
+}
+
+.cabecalho_calandario .icones{
+  display: flex;
+}
+
+.cabecalho_calandario .icones span{
+  height: 45px;
+  width: 45px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: black;
+  text-align: center;
+  line-height: 45px;
+  font-size: 4rem;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.icones span:last-child{
+  margin-right: -10px;
+}
+
+.cabecalho_calandario .icones span:hover{
+  background: #f2f2f2;
+}
+
+.cabecalho_calandario .data_atual{
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.calendario{
+  padding: 20px;
+}
+
+.calendario ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendario .dias{
+  margin-bottom: 20px;
+}
+
+.calendario li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.5rem;
+}
+
+.calendario .semanas li{
+  font-weight: 700;
+  cursor: default;
+}
+
+.calendario .dias li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 40px;
+}
+
+.dias li.inactive{
+  color: #aaa;
+}
+
+.dias li.active{
+  color: black;
+}
+
+.dias li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 48px;
+  width: 48px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dias li.active::before{
+  border: 1px dotted black;
+}
+
+.dias li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.diario-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-diario {
+  position: absolute;
+  top: -30px; /* controla o quanto sobe */
+  left: -70px;
+  width: 200px;
+  background-color: #1E5A8F;
+  color: white;
+  padding: 20px 22px;
+  border-radius: 30px;
+  font-size: 2.3rem;
+  font-weight: 500;
+  z-index: 10;
+  text-align: center;
+}
+
+.btn-registrar {
+  background-color: #1E5A8F;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.btn-registrar:hover {
+  background-color: #164a78;
+}
