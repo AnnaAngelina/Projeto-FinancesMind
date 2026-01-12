@@ -1,0 +1,203 @@
+:root {
+    font-size: 62.5%;
+    --main_color: #FFF6E8;
+    --secondary_color: #1E5A8F;
+    --secondary_color2: #FFA600;
+    --gray_color: #565656;
+}
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.small {
+    font-size: 1.2rem;
+}
+
+.leitor-de-tela-apenas{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+}
+
+main { 
+    flex: 1 0;
+    width: 70%;
+    min-height: 100vh;
+    margin: 10rem auto 2rem auto; 
+}
+
+main > section:not(:first-child){
+    margin-top: 3.6rem;
+}
+
+main .back-white {
+    padding: 2.5rem 6rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.shadow {
+    box-shadow: 0.2rem 0.3rem 0.5rem -0.2rem var(--gray_color);
+}
+
+.line-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/*--------------------------
+       Seção de Saldo
+---------------------------*/
+.saldo-atual-secao .line-flex:first-child h2, 
+.saldo-atual-secao .line-flex:first-child p{
+    display: block; 
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.saldo-atual-secao .line-flex .small::after {
+    content: " >";
+}
+
+
+/*--------------------------
+Seção de despesas e receitas
+---------------------------*/
+section.despesa-receita .line-flex:first-child {
+    align-items: baseline;
+}
+
+section.despesa-receita h2 {
+    font-size: 2.5rem;
+}
+
+
+/*Valores do gráfico*/
+.container-valor{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 0;
+}
+
+.container-valor p{
+    margin: 0 2rem
+}
+
+.receita-valor .seta-progresso {
+    color: var(--secondary_color);
+}
+
+.despesa-valor > .seta-progresso{
+    transform: rotate(70deg);
+    color: var(--secondary_color2);
+}
+
+section.despesa-receita .line-flex:first-child div {
+    display: flex;
+    gap: 3rem;
+}
+
+section.despesa-receita .line-flex:first-child div > .container-valor {
+    gap: 0;
+}
+
+/*Geral da segunda linha*/
+.despesa-receita .line-flex:not(:first-child) {
+    margin-top: 30px;
+}
+
+
+/*Gráfico*/
+.despesa-receita .line-flex .graphic-home {
+    padding: 0;
+    width: 70%;
+    max-width: 700px;
+    height: 200px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #ddd 0%, /*O gradiente comeca com o cinza claro*/
+        #ddd 1px,  /*O cinza claro forma uma linha de 1px de largura*/
+        #fff 1px, /*Quando acaba 1px de cinza, inicia a branca, sem transicao*/
+        #fff 4% /*O branco persiste por 5% da largura do container ate comecar o gradiente outra vez*/
+    );
+    border-left:  2px solid var(--gray_color);
+    border-bottom: 2px solid var(--gray_color);
+    position: relative;
+}
+
+
+.graphic-home .rectangle {
+    position: absolute;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.graphic-home .blue-rect {
+    background-color: var(--secondary_color);
+    width: 80%;
+    top: 40px;
+    left: 0;
+}
+
+.graphic-home .orange-rect {
+    background-color: var(--secondary_color2);
+    width: 40%;
+    bottom: 20px;
+    left: 0;
+}
+
+/*Seleção "radio"*/
+.despesa-receita > .line-flex > form {
+    height: fit-content;
+}
+.despesa-receita > .line-flex > form fieldset {
+    width: 20rem;
+    height: 90%;
+    border: none;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.despesa-receita > .line-flex > form fieldset input[type="radio"] {
+    opacity: 0%;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.despesa-receita form fieldset label {
+    margin: 15px 10px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.despesa-receita form fieldset input:checked + label {
+    background-color: var(--secondary_color);
+    color: white;
+}
+
+.despesa-receita form fieldset input:focus + label {
+    outline: 1px solid black;
+    border: 1px solid white;
+}
+
+
+

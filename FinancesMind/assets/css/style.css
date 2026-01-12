@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--main_color);
+}
+
 h1 {
     font-size: 2.3rem;
 }
@@ -128,6 +132,20 @@ header {
     }
 }
 
+
+footer {
+    display: flex;
+    background-image:linear-gradient(#1E5A8F, #1A466D) ;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        font-size: 1rem;
+        color: white;
+    }
+}
+
 /* --------------- media queries --------------- */
 
 /* Dispositivos móveis */
@@ -162,6 +180,7 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 1rem 3rem;
+        background-color: white;
         box-shadow: 0 0 1.1rem -0.1rem var(--gray_color);
         position: fixed;
         z-index: initial;
@@ -395,3 +414,4 @@ header {
     }
 
 }
+
