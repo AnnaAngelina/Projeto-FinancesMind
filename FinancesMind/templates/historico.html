@@ -6,7 +6,7 @@
     <title>Histórico de transações</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/historico.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"/>
 </head>
 <body>
     <div class="normal-screen">
@@ -90,7 +90,7 @@
                     <div class="input-content">
                         <input type="text" placeholder="Pesquisar" name="filter-search">
                     </div>
-                    <a onclick="filterModal(); event.stopPropagation()" id="filter">
+                    <a onclick="filterModal(); event.stopImmediatePropagation()" id="filter">
                         <p>Filtrar</p>
                         <span class="material-symbols-outlined">filter_list</span>
                     </a>  
@@ -287,7 +287,6 @@
             </form>
         </div>
     </div>
-
 
 </body>
 
