@@ -309,3 +309,18 @@ main{
   cursor: pointer;
 }
 
+.historico-lateral {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 420px;
+  height: 100vh;
+  background: white;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.2);
+  transition: right 0.35s ease;
+  z-index: 100;
+}
+
+.historico-lateral.aberto {
+  right: 0;
+}
