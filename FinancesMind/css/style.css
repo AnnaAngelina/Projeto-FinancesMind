@@ -105,17 +105,17 @@ main{
 }
 
 .wrapper{
-  min-height: 520px;
-  width: 600px;
+  min-height: 300px;
+  width: 400px;
   background: #fff;
-  border-radius: 40px;
-  border: 1px solid black;
+  border-radius: 50px;
+  border: 1px solid #5d5d5d;
 }
 
 .cabecalho_calandario{
   display: flex;
   align-items: center;
-  padding: 40px 30px 10px ;
+  padding: 30px 30px 10px;
   justify-content: space-between;
 }
 
@@ -131,7 +131,7 @@ main{
   color: black;
   text-align: center;
   line-height: 45px;
-  font-size: 4rem;
+  font-size: 30px;
   user-select: none;
   border-radius: 50%;
 }
@@ -146,11 +146,11 @@ main{
 
 .cabecalho_calandario .data_atual{
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 20px;
 }
 
 .calendario{
-  padding: 20px;
+  padding: 0px 20px 15px 20px;
 }
 
 .calendario ul{
@@ -167,11 +167,10 @@ main{
 .calendario li{
   color: #333;
   width: calc(100% / 7);
-  font-size: 1.5rem;
+  font-size: 12px;
 }
 
 .calendario .semanas li{
-  font-weight: 700;
   cursor: default;
 }
 
@@ -179,7 +178,7 @@ main{
   z-index: 1;
   cursor: pointer;
   position: relative;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .dias li.inactive{
@@ -219,15 +218,16 @@ main{
 
 .titulo-diario {
   position: absolute;
-  top: -30px; /* controla o quanto sobe */
+  top: -25px; /* controla o quanto sobe */
   left: -70px;
-  width: 200px;
+  width: 155px;
+  height: 60px;
   background-color: #1E5A8F;
   color: white;
-  padding: 20px 22px;
-  border-radius: 30px;
-  font-size: 2.3rem;
-  font-weight: 500;
+  padding: 18px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
   z-index: 10;
   text-align: center;
 }
@@ -237,7 +237,7 @@ main{
   color: white;
   border: none;
   padding: 12px 32px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 1.4rem;
   cursor: pointer;
   margin-top: 30px;
@@ -324,3 +324,4 @@ main{
 .historico-lateral.aberto {
   right: 0;
 }
+
