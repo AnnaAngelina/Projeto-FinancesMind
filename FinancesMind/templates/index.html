@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finances Mind</title>
+    <link rel="shortcut icon" href="../assets/img/FMicon.jpg" type="image/jpeg">
+
     <link rel="stylesheet" href="../assets/css/style.css">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" /> <!--This link is for the symbols-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--This link is for the symbols-->
 
     <link rel="stylesheet" href="../assets/css/home.css">
@@ -87,72 +88,170 @@
 
 
     <main>
-        <section class="back-white shadow saldo-atual-secao">
-            <div class="line-flex ">
-                <h2>Saldo atual</h2>
-                <p>R$ 50,00</p>
-            </div>
-            <div class="line-flex">
-                <p class="small">Detalhes</p>
-            </div>
-        </section>
+        <div class="content back-bege">
+            <section class="back-white shadow saldo-atual-secao">
+                <div class="line-flex ">
+                    <h2 class="title-2">Saldo atual</h2>
+                    <p class="title-2">R$ 50,00</p>
+                </div>
+                <div class="line-flex">
+                    <a href="historico.html">
+                        <p class="small">Detalhes &gt;</p>
+                    </a>
+                </div>
+            </section>
 
-        <section class="back-white shadow despesa-receita">
-            <div class="line-flex">
-                <h2>Minhas despesas e receitas</h2>
-                <div>
-                    <div class="container-valor receita-valor shadow">
-                        <span class="material-symbols-outlined seta-progresso">moving</span>
-                        <p>R$ 100,00</p>
+            <form action="" method="get" class="periodo-dia-selecao tela-menor">
+                <fieldset class="shadow">
+                    <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
+                    <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
+                    <label for="item1-periodo">7 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item2-periodo" value="15-dias" checked>
+                    <label for="item2-periodo">15 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item3-periodo" value="30-dias">
+                    <label for="item3-periodo">30 dias</label>
+                </fieldset>
+            </form>
+
+            <section class="back-white shadow despesa-receita">
+                <div class="line-flex">
+                    <h2 class="title-2">Minhas despesas e receitas</h2>
+                    <div>
+                        <div class="container-valor receita-valor shadow">
+                            <span class="material-symbols-outlined seta-progresso">moving</span>
+                            <p>R$ 100,00</p>
+                        </div>
+            
+                        <div class="container-valor despesa-valor shadow">
+                            <span class="material-symbols-outlined seta-progresso">moving</span>
+                            <p>R$ 50,00</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="line-flex">
+                    <div class="graphic-home">
+                        <div class="blue-rect rectangle"></div>
+                        <div class="orange-rect rectangle"></div>
+                    </div>
+                    <form action="" method="get" class="periodo-dia-selecao tela-maior">
+                        <fieldset class="back- shadow">
+                            <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
+                            <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
+                            <label for="item1-periodo">7 dias</label>
+                            <input type="radio" name="periodo-grafico" id="item2-periodo" value="15-dias" checked>
+                            <label for="item2-periodo">15 dias</label>
+                            <input type="radio" name="periodo-grafico" id="item3-periodo" value="30-dias">
+                            <label for="item3-periodo">30 dias</label>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        
+            <section class="emocoes">
+                <div class="flex">
+                    <div class="column left">
+                        <small class="small">Parece que você ainda não registrou hoje</small>
+                        <h2 class="title-2">Como está se sentindo hoje?</h2>
+                    </div>
+                    <div class="flex-column right">
+                        <ul class="emojis flex back-white shadow">
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                                <li><a href=""> </a></li>
+                        </ul>
+                        <a href="" class="btn">Fazer registro</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content back-blue">
+            <section class="">
+                <h2 class="title-2">Dicas para você</h2>
+                <div class="flex">
+                    <div>
+                        <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
+                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
                     </div>
                     
-                    <div class="container-valor despesa-valor shadow">
-                        <span class="material-symbols-outlined seta-progresso">moving</span>
-                        <p>R$ 50,00</p>
+                    <div>
+                        <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
+                        <span class="material-symbols-outlined coracao clicado">favorite</span>
+                    </div>
+                    
+                    <div>
+                        <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
+                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                    </div>
+
+                    <div>
+                        <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
+                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
                     </div>
                 </div>
-            </div>
-            
-            <div class="line-flex">
-                <div class="graphic-home">
-                    <div class="fundo-grafico-listras"></div>
-                    <div class="blue-rect rectangle"></div>
-                    <div class="orange-rect rectangle"></div>
+
+            </section>
+        </div>
+        <div class="content back-bege">
+            <section class="videos-about">
+                <h2 class="title-2">Vídeos que irão te ajudar</h2>
+                <div class="grid">
+                    <a href="https://www.youtube.com/watch?v=FHsKk39C3o8&t=2s" target="_blank" hreflang="pt-br" rel="external">
+                        <div class="card-video">
+                            <img src="../assets/img/capa-video.png" alt="Capa do vídeo">
+                            <div class="info-video">
+                                <p class="title-video">Aulão OLITEF</p>
+                                <small class="canal-video">OLITEF</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FHsKk39C3o8&t=2s" target="_blank" hreflang="pt-br" rel="external">
+                        <div class="card-video">
+                            <img src="../assets/img/capa-video.png" alt="Capa do vídeo">
+                            <div class="info-video">
+                                <p class="title-video">Aulão OLITEF</p>
+                                <small class="canal-video">OLITEF</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FHsKk39C3o8&t=2s" target="_blank" hreflang="pt-br" rel="external">
+                        <div class="card-video">
+                            <img src="../assets/img/capa-video.png" alt="Capa do vídeo">
+                            <div class="info-video">
+                                <p class="title-video">Aulão OLITEF</p>
+                                <small class="canal-video">OLITEF</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FHsKk39C3o8&t=2s" target="_blank" hreflang="pt-br" rel="external">
+                        <div class="card-video">
+                            <img src="../assets/img/capa-video.png" alt="Capa do vídeo">
+                            <div class="info-video">
+                                <p class="title-video">Aulão OLITEF</p>
+                                <small class="canal-video">OLITEF</small>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=FHsKk39C3o8&t=2s" target="_blank" hreflang="pt-br" rel="external">
+                        <div class="card-video">
+                            <img src="../assets/img/capa-video.png" alt="Capa do vídeo">
+                            <div class="info-video">
+                                <p class="title-video">Aulão OLITEF</p>
+                                <small class="canal-video">OLITEF</small>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-
-                <form action="" method="get" class="periodo-dia-selecao">
-                    <fieldset class="shadow">
-                        <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
-                        <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
-                        <label for="item1-periodo">7 dias</label>
-
-                        <input type="radio" name="periodo-grafico" id="item2-periodo" value="15-dias" checked>
-                        <label for="item2-periodo">15 dias</label>
-
-                        <input type="radio" name="periodo-grafico" id="item3-periodo" value="30-dias">
-                        <label for="item3-periodo">30 dias</label>
-                    </fieldset>
-                </form>
-            </div>
-        </section>
-
-        <section>
-            <div class="column left">
-                <small>Parece que você ainda não registrou hoje</small>
-                <p>Como está se sentindo hoje?</p>
-            </div>
-            <div class="column right">
-                <a href="">Fazer registro</a>
-            </div>
-        </section>
-
-        <section class="back-blue">
-            <h2>Dicas para você</h2>
-        </section>
-
-        <section>
-            <h2>Vídeos que irão te ajudar</h2>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer>

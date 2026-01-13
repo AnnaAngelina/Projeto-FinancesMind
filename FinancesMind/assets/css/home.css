@@ -5,6 +5,7 @@
     --secondary_color2: #FFA600;
     --light-blue: #CCE2F4;
     --gray_color: #565656;
+    --black_color: #0e0e0e;
 }
 * {
     box-sizing: border-box;
@@ -21,11 +22,16 @@ h2 {
 
 a { 
     text-decoration: none;
+    color: var(--black_color);
 }
 
 main { 
     flex: 1 0;
     min-height: 100vh;
+}
+
+.title-2 {
+    font-size: 2.5rem;
 }
 
 .content {
@@ -78,8 +84,8 @@ main .back-white {
 
 .leitor-de-tela-apenas{
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0.1px;
+    height: 0.1px;
     padding: 0;
     margin: -1px;
     overflow: hidden;
@@ -95,14 +101,8 @@ main .back-white {
 .saldo-atual-secao .line-flex:first-child h2, 
 .saldo-atual-secao .line-flex:first-child p{
     display: block; 
-    font-size: 2.5rem;
     font-weight: 700;
 }
-
-.saldo-atual-secao .line-flex .small::after {
-    content: " >";
-}
-
 
 /*--------------------------
 Seção de despesas e receitas
@@ -111,22 +111,18 @@ section.despesa-receita .line-flex:first-child {
     align-items: baseline;
 }
 
-section.despesa-receita h2 {
-    font-size: 2.5rem;
-}
-
-
 /*Valores do gráfico*/
 .container-valor{
     display: flex;
     align-items: center;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 50px;
     gap: 0;
 }
 
 .container-valor p{
-    margin: 0 2rem
+    margin: 0 2rem;
+    min-width: 50px;
 }
 
 .receita-valor .seta-progresso {
@@ -193,10 +189,42 @@ section.despesa-receita .line-flex:first-child div > .container-valor {
 }
 
 /*Seleção "radio"*/
+/*O de telas menores*/
+form.periodo-dia-selecao.tela-menor {
+    display: none;
+}
+
+form.periodo-dia-selecao.tela-menor fieldset{
+    margin: 2rem auto -2.6rem auto;
+    padding: 0;
+    width: 60%;
+    height: fit-content;
+
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+form.periodo-dia-selecao.tela-menor fieldset label {
+    margin: 0;
+    padding: 1rem 1rem;
+    width: 7rem;
+
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 50px;
+}
+
+
+/*O radio de telas maiores*/
 .despesa-receita > .line-flex > form {
     height: fit-content;
 }
-.despesa-receita > .line-flex > form fieldset {
+
+form.periodo-dia-selecao.tela-maior fieldset {
     width: 20rem;
     height: 90%;
     border: none;
@@ -207,26 +235,27 @@ section.despesa-receita .line-flex:first-child div > .container-valor {
     justify-content: space-between;
 }
 
-.despesa-receita > .line-flex > form fieldset input[type="radio"] {
-    opacity: 0%;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-.despesa-receita form fieldset label {
+form.periodo-dia-selecao.tela-maior fieldset label {
     margin: 15px 10px;
     padding: 10px 10px;
     text-align: center;
     border-radius: 50px;
 }
 
-.despesa-receita form fieldset input:checked + label {
+/*configurações gerais entre o radio de telas menores e o de maiores*/
+form.periodo-dia-selecao fieldset input[type="radio"] {
+    opacity: 0%;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+}
+
+form.periodo-dia-selecao fieldset input:checked + label {
     background-color: var(--secondary_color);
     color: white;
 }
 
-.despesa-receita form fieldset input:focus + label {
+form.periodo-dia-selecao fieldset input:focus + label {
     outline: 1px solid black;
     border: 1px solid white;
 }
@@ -325,12 +354,12 @@ section.emocoes > .flex ul.emojis {
     margin-top: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 3rem;
 
 }
 
 .videos-about .card-video {
-    width: 300px;
+    width: 100%;
     transition: all 0.5s ease-in;
 }
 
@@ -360,4 +389,131 @@ section.emocoes > .flex ul.emojis {
 
 .videos-about .card-video > .info-video  .canal-video {
     color: var(--gray_color);
+}
+
+
+
+/* =-=-=-=-=-=- MEDIA QUERIES -=-=-=-=-=-= */
+/* 
+=========================
+=  Dispositivos móveis  =
+=========================*/
+@media (max-width:480px) {
+    * {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title-2{
+        font-size: 1.8rem;
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    main .back-white {
+        padding: 2rem;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    /*--------------------------
+        Seção de Saldo
+    ---------------------------*/
+    
+
+    /*--------------------------
+    Seção das despesas e receitas
+    ---------------------------*/
+    form.periodo-dia-selecao.tela-maior {
+        display: none;
+    }
+
+    form.periodo-dia-selecao.tela-menor {
+        display: block;
+    }
+
+    section.despesa-receita h2 {
+        font-size: 1.6rem;
+    }
+
+    section.despesa-receita .container-valor p{
+        margin: 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    section.despesa-receita .container-valor > .seta-progresso{
+        font-size: 1.4rem;
+    }
+
+    section.despesa-receita .line-flex:first-child {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    section.despesa-receita .line-flex:first-child > div {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    /*Gráfico*/
+    .despesa-receita .line-flex .graphic-home {
+        width: 100%;
+        height: 100px;
+    }
+
+    .graphic-home .rectangle {
+        height: 30px;
+    }
+
+    .graphic-home .blue-rect {
+        top: 20px;
+    }
+
+    .graphic-home .orange-rect {
+        bottom: 10px;
+    }
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue section{
+        padding: 4rem 0 7rem 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .back-blue section blockquote.card {
+        max-width: 300px;
+        
+    }
+    .back-blue section .flex> div {
+        margin: auto;
+    }
+    
+
+    /*--------------------------
+        Seção dos vídeos
+    ---------------------------*/
+    .videos-about > .grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .videos-about .card-video {
+        width: 200px;
+    }
+
+    .videos-about .card-video > .info-video  .title-video {
+        font-size: 1.6rem;
+    }
+
+    .videos-about .card-video > .info-video  .canal-video {
+        font-size: 1.4rem;
+    }
+
 }
