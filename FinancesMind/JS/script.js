@@ -1,6 +1,6 @@
-/* ===============================
-   SELEÇÃO DE ELEMENTOS
-================================ */
+// ====================
+// SELEÇÃO DE ELEMENTOS
+// ====================
 const diasElemento = document.querySelector(".dias");
 const dataAtualElemento = document.querySelector(".data_atual");
 const iconesAnteriorProximo = document.querySelectorAll(".icones span");
@@ -9,72 +9,88 @@ const btnRegistrar = document.querySelector(".btn-registrar");
 const registroLateral = document.querySelector(".registro-lateral");
 const historicoLateral = document.querySelector(".historico-lateral");
 const fecharRegistro = document.querySelector(".fechar-registro");
+const fecharHistorico = document.querySelector(".fechar-historico");
+
 const textoHistorico = document.querySelector(".texto-historico");
 
+const dataRegistroElemento = document.querySelector(".data-registro");
+const dataHistoricoElemento = document.querySelector(".data-historico");
 
-/* ===============================
-   ESTADO DO CALENDÁRIO
-================================ */
+const hoje = new Date();
+const diaHoje = hoje.getDate();
+const mesHoje = hoje.getMonth();
+const anoHoje = hoje.getFullYear();
+
+// ====================
+// DATA ATUAL
+// ====================
 let data = new Date();
 let anoAtual = data.getFullYear();
 let mesAtual = data.getMonth();
+let dataSelecionada = null; // ← GUARDA O DIA CLICADO
 
 const meses = [
   "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
   "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
 
-
-/* ===============================
-   REGISTROS (SIMULAÇÃO)
-================================ */
+// ====================
+// REGISTROS (exemplo)
+// ====================
 const registros = {
   "2026-01-05": { texto: "Dia feliz 😊" },
   "2026-01-10": { texto: "Dia cansativo 😴" }
 };
 
-
-/* ===============================
-   FUNÇÕES DO CALENDÁRIO
-================================ */
+// ====================
+// RENDERIZAR CALENDÁRIO
+// ====================
 function renderizarCalendario() {
-  const primeiroDiaDoMes = new Date(anoAtual, mesAtual, 1).getDay();
-  const ultimoDiaDoMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
-  const ultimoDiaSemanaMes = new Date(anoAtual, mesAtual, ultimoDiaDoMes).getDay();
+  const primeiroDia = new Date(anoAtual, mesAtual, 1).getDay();
+  const ultimoDiaMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
+  const ultimoDiaSemana = new Date(anoAtual, mesAtual, ultimoDiaMes).getDay();
   const ultimoDiaMesAnterior = new Date(anoAtual, mesAtual, 0).getDate();
 
   let listaDias = "";
 
   // Dias do mês anterior
-  for (let i = primeiroDiaDoMes; i > 0; i--) {
+  for (let i = primeiroDia; i > 0; i--) {
     listaDias += `<li class="inactive">${ultimoDiaMesAnterior - i + 1}</li>`;
   }
 
   // Dias do mês atual
-  for (let dia = 1; dia <= ultimoDiaDoMes; dia++) {
+    for (let dia = 1; dia <= ultimoDiaMes; dia++) {
     const dataCompleta = `${anoAtual}-${String(mesAtual + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
-    const classe = registros[dataCompleta] ? "com-registro" : "sem-registro";
+
+    const temRegistro = registros[dataCompleta] ? "com-registro" : "sem-registro";
+
+    const ehHoje =
+        dia === diaHoje &&
+        mesAtual === mesHoje &&
+        anoAtual === anoHoje
+        ? "hoje"
+        : "";
 
     listaDias += `
-      <li class="${classe}" data-data="${dataCompleta}">
+        <li class="${temRegistro} ${ehHoje}" data-data="${dataCompleta}">
         ${dia}
-      </li>
-    `;
-  }
+        </li>`;
+    }
 
   // Dias do próximo mês
-  for (let i = ultimoDiaSemanaMes; i < 6; i++) {
-    listaDias += `<li class="inactive">${i - ultimoDiaSemanaMes + 1}</li>`;
+  for (let i = ultimoDiaSemana; i < 6; i++) {
+    listaDias += `<li class="inactive">${i - ultimoDiaSemana + 1}</li>`;
   }
 
   dataAtualElemento.innerText = `${meses[mesAtual]} ${anoAtual}`;
   diasElemento.innerHTML = listaDias;
 }
 
+renderizarCalendario();
 
-/* ===============================
-   NAVEGAÇÃO ENTRE MESES
-================================ */
+// ====================
+// NAVEGAÇÃO DE MESES
+// ====================
 iconesAnteriorProximo.forEach(icone => {
   icone.addEventListener("click", () => {
     mesAtual = icone.id === "prev" ? mesAtual - 1 : mesAtual + 1;
@@ -89,47 +105,64 @@ iconesAnteriorProximo.forEach(icone => {
   });
 });
 
+// ====================
+// FUNÇÕES DE TELAS
+// ====================
 
-/* ===============================
-   PAINÉIS LATERAIS
-================================ */
-function abrirRegistro() {
+function formatarData(dataISO) {
+  const [ano, mes, dia] = dataISO.split("-");
+  return `${dia} de ${meses[Number(mes) - 1]} de ${ano}`;
+}
+
+function abrirRegistro(data) {
   historicoLateral.classList.remove("aberto");
   registroLateral.classList.add("aberto");
+
+  dataRegistroElemento.innerText = formatarData(data);
 }
 
 function abrirHistorico(data) {
   registroLateral.classList.remove("aberto");
   historicoLateral.classList.add("aberto");
+
+  dataHistoricoElemento.innerText = formatarData(data);
   textoHistorico.innerText = registros[data].texto;
 }
 
 
-/* ===============================
-   EVENTOS
-================================ */
-btnRegistrar.addEventListener("click", abrirRegistro);
-
-fecharRegistro.addEventListener("click", () => {
-  registroLateral.classList.remove("aberto");
-});
-
+// ====================
+// CLICK NOS DIAS
+// ====================
 diasElemento.addEventListener("click", (event) => {
   const dia = event.target;
 
   if (dia.tagName !== "LI" || dia.classList.contains("inactive")) return;
 
-  const dataSelecionada = dia.dataset.data;
+  const data = dia.dataset.data;
 
-  if (registros[dataSelecionada]) {
-    abrirHistorico(dataSelecionada);
+  if (registros[data]) {
+    abrirHistorico(data); //  dia com registro
   } else {
-    abrirRegistro();
+    abrirRegistro(data); //  dia sem registro
   }
 });
 
+// ====================
+// BOTÕES
+// ====================
+btnRegistrar.addEventListener("click", () => {
+  if (!dataSelecionada) {
+    const hoje = new Date();
+    dataSelecionada = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}-${String(hoje.getDate()).padStart(2, "0")}`;
+  }
 
-/* ===============================
-   INICIALIZAÇÃO
-================================ */
-renderizarCalendario();
+  abrirRegistro(dataSelecionada);
+});
+
+fecharRegistro.addEventListener("click", () => {
+  registroLateral.classList.remove("aberto");
+});
+
+fecharHistorico.addEventListener("click", () => {
+  historicoLateral.classList.remove("aberto");
+});

@@ -190,19 +190,15 @@ main{
 }
 
 .dias li::before{
-  position: absolute;
   content: "";
-  left: 50%;
+  position: absolute;
   top: 50%;
-  height: 48px;
-  width: 48px;
-  z-index: -1;
-  border-radius: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* 🔴 deixa redondo */
   transform: translate(-50%, -50%);
-}
-
-.dias li.active::before{
-  border: 1px dotted black;
+  z-index: -1;
 }
 
 .dias li:not(.active):hover::before{
@@ -325,3 +321,17 @@ main{
   right: 0;
 }
 
+.data-registro, .data-historico{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700px;
+}
+
+.fechar-registro, .fechar-historico{
+    cursor: pointer;
+}
+
+.dias li.hoje::before {
+  border: 2px dotted #1E5A8F;
+}
