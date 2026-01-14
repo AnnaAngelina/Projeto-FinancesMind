@@ -197,7 +197,7 @@ form.periodo-dia-selecao.tela-menor {
 form.periodo-dia-selecao.tela-menor fieldset{
     margin: 2rem auto -2.6rem auto;
     padding: 0;
-    width: 60%;
+    width: fit-content;
     height: fit-content;
 
     background-color: white;
@@ -312,7 +312,7 @@ section.emocoes > .flex ul.emojis {
     min-height: 15rem;
     background-color: white;
     border: 1px solid var(--gray_color);
-    border-radius: 2rem;
+    border-radius: 20px;
     transition: all 1s ease-in;
 }
 
@@ -320,6 +320,7 @@ section.emocoes > .flex ul.emojis {
     content: url("../img/aspa.png");
     position: absolute;
     top: -3rem;
+    left: 1.5rem;
     
     width: 20rem;
     height: 20rem;
@@ -351,15 +352,20 @@ section.emocoes > .flex ul.emojis {
     Seção dos vídeos
 ---------------------------*/
 .videos-about > .grid {
+    margin: auto;
     margin-top: 3rem;
+
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    justify-items: center;
+    gap: 2rem;
 
 }
 
+
 .videos-about .card-video {
-    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
     transition: all 0.5s ease-in;
 }
 
@@ -397,17 +403,18 @@ section.emocoes > .flex ul.emojis {
 /* 
 =========================
 =  Dispositivos móveis  =
+=        CELULAR        =
 =========================*/
 @media (max-width:480px) {
     * {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
     
     .title-2{
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .content {
@@ -425,7 +432,7 @@ section.emocoes > .flex ul.emojis {
     /*--------------------------
         Seção de Saldo
     ---------------------------*/
-    
+    /*Não foi preciso fazer mais nada*/
 
     /*--------------------------
     Seção das despesas e receitas
@@ -458,7 +465,7 @@ section.emocoes > .flex ul.emojis {
 
     section.despesa-receita .line-flex:first-child > div {
         width: 100%;
-        justify-content: space-between;
+        justify-content: center;
     }
     
     /*Gráfico*/
@@ -478,20 +485,30 @@ section.emocoes > .flex ul.emojis {
     .graphic-home .orange-rect {
         bottom: 10px;
     }
+
+    /*--------------------------
+        Seção das emoções
+    ---------------------------*/
+    section.emocoes .flex {
+        gap: 16px;
+    }
+
     /*--------------------------
         Seção de dicas
     ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
     .back-blue section{
         padding: 4rem 0 7rem 0;
         width: 90%;
         margin: auto;
     }
 
-    .back-blue section blockquote.card {
+    .back-blue section .flex > div {
+        width: 90%;
         max-width: 300px;
-        
-    }
-    .back-blue section .flex> div {
         margin: auto;
     }
     
@@ -500,12 +517,11 @@ section.emocoes > .flex ul.emojis {
         Seção dos vídeos
     ---------------------------*/
     .videos-about > .grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+        margin: 2rem auto auto auto;
+        width: fit-content;
 
-    .videos-about .card-video {
-        width: 200px;
+        grid-template-columns: minmax(200px, 300px);
+        justify-items: center;
     }
 
     .videos-about .card-video > .info-video  .title-video {
@@ -515,5 +531,148 @@ section.emocoes > .flex ul.emojis {
     .videos-about .card-video > .info-video  .canal-video {
         font-size: 1.4rem;
     }
+}
 
+
+/*
+=========================
+=  Dispositivos móveis  =
+=        TABLET         =
+=========================*/
+@media (min-width: 481px) and (max-width: 768px) { 
+    *{
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .title-2{
+        font-size: 1.7rem;
+    }
+    
+    .content {
+        width: 90%;
+    }
+
+    main .back-white {
+        padding: 2rem;
+    }
+    
+    /*--------------------------
+    Seção das despesas e receitas
+    ---------------------------*/
+    form.periodo-dia-selecao.tela-maior {
+        display: none;
+    }
+
+    form.periodo-dia-selecao.tela-menor {
+        display: block;
+    }
+
+    form.periodo-dia-selecao.tela-menor label {
+        font-size: 1.6rem;
+    }
+
+    section.despesa-receita .line-flex:first-child {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    section.despesa-receita .line-flex:first-child > div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /*Gráfico*/
+    .despesa-receita .line-flex .graphic-home {
+        width: 100%;
+        height: 150px;
+    }
+
+    .graphic-home .rectangle {
+        height: 45px;
+    }
+
+    .graphic-home .blue-rect {
+        top: 35px;
+    }
+
+    .graphic-home .orange-rect {
+        bottom: 10px;
+    }
+
+    /*--------------------------
+        Seção das emoções
+    ---------------------------*/
+    section.emocoes .flex {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
+    .back-blue section{
+        padding: 4rem 0 7rem 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .back-blue section .flex {
+        flex-wrap: wrap;
+    }
+
+    .back-blue section .flex > div {
+        width: 90%;
+        max-width: 250px;
+        margin: auto;
+    }
+
+
+}
+
+
+/*
+=========================
+=        LAPTOPS        =
+=========================*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content {
+        width: 75%;
+    }
+
+    /*--------------------------
+    Seção de despesas e receitas
+    ---------------------------*/
+    /*Valores do gráfico*/
+    .container-valor  p{
+        font-size: 1.3rem;
+    }
+
+    /*Seleção "radio"*/
+    form.periodo-dia-selecao.tela-maior fieldset {
+        width: 17rem;
+    }
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
+    .back-blue section{
+        width: 75%;
+        margin: auto;
+    }
+
+    .back-blue section .flex > div {
+        width: 100%;
+        margin: auto;
+    }
 }
