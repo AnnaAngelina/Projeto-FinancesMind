@@ -69,21 +69,72 @@
         <div class="registro-conteudo">
             <span class="material-symbols-outlined fechar-registro">close</span>
 
-            <h2 class="data-registro"></h2>
+            <form>
+            <p class="data-registro"></p>
 
-            <label>Como você se sente hoje?</label>
+            <p>Como você se sente hoje?</p>
+            <div class="selecionar-emocao">
+            
+            <div>
+            <input type="radio" 
+            id="emoji-raiva" name="emoji"
+            value="irritado">
+            <label for="emoji-raiva">Irritado</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-feliz" name="emoji"
+            value="feliz">
+            <label for="emoji-feliz">Feliz</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-cansado" name="emoji"
+            value="cansado">
+            <label for="emoji-cansado">Cansado</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-triste" name="emoji"
+            value="triste">
+            <label for="emoji-triste">Triste</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-normal" name="emoji"
+            value="normal">
+            <label for="emoji-normal">Normal</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-empolgado" name="emoji"
+            value="empolgado">
+            <label for="emoji-empolgado">Empolgado</label>
+            </div>
+
+            <div>
+            <input type="radio" id="emoji-ansioso" name="emoji"
+            value="ansioso">
+            <label for="emoji-ansioso">Ansioso</label>
+            </div>
+            </div>
+
             <label>O que acha que está fazendo você se sentir assim?</label>
             <textarea placeholder="Que tal procurar entender de onde vieram esses sentimentos?"></textarea>
 
             <button class="btn-salvar">Salvar registro</button>
+            </form>
         </div>
     </div>
 
     <div class="historico-lateral">
         <div class="registro-conteudo">
             <span class="material-symbols-outlined fechar-historico">close</span>
-            <h2 class="data-historico"></h2>
-            <span class="emoji-historico"></span>
+            <p class="data-historico"></p>
+            <div class="humor-historico">
+                <img class="emoji-historico" />
+                <span class="texto-humor"></span>
+            </div>
             <p>Me senti assim por...</p>
             <p class="texto-historico"></p>
         </div>

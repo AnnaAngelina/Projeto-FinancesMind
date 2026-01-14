@@ -15,6 +15,7 @@ const fecharHistorico = document.querySelector(".fechar-historico");
 const textoHistorico = document.querySelector(".texto-historico");
 const dataHistoricoElemento = document.querySelector(".data-historico");
 const emojiHistorico = document.querySelector(".emoji-historico");
+const textoHumor = document.querySelector(".texto-humor");
 
 const hoje = new Date();
 const diaHoje = hoje.getDate();
@@ -38,14 +39,16 @@ const meses = [
 // REGISTROS (exemplo)
 // ====================
 const registros = {
-  "2026-01-05": { texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
-    emiji:"C:\Users\Usuário\Documents\GitHub\Projeto-FinancesMind\FinancesMind\img\sad_face.png",
-    humor:"triste"
+  "2026-01-05": {
+    texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
+    emoji: "/FinancesMind/img/sad_face.png",
+    humor: "triste"
   },
-  "2026-01-10": { texto: "Neste dia me senti anamado pois vou sair com meus amigos",
-    emiji:"C:\Users\Usuário\Documents\GitHub\Projeto-FinancesMind\FinancesMind\img\happy_smille.png",
-    humor:"feliz"
-   }
+  "2026-01-10": {
+    texto: "Neste dia me senti animada pois vou sair com meus amigos",
+    emoji: "/FinancesMind/img/happy_smille.png",
+    humor: "feliz"
+  }
 };
 
 // ====================
@@ -142,10 +145,25 @@ function abrirHistorico(data) {
   registroLateral.classList.remove("aberto");
   historicoLateral.classList.add("aberto");
 
+  const registro = registros[data];
+
   dataHistoricoElemento.innerText = formatarData(data);
-  textoHistorico.innerText = registros[data].texto;
-  emojiHistorico.innerText = registros[data].emoji;
+  textoHistorico.innerText = registro.texto;
+
+  if (registro.emoji && registro.humor) {
+    emojiHistorico.src = registro.emoji;
+    emojiHistorico.alt = registro.humor;
+    textoHumor.innerText = registro.humor;
+
+    emojiHistorico.style.display = "inline-block";
+    textoHumor.style.display = "inline-block";
+  } else {
+    emojiHistorico.style.display = "none";
+    textoHumor.style.display = "none";
+  }
 }
+
+
 
 
 // ====================
