@@ -9,12 +9,12 @@ const btnRegistrar = document.querySelector(".btn-registrar");
 const registroLateral = document.querySelector(".registro-lateral");
 const historicoLateral = document.querySelector(".historico-lateral");
 const fecharRegistro = document.querySelector(".fechar-registro");
-const fecharHistorico = document.querySelector(".fechar-historico");
-
-const textoHistorico = document.querySelector(".texto-historico");
-
 const dataRegistroElemento = document.querySelector(".data-registro");
+
+const fecharHistorico = document.querySelector(".fechar-historico");
+const textoHistorico = document.querySelector(".texto-historico");
 const dataHistoricoElemento = document.querySelector(".data-historico");
+const emojiHistorico = document.querySelector(".emoji-historico");
 
 const hoje = new Date();
 const diaHoje = hoje.getDate();
@@ -38,8 +38,14 @@ const meses = [
 // REGISTROS (exemplo)
 // ====================
 const registros = {
-  "2026-01-05": { texto: "Dia feliz 😊" },
-  "2026-01-10": { texto: "Dia cansativo 😴" }
+  "2026-01-05": { texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
+    emiji:"C:\Users\Usuário\Documents\GitHub\Projeto-FinancesMind\FinancesMind\img\sad_face.png",
+    humor:"triste"
+  },
+  "2026-01-10": { texto: "Neste dia me senti anamado pois vou sair com meus amigos",
+    emiji:"C:\Users\Usuário\Documents\GitHub\Projeto-FinancesMind\FinancesMind\img\happy_smille.png",
+    humor:"feliz"
+   }
 };
 
 // ====================
@@ -50,6 +56,8 @@ function renderizarCalendario() {
   const ultimoDiaMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
   const ultimoDiaSemana = new Date(anoAtual, mesAtual, ultimoDiaMes).getDay();
   const ultimoDiaMesAnterior = new Date(anoAtual, mesAtual, 0).getDate();
+
+  
 
   let listaDias = "";
 
@@ -62,7 +70,9 @@ function renderizarCalendario() {
     for (let dia = 1; dia <= ultimoDiaMes; dia++) {
     const dataCompleta = `${anoAtual}-${String(mesAtual + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
 
-    const temRegistro = registros[dataCompleta] ? "com-registro" : "sem-registro";
+    const registro = registros[dataCompleta];
+
+    const temRegistro = registro ? "com-registro" : "sem-registro";
 
     const ehHoje =
         dia === diaHoje &&
@@ -71,11 +81,18 @@ function renderizarCalendario() {
         ? "hoje"
         : "";
 
+    const emoji = registro
+    ? `<img src="${registro.emoji}" alt="${registro.humor}" class="emoji-dia">`
+    : "";
+
     listaDias += `
         <li class="${temRegistro} ${ehHoje}" data-data="${dataCompleta}">
-        ${dia}
-        </li>`;
+        <span class="numero-dia">${dia}</span>
+        ${emoji}
+        </li>
+    `;
     }
+
 
   // Dias do próximo mês
   for (let i = ultimoDiaSemana; i < 6; i++) {
@@ -127,6 +144,7 @@ function abrirHistorico(data) {
 
   dataHistoricoElemento.innerText = formatarData(data);
   textoHistorico.innerText = registros[data].texto;
+  emojiHistorico.innerText = registros[data].emoji;
 }
 
 
