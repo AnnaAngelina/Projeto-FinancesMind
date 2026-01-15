@@ -26,6 +26,7 @@ a {
 }
 
 main { 
+    padding: 64px 0 0 64px;
     flex: 1 0;
     min-height: 100vh;
 }
@@ -35,14 +36,9 @@ main {
 }
 
 .content {
-    width: 70%;
+    width: 85%;
     margin: 4rem auto;
 }
-
-.content:first-child {
-    margin: 10rem auto 4rem auto; 
-}
-
 
 main .content > section:not(:first-child){
     margin-top: 3.6rem;
@@ -295,7 +291,7 @@ section.emocoes > .flex ul.emojis {
 ---------------------------*/
 .back-blue section{
     padding: 4rem 0 7rem 0;
-    width: 70%;
+    width: 85%;
     margin: auto;
 }
 
@@ -644,9 +640,8 @@ section.emocoes > .flex ul.emojis {
 =========================*/
 @media (min-width: 769px) and (max-width: 1024px) {
     .content {
-        width: 75%;
+        width: 85%;
     }
-
     /*--------------------------
     Seção de despesas e receitas
     ---------------------------*/
@@ -667,7 +662,7 @@ section.emocoes > .flex ul.emojis {
     }
 
     .back-blue section{
-        width: 75%;
+        width: 85%;
         margin: auto;
     }
 

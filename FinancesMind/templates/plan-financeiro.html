@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finances Mind</title>
+    <title>Plano financeiro</title>
+    <link rel="shortcut icon" href="../assets/img/FMicon.jpg" type="image/jpeg">
+
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+    <link rel="stylesheet" href="../assets/css/plan.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="normal-screen">
@@ -82,43 +87,172 @@
     </div>
 
     <main>
-        <h2>Planejamento Financeiro</h2>
-        <p>O planejamento financeiro é essencial, pois irá facilitar e melhorar a utilização do dinheiro assim como sua organização para um melhor relacionamento com o dinheiro.</p>
+        <div class="content">
 
-        <section class="plan-info">
-            <div class="graphic-plan"></div>
-            <div>
-                <p>Total de despesas<br>65%</p>
-                <p>Sobrando<br>35%</p>
-            </div>
-        </section>
+            <section class="flex align-center present-graphic">
+                <div class="presentation">
+                    <h2>Planejamento Financeiro</h2>
+                    <p>O planejamento financeiro é essencial, pois irá facilitar e melhorar a utilização do dinheiro assim como sua organização para um melhor relacionamento com o dinheiro.</p>
+                </div>
+                <figure class="chart back-white shadow flex align-center">
+                    <div class="graphic-plan"></div>
+                    <figcaption class="legends">
+                        <p><b>Total de despesas</b><br>65%</p>
+                        <p><b>Sobrando</b><br>35%</p>
+                    </figcaption>
+                </figure>
+            </section>
 
-        <section class="plan-info">
-            <h3>Renda</h3>
-            <ul>
-                <li><p>Salário 1</p><p>R$0,00</p></li>
-                <li><p>Renda extra</p><p>R$0,00</p></li>
-            </ul>
-        </section>
+            <section class="plan-info renda">
+                
+                <div class="container back-white shadow">
+                    <div class="line-flex">
+                        <h3>Renda</h3>
+                        <div class="functions">
+                            <span class="material-symbols-outlined">add</span>
+                            <span class="material-symbols-outlined">edit</span>
+                        </div> 
+                    </div>
+                    <div class="line-flex item-renda">
+                        <p>Salário 1</p>
+                        <p>R$0,00</p>
+                    </div>
+                    <div class="line-flex item-renda">
+                        <p>Renda extra</p>
+                        <p>R$0,00</p>
+                    </div>
+                </div>
+            </section>
 
-        <section class="plan-info">
-            <h3>Despesas</h3>
-            
-        </section>
+            <section class="plan-info">
+                <h3>Despesas</h3>
+                <div class="container back-white shadow">
+                    <div class="column">
+                        <span class="flex align-center">
+                            <h4 >Despesas primárias </h4>
+                            <dfn title="As despesas principais, de coisas que não podem faltar de jeito nenhum. Não dá para ficar sem!">
+                                <span class="material-symbols-outlined help">help</span>
+                            </dfn>
+                        </span>
+                        <!-- Semanticamente, a tag dfn deveria
+                         ser aplicada em "despesas primárias,
+                         mas a intenção é mostrar a definição
+                         quando o mouse flutuar pelo ícone"-->
 
-        <section class="plan-info">
-            <h3>Objetivos financeiros</h3>
-        </section>
+                        <div class="category nao-alterar line-flex">
+                            <p>Alimentação</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="category nao-alterar line-flex">
+                            <p>Moradia</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="add-category flex align-center">
+                            <span class="material-symbols-outlined">add</span><p>Adicionar despesa primária</p>
+                        </div>
+                    </div>
 
-        <section class="back-blue">
-            <h3>Por que começar a investir?</h3>
-            <p>Começar a investir é crucial para proteger seu dinheiro da inflação, fazer o capital render ao longo do tempo e atingir objetivos financeiros de curto, médio e longo prazo, como a aposentadoria, a compra de um imóvel ou a criação de uma reserva de emergência.</p>
-            <img src="../assets/img/desenho-alta-financeira.png" alt="Desenho de um gráfico com as colunas crescendo cada vez mais e uma moeda no topo." width="250px">
-        </section>
+                    <div class="column">
+                        <span class="flex align-center">
+                            <h4>Despesas secundárias </h4>
+                            <dfn title="São as despesas que não são tão essenciais, por isso dá para diminuir um pouco.">
+                                <span class="material-symbols-outlined help">help</span>
+                            </dfn>
+                        </span>
+                        <div class="category nao-alterar line-flex">
+                            <p>Lazer</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="add-category flex align-center">
+                            <span class="material-symbols-outlined">add</span><p>Adicionar despesa secundária</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section class="plan-info">
-            <h3>Investimentos</h3>
-        </section>
+            <section class="plan-info">
+                <h3>Objetivos financeiros</h3>
+                <div class="container back-white shadow">
+                    <div class="column">
+                        <span class="flex align-center">
+                            <h4 >Futuro próximo</h4>
+                            <dfn title="Algo que você quer para menos de 10 anos.">
+                                <span class="material-symbols-outlined help">help</span>
+                            </dfn>
+                        </span>
+                        
+
+                        <div class="category nao-alterar line-flex">
+                            <p>Comprar celular</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="category nao-alterar line-flex">
+                            <p>Comprar carro</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="add-category flex align-center">
+                            <span class="material-symbols-outlined">add</span><p>Adicionar objetivo próximo</p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <span class="flex align-center">
+                            <h4>Futuro distante</h4>
+                            <dfn title="O que pode esperar para daqui a 10 anos ou mais.">
+                                <span class="material-symbols-outlined help">help</span>
+                            </dfn>
+                        </span>
+                        <div class="category nao-alterar line-flex">
+                            <p>Comprar casa</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                        <div class="add-category flex align-center">
+                            <span class="material-symbols-outlined">add</span><p>Adicionar objetivo distante</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="content back-blue">
+            <section class="flex align-center">
+                <div class="motivation-text">
+                    <h3>Por que começar a investir?</h3>
+                    <p>Começar a investir é crucial para proteger seu dinheiro da inflação, fazer o capital render ao longo do tempo e atingir objetivos financeiros de curto, médio e longo prazo, como a aposentadoria, a compra de um imóvel ou a criação de uma reserva de emergência.</p>
+                </div>
+                <img src="../assets/img/desenho-alta-financeira.png" alt="Desenho de um gráfico com as colunas crescendo cada vez mais e uma moeda no topo." width="250px">
+            </section>
+        </div>
+        <div class="content">
+            <section class="plan-info">
+                <h3>Investimentos</h3><div class="container back-white shadow invest">
+
+                    <div class="grid">
+                        <div class="category nao-alterar line-flex">
+                            <p>Previdência social</p>
+                            <div class="flex align-center">
+                                R$ 0,00 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="add-category flex align-center">
+                        <span class="material-symbols-outlined">add</span><p>Adicionar investimento</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer></footer>
