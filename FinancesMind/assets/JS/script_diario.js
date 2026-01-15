@@ -1,3 +1,33 @@
+// ---------------- base JS -------------------------
+
+
+let menu = document.querySelector('.menu-symbol')
+let nav = document.querySelector('.nav-hidden')
+let smallScreen = document.querySelector('.small-screen')
+let close = document.querySelector('.close')
+
+menu.addEventListener('click', () => {
+    if (nav.getAttribute('class') == 'nav-hidden') {
+        nav.classList.add('nav-active')
+        nav.classList.remove('nav-hidden')
+    } else {
+        nav.classList.remove('nav-active')
+        nav.classList.add('nav-hidden')
+    }
+
+})
+
+close.addEventListener('click', () => {
+    if (nav.getAttribute('class') == 'nav-active') {
+        nav.classList.remove('nav-active')
+        nav.classList.add('nav-hidden')
+    }
+
+})
+
+
+// ---------------- DIARIO JS --------------------------------------------------------------------------------------------
+
 // ====================
 // SELEÇÃO DE ELEMENTOS
 // ====================
@@ -16,6 +46,9 @@ const textoHistorico = document.querySelector(".texto-historico");
 const dataHistoricoElemento = document.querySelector(".data-historico");
 const emojiHistorico = document.querySelector(".emoji-historico");
 const textoHumor = document.querySelector(".texto-humor");
+const causaHistorico = document.querySelector(".causa-historico");
+const causaimgHistorico = document.querySelector(".causa-img-historico");
+const causaContainer = document.querySelector(".causa-historico-container");
 
 const hoje = new Date();
 const diaHoje = hoje.getDate();
@@ -41,13 +74,21 @@ const meses = [
 const registros = {
   "2026-01-05": {
     texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
-    emoji: "/FinancesMind/img/Triste.png",
-    humor: "triste"
+    emoji: "/FinancesMind/assets/img/Triste.png",
+    humor: "triste",
+    causa: {
+    texto: "Trabalho",
+    imagem: "/FinancesMind/assets/img/Triste.png"
+  }
   },
   "2026-01-10": {
     texto: "Neste dia me senti animada pois vou sair com meus amigos",
-    emoji: "/FinancesMind/img/Feliz.png",
-    humor: "feliz"
+    emoji: "/FinancesMind/assets/img/Feliz.png",
+    humor: "feliz",
+    causa: {
+    texto: "Trabalho",
+    imagem: "/FinancesMind/assets/img/Triste.png"
+    }
   }
 };
 
@@ -160,6 +201,17 @@ function abrirHistorico(data) {
   } else {
     emojiHistorico.style.display = "none";
     textoHumor.style.display = "none";
+  }
+
+  // EXIBIR A CAUSA
+  if (registro.causa) {
+    causaHistorico.innerText = registro.causa.texto;
+    causaImagem.src = registro.causa.imagem;
+    causaImagem.alt = registro.causa.texto;
+
+    causaContainer.style.display = "flex";
+  } else {
+    causaContainer.style.display = "none";
   }
 }
 
