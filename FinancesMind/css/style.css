@@ -391,31 +391,96 @@ main{
     font-size: 12px;
 }
 
-.selecionar-emocao{
-    display: flex;
-    justify-content: center;
-    padding: 20px 20px;
-    border: 1px solid #333;
-    border-radius: 15px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+.selecionar-emocao {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 15px;
+  margin: 10px auto;
 }
 
-.selecionar-emocao label{
-    font-size: 9px;
-    bottom: 415px;
-    margin: auto;
+/* cada opção */
+.opcao-emocao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.2s;
 }
 
-.selecionar-emocao input{
-    margin: 15px;
-    text-align: center;
-    margin: 10px;
+/* esconde o radio */
+.opcao-emocao input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-selecionar-emocao div{
-    display: flex;
-    gap: 30px;
-    justify-content:space-between;
+/* emoji */
+.opcao-emocao .emocao {
+  width: 32px;
+  height: 32px;
+  transition: 0.2s;
+}
 
+/* texto */
+.opcao-emocao span {
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ⭐ efeito ao selecionar */
+.opcao-emocao:has(input:checked) .emocao{
+  background: #F3F8FF;
+  border: 1.5px solid #1E5A8F;
+  border-radius: 50px;
+}
+
+/* aumenta o emoji selecionado */
+.opcao-emocao:has(input:checked) .emocao {
+  transform: scale(1.15);
+}
+
+
+.selecionar-causa {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.causa-opcao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.causa-opcao input {
+  display: none;
+}
+
+.causa-opcao img {
+  width: 22px;
+  height: 22px;
+}
+
+.causa-opcao input:checked ~ span {
+  font-weight: 600;
+}
+
+.causa-opcao:has(input:checked) {
+  border-color: #1E5A8F;
+  background: #F3F8FF;
 }

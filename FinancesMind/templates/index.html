@@ -70,59 +70,109 @@
             <span class="material-symbols-outlined fechar-registro">close</span>
 
             <form>
-            <p class="data-registro"></p>
+                <p class="data-registro"></p>
+                <p>Como você se sente hoje?</p>
 
-            <p>Como você se sente hoje?</p>
-            <div class="selecionar-emocao">
-            
-            <div>
-            <input type="radio" 
-            id="emoji-raiva" name="emoji"
-            value="irritado">
-            <label for="emoji-raiva">Irritado</label>
-            </div>
+                <div class="selecionar-emocao">
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="irritado">
+                        <img class="emocao" src="/FinancesMind/img/angry_face.png">
+                        <span>Irritado</span>
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-feliz" name="emoji"
-            value="feliz">
-            <label for="emoji-feliz">Feliz</label>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="feliz">
+                        <img class="emocao" src="/FinancesMind/img/happy_smille.png">
+                        <span>Feliz</span>
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-cansado" name="emoji"
-            value="cansado">
-            <label for="emoji-cansado">Cansado</label>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="cansado">
+                        <img class="emocao" src="/FinancesMind/img/anciety_face.png">
+                        <span>Cansado</span>
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-triste" name="emoji"
-            value="triste">
-            <label for="emoji-triste">Triste</label>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="triste">
+                        <img class="emocao" src="/FinancesMind/img/sad_face.png">
+                        <span>Triste</span>
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-normal" name="emoji"
-            value="normal">
-            <label for="emoji-normal">Normal</label>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="normal">
+                        <img class="emocao" src="/FinancesMind/img/normal_face.png">
+                        <span>Normal</span>            
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-empolgado" name="emoji"
-            value="empolgado">
-            <label for="emoji-empolgado">Empolgado</label>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio"  name="emocao" value="empolgado">
+                        <img class="emocao" src="/FinancesMind/img/anciety_face.png">
+                        <span>Empolgado</span>
+                    </label>
 
-            <div>
-            <input type="radio" id="emoji-ansioso" name="emoji"
-            value="ansioso">
-            <label for="emoji-ansioso">Ansioso</label>
-            </div>
-            </div>
+                    <label class="opcao-emocao">
+                        <input type="radio" name="emocao" value="ansioso">
+                        <img class="emocao" src="/FinancesMind/img/anciety_face.png">
+                        <span>Ansioso</span>            
+                    </label>
+                </div>
 
-            <label>O que acha que está fazendo você se sentir assim?</label>
-            <textarea placeholder="Que tal procurar entender de onde vieram esses sentimentos?"></textarea>
+                <p>O que acha que está fazendo você se sentir assim?</p>
+                <div class="selecionar-causa">
+  
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="trabalho">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Trabalho</span>
+                    </label>
 
-            <button class="btn-salvar">Salvar registro</button>
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="imagem">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Imagem</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="familia">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Família</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="estudos">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Estudos</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="parceiro">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Parceiro / ex-parceiro</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="amigos">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Amigos</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="redes">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Redes sociais</span>
+                    </label>
+
+                    <label class="causa-opcao">
+                        <input type="radio" name="causa" value="financas">
+                        <img src="/FinancesMind/img/anciety_face.png">
+                        <span>Finanças</span>
+                    </label>
+
+                </div>
+
+                <textarea placeholder="Que tal procurar entender de onde vieram esses sentimentos?"></textarea>
+
+                <button class="btn-salvar">Salvar registro</button>
             </form>
         </div>
     </div>
