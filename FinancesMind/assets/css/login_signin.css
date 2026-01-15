@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --main_color: #FFF6E8;
+    --secondary_color: #1E5A8F;
+    --gray_color: #565656;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    color: #4A76B4;
+}
+
+button #button {
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main_color);
+}
+
+.content > .container form {
+    display: flex;
+    width: 40vw;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 8rem 6rem;
+    background-color: white;
+    box-shadow: 0rem 0rem 0.5rem 0rem var(--gray_color);
+    border-radius: 3rem;
+}
+
+.content:has(.signin) {
+    padding: 5rem 0;
+}
+
+.content > .quest02 form {
+    width: 50vw;
+}
+
+.container form legend > .title {
+    margin-bottom: 3rem;
+}
+
+.container form > fieldset {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.container form > fieldset div input, .container form > fieldset div select {
+    border-radius: 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: 0.1rem solid var(--gray_color);
+    font-size: 1.5rem;
+}
+
+.container form > fieldset div select, .container form > fieldset div select option {
+    color: var(--gray_color);
+}
+
+.container form div:not(.btns):not(.values) {
+    display: flex;
+    flex-direction: column;
+}
+
+.container div > .forgot-password {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.container div > .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.container button {
+    width: fit-content;
+    border: 0;
+    border-radius: 2rem;
+    display: flex;
+    align-self: center;
+    background-color: var(--secondary_color);
+    padding: 0.7rem 25%;
+    color: white;
+    margin-top: 1rem;
+}
+
+.container button:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+form fieldset > .btns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+form fieldset .btns button {
+    width: fit-content;
+    padding: 0.7rem 3rem;
+}
+
+form fieldset .btns .back {
+    background-color: white;
+    border: 0.1rem solid var(--gray_color);
+}
+
+form fieldset .btns .back #button {
+    color: black;
+}
+
+input[type="date" i] {
+    font-family:'Arial';
+    font-size: 1.5rem;
+    color: var(--gray_color);
+
+}
+
+form > fieldset .legend-saldo {
+    font-size: 1rem;
+    position: relative;
+    bottom: 1rem;
+    left: 0.5rem;
+}
+
+.content .quest01 > form fieldset .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3rem;
+    border: 0.1rem solid var(--gray_color);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.container form fieldset .checkbox-container input:hover, fieldset .range div > input[type="range"]:hover {
+    cursor: pointer;
+}
+
+.container form fieldset .checkbox-container input {
+    width: fit-content;
+}
+
+.container form fieldset:has(.checkbox-container) {
+    display: flex;
+    align-items: flex-start;
+}
+
+.content:has(.checkbox-container) {
+    padding: 5rem 0;
+}
+
+.container form fieldset .range > div > .values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container form fieldset .range > div:has(.values) {
+    margin-top: 3rem;
+}
+
+.container form fieldset .range > div > .values span {
+    font-size: 1rem;
+}
+
+.container form fieldset .range > div > input[type="range"] {
+    accent-color: var(--secondary_color);
+}
+
+/* --------------- media queries --------------- */
+
+/* Dispositivos móveis */
+
+@media (max-width: 480px) {
+    .content > .container form {
+        width: 90vw;
+        padding: 8rem 4rem;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+        .container form fieldset .range > div > input[type="range"] {
+        appearance: slider-vertical;
+        width: 5rem;
+    }
+
+    .content .quest02 form fieldset .range > div {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+    }
+
+    .content .quest02 form fieldset .range > div > .values {
+        flex-direction: column;
+    }
+
+
+}
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .content > .container form {
+        width: 70vw;
+        padding: 8rem 4rem;
+    }
+
+    .content > .quest02 form {
+        width: 80vw;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title, form fieldset > .p-logout {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+/* Laptops */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content > .container form {
+        width: 50vw;
+        padding: 8rem 5rem;
+    }
+
+    .content > .quest02 form {
+        width: 55vw;
+    }
+
+    .container form legend {
+        width: 100%;
+    }
+
+    .container form legend > .title, form fieldset > .p-logout {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
+/* Telas muito grandes, TVs */
+
+@media (min-width: 1201px) {
+    .content > .container form {
+        width: 35vw;
+        padding: 8rem 6rem;
+    }
+
+    .content > .quest02 form {
+        width: 40vw;
+    }
+}
