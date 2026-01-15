@@ -281,6 +281,8 @@ main{
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow: auto;
+  max-height: 615px;
 }
 
 .registro-conteudo h2 {
@@ -300,9 +302,12 @@ main{
   background: #1E5A8F;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 10px 12px;
   border-radius: 15px;
   cursor: pointer;
+  display: flex;
+  margin:auto;
+  font-size: 12px;
 }
 
 .historico-lateral {
@@ -362,8 +367,8 @@ main{
 /* Emoji sobreposto */
 .emoji-dia {
   position: absolute;
-  width: 22px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
   z-index: 2;
   pointer-events: none;
 }
@@ -450,21 +455,30 @@ main{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  max-width: 500px;
+  max-width: 400px;
   margin: 10px auto;
 }
 
 .causa-opcao {
+  width: 140px;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
   border: 1px solid #ccc;
   border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
   background: #fff;
   transition: all 0.2s ease;
+  padding: 5px 0px 5px 15px;
+}
+
+textarea{
+  width: 340px;
+  margin-bottom: 10px;
+}
+
+.causa-opcao span{
+  font-size: 12px;
 }
 
 .causa-opcao input {
@@ -477,10 +491,11 @@ main{
 }
 
 .causa-opcao input:checked ~ span {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .causa-opcao:has(input:checked) {
   border-color: #1E5A8F;
   background: #F3F8FF;
 }
+

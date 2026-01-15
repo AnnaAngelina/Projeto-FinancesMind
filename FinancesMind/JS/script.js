@@ -41,12 +41,12 @@ const meses = [
 const registros = {
   "2026-01-05": {
     texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
-    emoji: "/FinancesMind/img/sad_face.png",
+    emoji: "/FinancesMind/img/Triste.png",
     humor: "triste"
   },
   "2026-01-10": {
     texto: "Neste dia me senti animada pois vou sair com meus amigos",
-    emoji: "/FinancesMind/img/happy_smille.png",
+    emoji: "/FinancesMind/img/Feliz.png",
     humor: "feliz"
   }
 };
