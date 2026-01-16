@@ -311,8 +311,11 @@ section.emocoes .flex {
 }
 
 .back-blue section div.flex{
-    margin-top: 4rem;
+    padding: 4rem 2rem;
     gap: 4rem;
+
+    overflow-x: auto;
+    scrollbar-width: none;
 }
 
 .back-blue section blockquote.card {
@@ -428,6 +431,10 @@ section.emocoes .flex {
         font-size: 1.7rem;
     }
 
+    main{
+        padding: 64px 0 0 0;        
+    }
+
     .content {
         width: 90%;
     }
@@ -504,6 +511,23 @@ section.emocoes .flex {
         gap: 16px;
     }
 
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 40px;
+    }
+
+
+
     /*--------------------------
         Seção de dicas
     ---------------------------*/
@@ -561,6 +585,10 @@ section.emocoes .flex {
     
     .title-2{
         font-size: 1.7rem;
+    }
+
+    main{
+        padding: 64px 0 0 0;        
     }
     
     .content {
@@ -622,6 +650,21 @@ section.emocoes .flex {
         gap: 16px;
     }
 
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 60px;
+    }
+
     /*--------------------------
         Seção de dicas
     ---------------------------*/
@@ -669,6 +712,29 @@ section.emocoes .flex {
     form.periodo-dia-selecao.tela-maior fieldset {
         width: 17rem;
     }
+
+
+    /*--------------------------
+        Seção das emoções
+    --------------------------*/
+    .emocoes .flex {
+        flex-direction: column;
+    }
+
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 72px;
+    }
     /*--------------------------
         Seção de dicas
     ---------------------------*/
@@ -683,6 +749,7 @@ section.emocoes .flex {
 
     .back-blue section .flex > div {
         width: 100%;
+        min-width: 160px;
         margin: auto;
     }
 }
