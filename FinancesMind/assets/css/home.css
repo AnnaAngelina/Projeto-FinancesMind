@@ -265,10 +265,25 @@ section.emocoes .flex {
     gap: 32px;
 }
 
-section.emocoes > .flex ul.emojis {
-    list-style-type: none;
+.emocoes .flex .left,
+.emocoes .flex .right,
+.emocoes .flex .emojis{
+    width: fit-content;
 }
 
+.emocoes .emojis img {
+    width: 80px;
+}
+
+.emocoes > .flex ul.emojis {
+    list-style-type: none;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+}
+
+.emocoes > .flex ul.emojis li {
+    margin-left: -2rem;
+    padding: 0;
+}
 .btn {
     margin-top: 1.5rem;
     padding: 8px 20px;
