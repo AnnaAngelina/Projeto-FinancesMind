@@ -39,7 +39,6 @@ let periodo = document.getElementById('periodo-date')
 let p1 = 0
 let p2 = 0
 
-console.log(periodoInicio.value)
 periodoInicio.addEventListener('blur', () => {
     if (periodoInicio.value) {
         periodo.classList.remove('periodo-active1')
@@ -65,6 +64,7 @@ periodoFim.addEventListener('blur', () => {
 
 // ---------------- base JS -------------------------
 
+// nav e header
 
 let menu = document.querySelector('.menu-symbol')
 let nav = document.querySelector('.nav-hidden')
@@ -89,4 +89,22 @@ close.addEventListener('click', () => {
     }
 
 })
+
+// botao flutuante
+
+let containerButtons = document.querySelector('.buttons')
+let addTransiction = document.getElementById('add-transaction')
+console.log(containerButtons)
+
+addTransiction.addEventListener('click', () => {
+    if (containerButtons.getAttribute('class') == 'open') {
+        containerButtons.classList.toggle = 'buttons'
+        addTransiction.id = 'add-transaction'
+    } else {
+        containerButtons.classList.toggle = 'open'
+        addTransiction.id = 'open-buttons'
+    }
+})
+
+
 

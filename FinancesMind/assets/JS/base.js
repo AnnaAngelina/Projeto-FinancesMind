@@ -22,3 +22,19 @@ close.addEventListener('click', () => {
     }
 
 })
+
+let containerButtons = document.getElementById('buttons')
+let floatButton = document.getElementById('float-button')
+let addTransiction = document.getElementById('add-transaction')
+console.log('oi', addTransiction)
+
+addTransiction.addEventListener('click', () => {
+    console.log('oi')
+    if (containerButtons.id === 'open') {
+        containerButtons.id = 'buttons'
+        addTransiction.id = 'add-transaction'
+    } else {
+        containerButtons.id == 'open'
+        addTransiction.id = 'open-buttons'
+    }
+})
