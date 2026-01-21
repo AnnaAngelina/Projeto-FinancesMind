@@ -1,0 +1,142 @@
+<html lang="en">
+<head>
+    <title>Painel Financeiro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/FinancesMind/assets/css/painel_financeiro.css">
+
+    <link rel="stylesheet" href="/FinancesMind/assets/css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+
+</head>
+<body>
+    <div class="normal-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <div class="visual">
+                <p><b>Olá, Eduarda</b></p>
+                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+            </div>
+        </header>
+        <nav class="navegacao">
+            <ul>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="small-screen">
+        <header class="header">
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <span class="material-symbols-outlined menu-symbol">menu</span>
+        </header>
+        <nav class="nav-hidden">
+            <span class="material-symbols-outlined close">close</span>
+            <ul>
+                <li>
+                    <div class="visual">
+                        <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="30px"></a>
+                        <p>Perfil</p>
+                    </div>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Diário</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">currency_exchange</span>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Chat</span>
+                    </a>
+                </li>  
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <main class="dashboard">
+    <h2>Painel Financeiro</h2>
+
+    <section class="cards">
+
+      <div class="card">
+        <h3>Despesas e Receitas</h3>
+        <div class="grafico barra"></div>
+      </div>
+
+      <div class="card">
+        <h3>Visão Geral das receitas</h3>
+        <div class="grafico pizza"></div>
+      </div>
+
+      <div class="card">
+        <h3>Visão Geral das despesas</h3>
+        <div class="grafico pizza"></div>
+      </div>
+
+      <div class="card">
+        <h3>Top 3 despesas</h3>
+        <div class="top-despesas">
+          <div>
+            <span>Alimentação</span>
+            <div class="barra-progresso"><div class="p40"></div></div>
+          </div>
+          <div>
+            <span>Transporte</span>
+            <div class="barra-progresso"><div class="p25"></div></div>
+          </div>
+          <div>
+            <span>Entretenimento</span>
+            <div class="barra-progresso"><div class="p14"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="acoes">
+      <button class="btn-voltar">Voltar</button>
+      <button class="btn-add">+</button>
+    </div>
+
+  </main>
+
+</body>
+<script src="../assets/JS/base.js">
+</script>
+</html>

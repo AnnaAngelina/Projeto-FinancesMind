@@ -47,7 +47,7 @@ const dataHistoricoElemento = document.querySelector(".data-historico");
 const emojiHistorico = document.querySelector(".emoji-historico");
 const textoHumor = document.querySelector(".texto-humor");
 const causaHistorico = document.querySelector(".causa-historico");
-const causaimgHistorico = document.querySelector(".causa-img-historico");
+const causaImgHistorico = document.querySelector(".causa-img-historico");
 const causaContainer = document.querySelector(".causa-historico-container");
 
 const hoje = new Date();
@@ -78,7 +78,7 @@ const registros = {
     humor: "triste",
     causa: {
     texto: "Trabalho",
-    imagem: "/FinancesMind/assets/img/Triste.png"
+    imagem: "/FinancesMind/assets/img/trabalho.png"
   }
   },
   "2026-01-10": {
@@ -86,8 +86,8 @@ const registros = {
     emoji: "/FinancesMind/assets/img/Feliz.png",
     humor: "feliz",
     causa: {
-    texto: "Trabalho",
-    imagem: "/FinancesMind/assets/img/Triste.png"
+    texto: "Amigos",
+    imagem: "/FinancesMind/assets/img/amigo.png"
     }
   }
 };
@@ -203,19 +203,17 @@ function abrirHistorico(data) {
     textoHumor.style.display = "none";
   }
 
-  // EXIBIR A CAUSA
+    // ✅ CAUSA (ERA ISSO QUE FALTAVA)
   if (registro.causa) {
+    causaImgHistorico.src = registro.causa.imagem;
+    causaImgHistorico.alt = registro.causa.texto;
     causaHistorico.innerText = registro.causa.texto;
-    causaImagem.src = registro.causa.imagem;
-    causaImagem.alt = registro.causa.texto;
 
     causaContainer.style.display = "flex";
   } else {
     causaContainer.style.display = "none";
   }
 }
-
-
 
 
 // ====================
