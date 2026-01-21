@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--main_color);
+}
+
 h1 {
     font-size: 2.5rem;
 }
@@ -109,6 +113,95 @@ header {
     display: none;
 }
 
+/* -------- float button ---------- */
+
+#float-button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+}
+
+#float-button > .buttons {
+    display: none;
+}
+
+#float-button > .open {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#float-button > .open a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+#float-button > .open a > .description {
+    color: var(--secondary_color);
+}
+
+#float-button > .open a > .material-symbols-outlined {
+    display: block;
+    width: fit-content;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--secondary_color);
+    font-size: 3rem;
+}
+
+#buttons a > .receita {
+    color: green;
+}
+
+#buttons a > .despesa {
+    color: darkred;
+}
+
+#open a > .transacao, .planejamento {
+    color: var(--secondary_color);
+    font-weight: 700;
+}
+
+#float-button #add-transaction {
+    background-color: var(--secondary_color);
+    text-align: center;
+    width: fit-content;
+    display: block;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+#float-button #open-buttons {
+    background-color: white;
+    text-align: center;
+    width: fit-content;
+    display: block;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--secondary_color);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary_color);
+}
+
+#float-button #add-transaction:hover, #float-button #open-buttons:hover {
+    transform: scale(1.05, 1.05);
+    transition: 10ms ease-in-out;
+    cursor: pointer;
+}
+
 @keyframes menuSlide {
     from {
         transform: translateX(-100%);
@@ -126,6 +219,20 @@ header {
 
     to {
         transform: translateX(0);
+    }
+}
+
+
+footer {
+    display: flex;
+    background-image:linear-gradient(#1E5A8F, #1A466D) ;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        font-size: 1rem;
+        color: white;
     }
 }
 
@@ -163,6 +270,7 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 1rem 3rem;
+        background-color: white;
         box-shadow: 0 0 1.1rem -0.1rem var(--gray_color);
         position: fixed;
         z-index: initial;
@@ -396,3 +504,4 @@ header {
     }
 
 }
+

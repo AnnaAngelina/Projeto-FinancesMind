@@ -1,0 +1,755 @@
+:root {
+    font-size: 62.5%;
+    --main_color: #FFF6E8;
+    --secondary_color: #1E5A8F;
+    --secondary_color2: #FFA600;
+    --light-blue: #CCE2F4;
+    --gray_color: #565656;
+    --black_color: #0e0e0e;
+}
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--black_color);
+}
+
+main { 
+    padding: 64px 0 0 64px;
+    flex: 1 0;
+    min-height: 100vh;
+}
+
+.title-2 {
+    font-size: 2.5rem;
+}
+
+.content {
+    width: 85%;
+    margin: 4rem auto;
+}
+
+main .content > section:not(:first-child){
+    margin-top: 3.6rem;
+}
+
+main .back-white {
+    padding: 2.5rem 6rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.back-blue {
+    background-color: var(--light-blue);
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.shadow {
+    box-shadow: 0.2rem 0.3rem 0.5rem -0.2rem var(--gray_color);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.line-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small {
+    font-size: 1.2rem;
+}
+
+.leitor-de-tela-apenas{
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+}
+
+
+
+/*--------------------------
+       Seção de Saldo
+---------------------------*/
+.saldo-atual-secao .line-flex:first-child h2, 
+.saldo-atual-secao .line-flex:first-child p{
+    display: block; 
+    font-weight: 700;
+}
+
+/*--------------------------
+Seção de despesas e receitas
+---------------------------*/
+section.despesa-receita .line-flex:first-child {
+    align-items: baseline;
+}
+
+/*Valores do gráfico*/
+.container-valor{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50px;
+    gap: 0;
+}
+
+.container-valor p{
+    margin: 0 2rem;
+    min-width: 50px;
+}
+
+.receita-valor .seta-progresso {
+    color: var(--secondary_color);
+}
+
+.despesa-valor > .seta-progresso{
+    transform: rotate(70deg);
+    color: var(--secondary_color2);
+}
+
+section.despesa-receita .line-flex:first-child div {
+    display: flex;
+    gap: 3rem;
+}
+
+section.despesa-receita .line-flex:first-child div > .container-valor {
+    gap: 0;
+}
+
+/*Geral da segunda linha*/
+.despesa-receita .line-flex:not(:first-child) {
+    margin-top: 30px;
+}
+
+
+/*Gráfico*/
+.despesa-receita .line-flex .graphic-home {
+    padding: 0;
+    width: 70%;
+    max-width: 700px;
+    height: 200px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #ddd 0%, /*O gradiente comeca com o cinza claro*/
+        #ddd 1px,  /*O cinza claro forma uma linha de 1px de largura*/
+        #fff 1px, /*Quando acaba 1px de cinza, inicia a branca, sem transicao*/
+        #fff 4% /*O branco persiste por 5% da largura do container ate comecar o gradiente outra vez*/
+    );
+    border-left:  2px solid var(--gray_color);
+    border-bottom: 2px solid var(--gray_color);
+    position: relative;
+}
+
+
+.graphic-home .rectangle {
+    position: absolute;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.graphic-home .blue-rect {
+    background-color: var(--secondary_color);
+    width: 80%;
+    top: 40px;
+    left: 0;
+}
+
+.graphic-home .orange-rect {
+    background-color: var(--secondary_color2);
+    width: 40%;
+    bottom: 20px;
+    left: 0;
+}
+
+/*Seleção "radio"*/
+/*O de telas menores*/
+form.periodo-dia-selecao.tela-menor {
+    display: none;
+}
+
+form.periodo-dia-selecao.tela-menor fieldset{
+    margin: 2rem auto -2.6rem auto;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+form.periodo-dia-selecao.tela-menor fieldset label {
+    margin: 0;
+    padding: 1rem 1rem;
+    width: 7rem;
+
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 50px;
+}
+
+
+/*O radio de telas maiores*/
+.despesa-receita > .line-flex > form {
+    height: fit-content;
+}
+
+form.periodo-dia-selecao.tela-maior fieldset {
+    width: 20rem;
+    height: 90%;
+    border: none;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form.periodo-dia-selecao.tela-maior fieldset label {
+    margin: 15px 10px;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+/*configurações gerais entre o radio de telas menores e o de maiores*/
+form.periodo-dia-selecao fieldset input[type="radio"] {
+    opacity: 0%;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+}
+
+form.periodo-dia-selecao fieldset input:checked + label {
+    background-color: var(--secondary_color);
+    color: white;
+}
+
+form.periodo-dia-selecao fieldset input:focus + label {
+    outline: 1px solid black;
+    border: 1px solid white;
+}
+
+
+
+/*--------------------------
+    Seção das emoções
+---------------------------*/
+section.emocoes .flex {
+    gap: 32px;
+}
+
+.emocoes .flex .left,
+.emocoes .flex .right,
+.emocoes .flex .emojis{
+    width: fit-content;
+}
+
+.emocoes .emojis img {
+    width: 80px;
+}
+
+.emocoes > .flex ul.emojis {
+    list-style-type: none;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+}
+
+.emocoes > .flex ul.emojis li {
+    margin-left: -2rem;
+    padding: 0;
+}
+.btn {
+    margin-top: 1.5rem;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--secondary_color);
+    width: fit-content;
+}
+
+.btn:hover, 
+.btn:focus {
+    background-color: #154065;
+    transition: all 0.5s;
+}
+
+
+/*--------------------------
+    Seção de dicas
+---------------------------*/
+.back-blue section{
+    padding: 4rem 0 7rem 0;
+    width: 85%;
+    margin: auto;
+}
+
+.back-blue section div.flex{
+    padding: 4rem 2rem;
+    gap: 4rem;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.back-blue section blockquote.card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 3rem;
+    min-height: 15rem;
+    background-color: white;
+    border: 1px solid var(--gray_color);
+    border-radius: 20px;
+    transition: all 1s ease-in;
+}
+
+.back-blue section blockquote.card::before{
+    content: url("../img/aspa.png");
+    position: absolute;
+    top: -3rem;
+    left: 1.5rem;
+    
+    width: 20rem;
+    height: 20rem;
+}
+
+.back-blue section blockquote.card:hover,
+.back-blue section blockquote.card:focus {
+    transition: all 1s ease-out;
+    scale: 1.05;
+}
+
+.back-blue section blockquote.card + .coracao {
+    margin-top: 1rem;
+    color: var(--gray_color);
+    font-size: 1.8rem;
+}
+
+.back-blue section blockquote.card + .clicado {
+    color: #B10101;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+}
+
+
+/*--------------------------
+    Seção dos vídeos
+---------------------------*/
+.videos-about > .grid {
+    margin: auto;
+    margin-top: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    justify-items: center;
+    gap: 2rem;
+
+}
+
+
+.videos-about .card-video {
+    min-width: 200px;
+    max-width: 300px;
+    transition: all 0.5s ease-in;
+}
+
+.videos-about .card-video:hover,
+.videos-about .card-video:focus{
+    transition: all 0.5s ease-out;
+    scale: 1.05;
+}
+
+.videos-about .card-video > img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.videos-about .card-video > .info-video {
+    margin-top: -1rem;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.videos-about .card-video > .info-video  .title-video {
+    color: black;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.videos-about .card-video > .info-video  .canal-video {
+    color: var(--gray_color);
+}
+
+
+
+/* =-=-=-=-=-=- MEDIA QUERIES -=-=-=-=-=-= */
+/* 
+=========================
+=  Dispositivos móveis  =
+=        CELULAR        =
+=========================*/
+@media (max-width:480px) {
+    * {
+        font-size: 1.3rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .title-2{
+        font-size: 1.7rem;
+    }
+
+    main{
+        padding: 64px 0 0 0;        
+    }
+
+    .content {
+        width: 90%;
+    }
+
+    main .back-white {
+        padding: 2rem;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    /*--------------------------
+        Seção de Saldo
+    ---------------------------*/
+    /*Não foi preciso fazer mais nada*/
+
+    /*--------------------------
+    Seção das despesas e receitas
+    ---------------------------*/
+    form.periodo-dia-selecao.tela-maior {
+        display: none;
+    }
+
+    form.periodo-dia-selecao.tela-menor {
+        display: block;
+    }
+
+    section.despesa-receita h2 {
+        font-size: 1.6rem;
+    }
+
+    section.despesa-receita .container-valor p{
+        margin: 0 1rem;
+        font-size: 1.2rem;
+    }
+
+    section.despesa-receita .container-valor > .seta-progresso{
+        font-size: 1.4rem;
+    }
+
+    section.despesa-receita .line-flex:first-child {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    section.despesa-receita .line-flex:first-child > div {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /*Gráfico*/
+    .despesa-receita .line-flex .graphic-home {
+        width: 100%;
+        height: 100px;
+    }
+
+    .graphic-home .rectangle {
+        height: 30px;
+    }
+
+    .graphic-home .blue-rect {
+        top: 20px;
+    }
+
+    .graphic-home .orange-rect {
+        bottom: 10px;
+    }
+
+    /*--------------------------
+        Seção das emoções
+    ---------------------------*/
+    section.emocoes .flex {
+        gap: 16px;
+    }
+
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 40px;
+    }
+
+
+
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
+    .back-blue section{
+        padding: 4rem 0 7rem 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .back-blue section .flex > div {
+        width: 90%;
+        max-width: 300px;
+        margin: auto;
+    }
+    
+
+    /*--------------------------
+        Seção dos vídeos
+    ---------------------------*/
+    .videos-about > .grid {
+        margin: 2rem auto auto auto;
+        width: fit-content;
+
+        grid-template-columns: minmax(200px, 300px);
+        justify-items: center;
+    }
+
+    .videos-about .card-video > .info-video  .title-video {
+        font-size: 1.6rem;
+    }
+
+    .videos-about .card-video > .info-video  .canal-video {
+        font-size: 1.4rem;
+    }
+}
+
+
+/*
+=========================
+=  Dispositivos móveis  =
+=        TABLET         =
+=========================*/
+@media (min-width: 481px) and (max-width: 768px) { 
+    *{
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .title-2{
+        font-size: 1.7rem;
+    }
+
+    main{
+        padding: 64px 0 0 0;        
+    }
+    
+    .content {
+        width: 90%;
+    }
+
+    main .back-white {
+        padding: 2rem;
+    }
+    
+    /*--------------------------
+    Seção das despesas e receitas
+    ---------------------------*/
+    form.periodo-dia-selecao.tela-maior {
+        display: none;
+    }
+
+    form.periodo-dia-selecao.tela-menor {
+        display: block;
+    }
+
+    form.periodo-dia-selecao.tela-menor label {
+        font-size: 1.6rem;
+    }
+
+    section.despesa-receita .line-flex:first-child {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    section.despesa-receita .line-flex:first-child > div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /*Gráfico*/
+    .despesa-receita .line-flex .graphic-home {
+        width: 100%;
+        height: 150px;
+    }
+
+    .graphic-home .rectangle {
+        height: 45px;
+    }
+
+    .graphic-home .blue-rect {
+        top: 35px;
+    }
+
+    .graphic-home .orange-rect {
+        bottom: 10px;
+    }
+
+    /*--------------------------
+        Seção das emoções
+    ---------------------------*/
+    section.emocoes .flex {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 60px;
+    }
+
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
+    .back-blue section{
+        padding: 4rem 0 7rem 0;
+        width: 90%;
+        margin: auto;
+    }
+
+    .back-blue section .flex {
+        flex-wrap: wrap;
+    }
+
+    .back-blue section .flex > div {
+        width: 90%;
+        max-width: 250px;
+        margin: auto;
+    }
+
+
+}
+
+
+/*
+=========================
+=        LAPTOPS        =
+=========================*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content {
+        width: 85%;
+    }
+    /*--------------------------
+    Seção de despesas e receitas
+    ---------------------------*/
+    /*Valores do gráfico*/
+    .container-valor  p{
+        font-size: 1.3rem;
+    }
+
+    /*Seleção "radio"*/
+    form.periodo-dia-selecao.tela-maior fieldset {
+        width: 17rem;
+    }
+
+
+    /*--------------------------
+        Seção das emoções
+    --------------------------*/
+    .emocoes .flex {
+        flex-direction: column;
+    }
+
+    .emocoes .flex .right {
+        width: 100%;
+    }
+
+    .emocoes .flex .emojis{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .emocoes .emojis img {
+        width: 72px;
+    }
+    /*--------------------------
+        Seção de dicas
+    ---------------------------*/
+    .back-blue {
+        width: 100%;
+    }
+
+    .back-blue section{
+        width: 85%;
+        margin: auto;
+    }
+
+    .back-blue section .flex > div {
+        width: 100%;
+        min-width: 160px;
+        margin: auto;
+    }
+}
