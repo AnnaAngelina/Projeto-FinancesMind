@@ -19,9 +19,7 @@ function filterModal() {
     })
 
     closeFilter.addEventListener('click', (e) => {
-        console.log('oi')
         if (filtro.getAttribute('class') == 'active') {
-            console.log('oiiiii')
             filtro.classList.remove('active')
             filtro.classList.add('filter-up')
 
@@ -92,19 +90,19 @@ close.addEventListener('click', () => {
 
 // botao flutuante
 
-let containerButtons = document.querySelector('.buttons')
-let addTransiction = document.getElementById('add-transaction')
-console.log(containerButtons)
+function openButton() {
+    let containerButtons = document.getElementById('buttons')
+    let addTransiction = document.querySelector('.add-transaction')
 
-addTransiction.addEventListener('click', () => {
-    if (containerButtons.getAttribute('class') == 'open') {
-        containerButtons.classList.toggle = 'buttons'
+    if (containerButtons.getAttribute('class') === 'open') {
+        containerButtons.classList.remove('open')
+        containerButtons.classList.add('buttons')
         addTransiction.id = 'add-transaction'
     } else {
-        containerButtons.classList.toggle = 'open'
+        containerButtons.classList.remove('buttons')
+        containerButtons.classList.add('open')
         addTransiction.id = 'open-buttons'
     }
-})
-
+}
 
 
