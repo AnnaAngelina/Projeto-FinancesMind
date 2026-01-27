@@ -1,68 +1,5 @@
-let button = document.getElementById('filter')
-let filtro = document.querySelector('.filter-up')
-let num = 0
-
-function filterModal() {
-    const closeFilter = document.querySelector('.close-filter')
-    const content = document.getElementById('content')
-
-    filtro.classList.add('active')
-    filtro.classList.remove('filter-up')
-
-    content.addEventListener('click', (e) => {
-        if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
-            console.log('ola')
-            filtro.classList.remove('active')
-            filtro.classList.add('filter-up')
-        }
-        e.stopImmediatePropagation()
-    })
-
-    closeFilter.addEventListener('click', (e) => {
-        if (filtro.getAttribute('class') == 'active') {
-            filtro.classList.remove('active')
-            filtro.classList.add('filter-up')
-
-        } else {
-            filtro.classList.add('active')
-            filtro.classList.remove('filter-up')
-        }
-        e.stopImmediatePropagation()
-    })
-}
-
-let periodoInicio = document.querySelector('.inicio')
-let periodoFim = document.querySelector('.fim')
-let periodo = document.getElementById('periodo-date')
-let p1 = 0
-let p2 = 0
-
-periodoInicio.addEventListener('blur', () => {
-    if (periodoInicio.value) {
-        periodo.classList.remove('periodo-active1')
-        p1 = 1
-    } else {
-        if (p1===1) {
-            periodo.classList.add('periodo-active1')
-        }
-    }
-})
-
-periodoFim.addEventListener('blur', () => {
-    if (periodoFim.value) {
-        periodo.classList.remove('periodo-active2')
-        p2 = 1
-    } else {
-        if (p2===1) {
-            periodo.classList.add('periodo-active2')
-        }
-    }
-})
-
-
 // ---------------- base JS -------------------------
 
-// nav e header
 
 let menu = document.querySelector('.menu-symbol')
 let nav = document.querySelector('.nav-hidden')
@@ -88,22 +25,6 @@ close.addEventListener('click', () => {
 
 })
 
-// botao flutuante
-
-function openButton() {
-    let containerButtons = document.getElementById('buttons')
-    let addTransiction = document.querySelector('.add-transaction')
-
-    if (containerButtons.getAttribute('class') === 'open') {
-        containerButtons.classList.remove('open')
-        containerButtons.classList.add('buttons')
-        addTransiction.id = 'add-transaction'
-    } else {
-        containerButtons.classList.remove('buttons')
-        containerButtons.classList.add('open')
-        addTransiction.id = 'open-buttons'
-    }
-}
 
 // ---------------- DIARIO JS --------------------------------------------------------------------------------------------
 
@@ -125,6 +46,9 @@ const textoHistorico = document.querySelector(".texto-historico");
 const dataHistoricoElemento = document.querySelector(".data-historico");
 const emojiHistorico = document.querySelector(".emoji-historico");
 const textoHumor = document.querySelector(".texto-humor");
+const causaHistorico = document.querySelector(".causa-historico");
+const causaimgHistorico = document.querySelector(".causa-img-historico");
+const causaContainer = document.querySelector(".causa-historico-container");
 
 const hoje = new Date();
 const diaHoje = hoje.getDate();
@@ -150,13 +74,21 @@ const meses = [
 const registros = {
   "2026-01-05": {
     texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
-    emoji: "/FinancesMind/img/Triste.png",
-    humor: "triste"
+    emoji: "/FinancesMind/assets/img/Triste.png",
+    humor: "triste",
+    causa: {
+    texto: "Trabalho",
+    imagem: "/FinancesMind/assets/img/Triste.png"
+  }
   },
   "2026-01-10": {
     texto: "Neste dia me senti animada pois vou sair com meus amigos",
-    emoji: "/FinancesMind/img/Feliz.png",
-    humor: "feliz"
+    emoji: "/FinancesMind/assets/img/Feliz.png",
+    humor: "feliz",
+    causa: {
+    texto: "Trabalho",
+    imagem: "/FinancesMind/assets/img/Triste.png"
+    }
   }
 };
 
@@ -270,6 +202,17 @@ function abrirHistorico(data) {
     emojiHistorico.style.display = "none";
     textoHumor.style.display = "none";
   }
+
+  // EXIBIR A CAUSA
+  if (registro.causa) {
+    causaHistorico.innerText = registro.causa.texto;
+    causaImagem.src = registro.causa.imagem;
+    causaImagem.alt = registro.causa.texto;
+
+    causaContainer.style.display = "flex";
+  } else {
+    causaContainer.style.display = "none";
+  }
 }
 
 
@@ -311,4 +254,3 @@ fecharRegistro.addEventListener("click", () => {
 fecharHistorico.addEventListener("click", () => {
   historicoLateral.classList.remove("aberto");
 });
-
