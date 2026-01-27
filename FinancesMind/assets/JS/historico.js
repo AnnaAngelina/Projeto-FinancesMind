@@ -93,6 +93,7 @@ close.addEventListener('click', () => {
 function openButton() {
     let containerButtons = document.getElementById('buttons')
     let addTransiction = document.querySelector('.add-transaction')
+    const main = document.getElementById('content')
 
     if (containerButtons.getAttribute('class') === 'open') {
         containerButtons.classList.remove('open')
@@ -103,6 +104,16 @@ function openButton() {
         containerButtons.classList.add('open')
         addTransiction.id = 'open-buttons'
     }
+
+
+    main.addEventListener('click', (e) => {
+      console.log(e.target)
+      if ((main.contains(e.target) || e.target == main) && addTransiction.id == 'open-buttons') {
+        containerButtons.classList.remove('open')
+        containerButtons.classList.add('buttons')
+        addTransiction.id = 'add-transaction'
+      }
+    })
 }
 
 // ---------------- DIARIO JS --------------------------------------------------------------------------------------------
