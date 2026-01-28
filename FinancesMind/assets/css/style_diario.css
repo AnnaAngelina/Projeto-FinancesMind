@@ -390,13 +390,14 @@ main{
   width: 140px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   border: 1px solid #ccc;
   border-radius: 50px;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
-  padding: 7px 0px 7px 15px;
+  padding: 7px 2px ;
+  justify-content: center;
 }
 
 textarea{
