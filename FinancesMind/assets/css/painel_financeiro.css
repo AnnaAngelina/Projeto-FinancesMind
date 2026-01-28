@@ -1,106 +1,202 @@
-body {
+* {
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background: #fff6e8;
-    padding: 20px;
 }
 
-.container {
-    max-width: 420px;
+body {
+    background: #fff6e8;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+  margin-top: 100px;
+}
+
+.painel {
+    width: 360px;
     margin: auto;
+    padding: 1.5rem;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .card {
-    background: #fff;
-    padding: 15px;
+    background: white;
     border-radius: 10px;
-    margin-bottom: 25px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.chart {
+h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== GRÁFICO BARRA ===== */
+.grafico-barra {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
     height: 200px;
-    margin-top: 15px;
 }
 
-.bar {
+.eixo-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    margin-right: 5px;
+}
+
+.barras {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex: 1;
+    border-left: 2px solid #999;
+    border-bottom: 2px solid #999;
+    padding-left: 10px;
+}
+
+.barra {
     width: 60px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    color: #000;
-    font-size: 12px;
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 4px 4px 0 0;
 }
 
-.bar span {
+.barra span {
     margin-bottom: 5px;
 }
 
-.receitas {
-    height: 170px;
-    background: #1f5a89;
+.receita {
+    height: 85%;
+    background: #1e5a8f;
 }
 
-.despesas {
-    height: 130px;
-    background: #f5a000;
+.despesa {
+    height: 65%;
+    background: #ffa600;
 }
 
-.legend {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-}
-
-.legend.vertical {
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 6px;
-}
-
-.blue { background: #1f5a89; }
-.orange { background: #f5a000; }
-.purple { background: #8e1d63; }
-.cyan { background: #1f8ac0; }
-.peach { background: #f2a36b; }
-
-.label {
+.periodo {
     text-align: center;
-    font-size: 13px;
+    font-size: 0.75rem;
     margin-top: 5px;
 }
 
-/* DONUT */
+.legenda {
+    display: flex;
+    gap: 10px;
+    font-size: 0.75rem;
+}
+
+.legenda span::before {
+    content: "■ ";
+}
+
+.azul { color: #1e5a8f; }
+.laranja { color: #ffa600; }
+
+/* ===== DONUT ===== */
 .donut {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin: 20px auto;
-    background: conic-gradient(
-        #8e1d63 0% 50%,
-        #1f8ac0 50% 75%,
-        #f2a36b 75% 90%,
-        #eee 90% 100%
-    );
+    margin: auto;
     position: relative;
 }
 
-.donut .center {
-    width: 90px;
-    height: 90px;
-    background: #fff;
+.donut::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: white;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.donut.receitas {
+    background: conic-gradient(
+        #8e2a8a 0 50%,
+        #2b8cc4 50% 75%,
+        #f29f67 75% 100%
+    );
+}
+
+.donut.despesas {
+    background: conic-gradient(
+        #f4b400 0 40%,
+        #4285f4 40% 65%,
+        #db4437 65% 79%,
+        #0f9d58 79% 100%
+    );
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.lista li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cor {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.salario { background: #8e2a8a; }
+.extra { background: #2b8cc4; }
+.investimento { background: #f29f67; }
+
+.alimentacao { background: #f4b400; }
+.transporte { background: #4285f4; }
+.entretenimento { background: #db4437; }
+.saude { background: #0f9d58; }
+
+/* ===== TOP DESPESAS ===== */
+.top-despesa p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    margin: 0.4rem 0;
+}
+
+.linha {
+    background: #eee;
+    height: 6px;
+    border-radius: 10px;
+}
+
+.linha div {
+    height: 100%;
+    background: #2ecc71;
+    border-radius: 10px;
+}
+
+/* ===== BOTÃO ===== */
+.voltar {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #1e5a8f;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
 }

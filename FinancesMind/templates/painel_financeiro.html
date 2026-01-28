@@ -1,50 +1,186 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Painel Financeiro</title>
     <link rel="stylesheet" href="/FinancesMind/assets/css/painel_financeiro.css">
+    <link rel="stylesheet" href="/FinancesMind/assets/css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
 </head>
 <body>
-
-<div class="container">
-    <h2>Painel Financeiro</h2>
-
-    <div class="card">
-        <h3>Despesas e Receita</h3>
-
-        <div class="chart">
-            <div class="bar receitas">
-                <span>3.715,25</span>
+    <div class="normal-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
             </div>
-
-            <div class="bar despesas">
-                <span>2.897,47</span>
+            <div class="visual">
+                <p><b>Olá, Eduarda</b></p>
+                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
             </div>
-        </div>
-
-        <div class="legend">
-            <div><span class="dot blue"></span>Receitas</div>
-            <div><span class="dot orange"></span>Despesas</div>
-        </div>
-
-        <p class="label">Últimos 30 dias</p>
+        </header>
+        <nav class="navegacao">
+            <ul>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+            </ul>
+        </nav>
     </div>
 
-    <div class="card">
-        <h3>Visão Geral das Receitas</h3>
-
-        <div class="donut">
-            <div class="center"></div>
-        </div>
-
-        <div class="legend vertical">
-            <div><span class="dot purple"></span>Salário 50%</div>
-            <div><span class="dot cyan"></span>Trabalho extra 25%</div>
-            <div><span class="dot peach"></span>Investimento 15%</div>
-        </div>
+    <div class="small-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <span class="material-symbols-outlined menu-symbol">menu</span>
+        </header>
+        <nav class="nav-hidden">
+            <span class="material-symbols-outlined close">close</span>
+            <ul>
+                <li>
+                    <div class="visual">
+                        <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="30px"></a>
+                        <p>Perfil</p>
+                    </div>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Diário</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">currency_exchange</span>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Chat</span>
+                    </a>
+                </li>  
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-</div>
+
+<main class="painel">
+
+    <div class="content">
+    <h1>Painel Financeiro</h1>
+
+    <!-- =====================
+         DESPESAS E RECEITA
+    ====================== -->
+    <section class="card">
+        <h2>Despesas e Receita</h2>
+
+        <div class="grafico-barra">
+            <div class="eixo-y">
+                <span>4000</span>
+                <span>3000</span>
+                <span>2000</span>
+                <span>1000</span>
+                <span>0</span>
+            </div>
+
+            <div class="barras">
+                <div class="barra receita">
+                    <span>3.715,25</span>
+                </div>
+
+                <div class="barra despesa">
+                    <span>2.897,47</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="periodo">Últimos 30 dias</p>
+
+        <div class="legenda">
+            <span class="azul">Receitas</span>
+            <span class="laranja">Despesas</span>
+        </div>
+    </section>
+
+    <!-- =====================
+         VISÃO RECEITAS
+    ====================== -->
+    <section class="card">
+        <h2>Visão Geral das Receitas</h2>
+
+        <div class="donut receitas"></div>
+
+        <ul class="lista">
+            <li><span class="cor salario"></span> Salário 50%</li>
+            <li><span class="cor extra"></span> Trabalho extra 25%</li>
+            <li><span class="cor investimento"></span> Investimento 15%</li>
+        </ul>
+    </section>
+
+    <!-- =====================
+         VISÃO DESPESAS
+    ====================== -->
+    <section class="card">
+        <h2>Visão Geral das Despesas</h2>
+
+        <div class="donut despesas"></div>
+
+        <ul class="lista">
+            <li><span class="cor alimentacao"></span> Alimentação 40%</li>
+            <li><span class="cor transporte"></span> Transporte 25%</li>
+            <li><span class="cor entretenimento"></span> Entretenimento 14%</li>
+            <li><span class="cor saude"></span> Saúde 10%</li>
+        </ul>
+    </section>
+
+    <!-- =====================
+         TOP DESPESAS
+    ====================== -->
+    <section class="card">
+        <h2>Top 3 despesas</h2>
+
+        <div class="top-despesa">
+            <p>Alimentação <span>40%</span></p>
+            <div class="linha"><div style="width:40%"></div></div>
+        </div>
+
+        <div class="top-despesa">
+            <p>Transporte <span>25%</span></p>
+            <div class="linha"><div style="width:25%"></div></div>
+        </div>
+
+        <div class="top-despesa">
+            <p>Entretenimento <span>14%</span></p>
+            <div class="linha"><div style="width:14%"></div></div>
+        </div>
+    </section>
+
+    <button class="voltar">Voltar</button>
+    </div>
+
+</main>
 
 </body>
 </html>
