@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+  --main-color: #FFF6E8;
+  --secondary-color: #1E5A8F;
+  --secondary-color2: #FFA600;
+  --gray-color: #5d5d5d;
+  --black-color: #0e0e0e;
+  --white-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
 
 main{
   display: flex;

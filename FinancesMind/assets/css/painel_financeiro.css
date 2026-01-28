@@ -1,202 +1,77 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+.pai{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-
-body {
-    background: #fff6e8;
-    margin: 0;
-    padding: 0;
-}
-
-.content{
+.Visão_Geral_Receitas{
   margin-top: 100px;
 }
 
-.painel {
-    width: 360px;
-    margin: auto;
-    padding: 1.5rem;
+.titulo{
+  flex-basis: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
-h1 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+.pizza{
+  width: 40rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.rosquinha{
+  display: flex;
+  flex-flow: row;
+  gap: 3rem;
+}
+/* gráfico em rosca */
+.rosca{
+  background-image:
+    radial-gradient(
+      #fff 40%,
+      transparent 41%
+    ),
+    conic-gradient(
+      from -90deg,
+      #8e2a6a 0% 50%,
+      #2f8fbf 0 75%,
+      #f4a261 0
+);
 }
 
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.legenda{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  flex-flow: column;
 }
 
-h2 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+.legenda span{
+  position: relative;
+  padding-left: 2.3rem;
 }
 
-/* ===== GRÁFICO BARRA ===== */
-.grafico-barra {
-    display: flex;
-    height: 200px;
+.legenda span::before{
+  content: "";
+  position: absolute;
+  left: 0rem;
+  top: 0.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 
-.eixo-y {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 0.7rem;
-    margin-right: 5px;
+/* cores da legenda */
+.legenda span:nth-child(1)::before{
+  background: #8e2a6a;
 }
-
-.barras {
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
-    flex: 1;
-    border-left: 2px solid #999;
-    border-bottom: 2px solid #999;
-    padding-left: 10px;
+.legenda span:nth-child(2)::before{
+  background: #2f8fbf;
 }
-
-.barra {
-    width: 60px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: white;
-    font-size: 0.7rem;
-    border-radius: 4px 4px 0 0;
-}
-
-.barra span {
-    margin-bottom: 5px;
-}
-
-.receita {
-    height: 85%;
-    background: #1e5a8f;
-}
-
-.despesa {
-    height: 65%;
-    background: #ffa600;
-}
-
-.periodo {
-    text-align: center;
-    font-size: 0.75rem;
-    margin-top: 5px;
-}
-
-.legenda {
-    display: flex;
-    gap: 10px;
-    font-size: 0.75rem;
-}
-
-.legenda span::before {
-    content: "■ ";
-}
-
-.azul { color: #1e5a8f; }
-.laranja { color: #ffa600; }
-
-/* ===== DONUT ===== */
-.donut {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin: auto;
-    position: relative;
-}
-
-.donut::after {
-    content: "";
-    width: 60px;
-    height: 60px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.donut.receitas {
-    background: conic-gradient(
-        #8e2a8a 0 50%,
-        #2b8cc4 50% 75%,
-        #f29f67 75% 100%
-    );
-}
-
-.donut.despesas {
-    background: conic-gradient(
-        #f4b400 0 40%,
-        #4285f4 40% 65%,
-        #db4437 65% 79%,
-        #0f9d58 79% 100%
-    );
-}
-
-.lista {
-    list-style: none;
-    padding: 0;
-    font-size: 0.8rem;
-}
-
-.lista li {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.cor {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.salario { background: #8e2a8a; }
-.extra { background: #2b8cc4; }
-.investimento { background: #f29f67; }
-
-.alimentacao { background: #f4b400; }
-.transporte { background: #4285f4; }
-.entretenimento { background: #db4437; }
-.saude { background: #0f9d58; }
-
-/* ===== TOP DESPESAS ===== */
-.top-despesa p {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    margin: 0.4rem 0;
-}
-
-.linha {
-    background: #eee;
-    height: 6px;
-    border-radius: 10px;
-}
-
-.linha div {
-    height: 100%;
-    background: #2ecc71;
-    border-radius: 10px;
-}
-
-/* ===== BOTÃO ===== */
-.voltar {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background: #1e5a8f;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
+.legenda span:nth-child(3)::before{
+  background: #f4a261;
 }
