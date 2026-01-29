@@ -399,37 +399,56 @@
 }
 
 
-
-
-
 /* ===============================
-   📱 RESPONSIVIDADE - MOBILE
+  MOBILE — até 480px
    =============================== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
-  /* Painel geral */
+  .barras-grid-line:nth-child(1) { top: 0rem; }
+  .barras-grid-line:nth-child(2) { top: 3rem; }
+  .barras-grid-line:nth-child(3) { top: 6rem; }
+  .barras-grid-line:nth-child(4) { top: 9rem; }
+  .barras-grid-line:nth-child(5) { top: 12rem; }
+  .barras-grid-line:nth-child(6) { top: 15rem; }
+  .barras-grid-line:nth-child(7) { top: 18rem; }
+  .barras-grid-line:nth-child(8) { top: 21rem; }
+  .barras-grid-line:nth-child(9) { top: 24rem; }
+
+  .barras-chart {
+    display: flex;
+    justify-content: center;
+  }
+
+  .barras-bar.barras-receitas {
+    height: 20rem;
+  }
+
+  .barras-bar.barras-despesas {
+    height: 14rem;
+  }
+
+  .despp{
+    margin: 0 auto;
+  }
+
+  .titulo_analise{
+    margin: 8rem auto 2rem;
+    text-align: center;
+  }
+
   .painel {
     padding: 2rem 1rem;
   }
 
   .painel-container {
     padding: 2rem 1.5rem;
-    display: flex;
-    justify-content: center;
   }
 
-  /* Grid vira coluna */
   .dashboard-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  /* Todas as sections ocupam 100% */
-  .dashboard-grid section {
-    width: 100%;
-  }
-
-  /* Donuts */
   .receitas-container,
   .despesas-content {
     flex-direction: column;
@@ -445,99 +464,106 @@
     padding: 2.5rem;
   }
 
-  /* Gráfico de barras */
+  /* 🔽 GRÁFICO DE BARRAS */
   .barras-content {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 
-  .barras-chart-container {
-    width: 100%;
-    align-items: center;
-  }
-
-  .barras-area {
-    width: 100%;
-    max-width: 28rem;
-  }
-
-  .barras-y-axis {
-    font-size: 1rem;
-  }
-
-  /* Top despesas */
-  .top-despesas-wrapper {
-    margin-top: 2rem;
-  }
-
-  /* Títulos */
-  h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .receitas-titulo,
-  .despesas-titulo,
-  .top-despesas-title {
-    text-align: center;
-  }
-}
-
-
-
-/* ===============================
-   📱 GRÁFICO DE BARRAS — MOBILE
-   =============================== */
-@media (max-width: 768px) {
-
-  .barras-chart-container h1{
-    margin-bottom:5rem ;
-  }
-  /* Container */
-  .barras-chart {
-    justify-content: center;
-  }
-
-  /* REMOVE eixo Y no mobile */
   .barras-y-axis {
     display: none;
   }
 
-  /* Área do gráfico */
   .barras-area {
-    width: 100%;
     max-width: 26rem;
     height: 24rem;
-    margin: 0 auto;
   }
 
-  /* Linhas de grid ajustadas */
-  .barras-grid-line:nth-child(1) { top: 0; }
-  .barras-grid-line:nth-child(2) { top: 6rem; }
-  .barras-grid-line:nth-child(3) { top: 12rem; }
-  .barras-grid-line:nth-child(4) { top: 18rem; }
-
-  /* Barras centralizadas */
   .barras-valores {
     left: 50%;
     transform: translateX(-50%);
     gap: 4rem;
   }
 
-  .barras-bar {
-    width: 4.2rem;
-  }
-
-  /* Label X */
-  .barras-x-label {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* Legenda */
   .barras-legenda {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
   }
 }
 
+
+/* ===============================
+  TABLET — 481px até 768px
+   =============================== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .barras-grid-line:nth-child(1) { top: 0rem; }
+  .barras-grid-line:nth-child(2) { top: 3.25rem; }
+  .barras-grid-line:nth-child(3) { top: 6.5rem; }
+  .barras-grid-line:nth-child(4) { top: 9.75rem; }
+  .barras-grid-line:nth-child(5) { top: 13rem; }
+  .barras-grid-line:nth-child(6) { top: 16.25rem; }
+  .barras-grid-line:nth-child(7) { top: 19.5rem; }
+  .barras-grid-line:nth-child(8) { top: 22.75rem; }
+  .barras-grid-line:nth-child(9) { top: 26rem; }
+
+  .barras-bar.barras-receitas {
+    height: 22rem;
+  }
+
+  .barras-bar.barras-despesas {
+    height: 15.5rem;
+  }
+
+  .titulo_analise{
+    margin: 8rem 0 2rem 4rem;
+  }
+
+  .painel {
+    padding: 3rem 2rem;
+  }
+
+  /* 👇 GRÁFICOS LADO A LADO NO TABLET */
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Mantém donut organizado */
+  .receitas-container,
+  .despesas-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .receitas-wrapper,
+  .despesas-wrapper,
+  .top-despesas-wrapper {
+    width: 100%;
+    padding: 3rem;
+  }
+
+  /* Gráfico de barras */
+  .barras-content {
+    margin-top: 6rem;
+  }
+
+  .barras-area {
+    max-width: 28rem;
+    height: 26rem;
+  }
+
+  .barras-y-axis {
+    font-size: 1rem;
+  }
+
+  .despp {
+    margin-left: 0rem;
+}
+
+}
