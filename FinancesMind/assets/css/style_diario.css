@@ -489,7 +489,7 @@ textarea{
   font-size: 1.4rem;
 }
 
-@media (max-width: 768px) {
+/* @media (min-width:481px) and (max-width: 768px)  {
 
   .titulo-diario {
     position: static;
@@ -573,10 +573,118 @@ textarea{
     padding-bottom: 8rem;
     height: 100vh;
   }
-  
+
   .historico-lateral.aberto{
     width: 100%;
     margin-top: 0rem;
+  }
+
+} */
+
+
+@media (max-width: 480px) {
+
+  main {
+    padding: 0 1rem;
+    align-items: flex-start;
+  }
+
+  .titulo-diario {
+    position: static;
+    margin: 10rem 0rem -2rem -22rem;
+    width: fit-content;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 2rem;
+  }
+
+  .btn-registrar {
+    max-width: 100%;
+  }
+
+  /* REGISTRO */
+  .registro-lateral {
+    width: 100%;
+    right: -100%;
+  }
+
+  .registro-lateral.aberto {
+    right: 0;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+
+  /* HISTÓRICO */
+  .historico-lateral {
+    width: 100%;
+    right: -100%;
+  }
+
+  .historico-lateral.aberto {
+    right: 0;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+
+  .registro-conteudo {
+    height: 100dvh;
+    padding-bottom: 8rem;
+    margin-top: 6rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  main {
+    padding: 0 2rem;
+    align-items: flex-start;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 48rem;
+    margin-top: 2rem;
+    border-radius: 3rem;
+  }
+
+  .titulo-diario {
+    position: static;
+    margin: 10rem 0rem -5rem -42rem;
+    z-index: 0;
+  }
+
+  .btn-registrar {
+    max-width: 24rem;
+  }
+
+  /* REGISTRO */
+
+  .registro-lateral.aberto {
+    right: 0;
+    margin-top: 3rem;
+    z-index: 1;
+  }
+
+  /* HISTÓRICO */
+
+  .historico-lateral.aberto {
+    right: 0;
+    margin-top: 3rem;
+    z-index: 1;
+  }
+
+  textarea {
+    width: 100%;
   }
 
 }
