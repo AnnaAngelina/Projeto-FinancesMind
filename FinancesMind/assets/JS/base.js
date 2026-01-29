@@ -23,18 +23,39 @@ close.addEventListener('click', () => {
 
 })
 
-let containerButtons = document.getElementById('buttons')
-let floatButton = document.getElementById('float-button')
-let addTransiction = document.getElementById('add-transaction')
-console.log('oi', addTransiction)
+function openButton() {
+    let containerButtons = document.querySelector('.buttons')
+    let floatButton = document.getElementById('float-button')
+    let addTransiction = document.getElementById('add-transaction')
+    let content = document.querySelector('.content')
 
-addTransiction.addEventListener('click', () => {
-    console.log('oi')
-    if (containerButtons.id === 'open') {
-        containerButtons.id = 'buttons'
-        addTransiction.id = 'add-transaction'
-    } else {
-        containerButtons.id == 'open'
-        addTransiction.id = 'open-buttons'
-    }
-})
+    containerButtons.classList.remove('buttons')
+    containerButtons.classList.add('open')
+    addTransiction.id = 'open-buttons'
+
+    content.addEventListener('click', (e) => {
+        console.log('oii')
+        console.log(e.target)
+        if (containerButtons.getAttribute('class') === 'open' && e.target !== floatButton) {
+            containerButtons.classList.remove('open')
+            containerButtons.classList.add('buttons')
+            addTransiction.id = 'add-transaction'
+        }
+    })
+
+    addTransiction.addEventListener('click', () => {
+        console.log('olaaaa')
+        if (containerButtons.id === 'open') {
+            containerButtons.classList.remove('open')
+            containerButtons.classList.add('buttons')
+            addTransiction.id = 'add-transaction'
+        } else {
+            containerButtons.classList.remove('buttons')
+            containerButtons.classList.add('open')
+            addTransiction.id = 'open-buttons'
+        }
+    })
+
+}
+
+
