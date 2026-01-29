@@ -28,7 +28,8 @@ main{
 
 .wrapper{
   min-height: 30rem;
-  width: 40rem;
+  max-width: 40rem;
+  width: 100%;
   background: #fff;
   border-radius: 5rem;
   border: 0.1rem solid #5d5d5d;
@@ -163,6 +164,8 @@ main{
   font-size: 1.4rem;
   cursor: pointer;
   margin-top: 3rem;
+  width: 100%;
+  max-width: 20rem;
 }
 
 .btn-registrar:hover {
@@ -173,21 +176,21 @@ main{
 .registro-lateral {
   position: fixed;
   top: 0;
-  right: -42rem; /* fora da tela */
+  right: -42rem;
   width: 42rem;
   height: 100vh;
   background: white;
   transition: right 0.35s ease;
   z-index: 100;
   border-left: 0.1rem solid #ccc;
+  display: flex;
+  flex-direction: column;
 }
 
 .registro-lateral.aberto {
   right: 0;
-  width: 42rem;       /* lateral */
-  max-width: 42rem;
-  height: 100vh;
-  overflow-y: auto;
+  height: 100%;
+  margin-top: 3rem;
 }
 
 
@@ -208,15 +211,18 @@ main{
 }
 
 .registro-conteudo {
+  flex: 1;
   max-width: 100%;
-  padding: 2rem 1.6rem 3rem;
+  padding: 2rem 1.6rem 4rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  overflow: visible;
-  max-height: 56rem;
-  margin-top: 5rem;
+  overflow: auto;
+  max-height: none;
+  margin-top: 4rem;
+  max-height: none;
+  overflow-y: auto;
 }
 
 
@@ -247,6 +253,8 @@ main{
   justify-content: center;
   margin:auto;
   font-size: 1.2rem;
+  width: 100%;
+  max-width: 20rem;
 }
 .registro-conteudo::after {
   content: "";
@@ -255,17 +263,21 @@ main{
 .historico-lateral {
   position: fixed;
   top: 0;
-  right: -42rem;
-  width: 42rem;
+  right: -42rem;          /* começa fora da tela */
+  width: 42rem;          /* igual ao registro */
   height: 100vh;
   background: white;
   transition: right 0.35s ease;
   z-index: 100;
   border-left: 0.1rem solid #ccc;
+  display: flex;
+  flex-direction: column;
 }
 
 .historico-lateral.aberto {
   right: 0;
+  height: 100%;
+  margin-top: 3rem;
 }
 
 .data-registro, .data-historico{
@@ -318,7 +330,7 @@ main{
 }
 
 .emoji-historico {
-  width: 7rem;
+  width: 6rem;
 }
 
 .texto-humor {
@@ -328,6 +340,7 @@ main{
 }
 .humor-historico {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   margin: 1rem ;
@@ -338,6 +351,8 @@ main{
     padding-top: 2rem;
     margin-top: 1rem;
     font-size: 1.2rem;
+    overflow: visible;
+    padding-bottom: 2rem;
 }
 
 .causa-historico-container {
@@ -349,7 +364,8 @@ main{
   border: 0.1rem solid #ccc;
   border-radius: 5rem;
   background: #fff;
-  padding: 0.7rem rem 0.7rem 1.5rem;
+  padding: 0.7rem 0.7rem 1.5rem;
+  justify-content: center;
 }
 
 .causa-img-historico {
@@ -367,7 +383,9 @@ main{
   border-radius: 1.5rem;
   margin: 1rem auto;
   align-items: flex-start;
-   min-height: 6rem;
+  min-height: 6rem;
+  width: 100%;
+  max-width: 36rem;
 }
 
 /* cada opção */
@@ -521,34 +539,50 @@ textarea{
   }
 
   .btn-salvar {
-    width: 100%;
     font-size: 1.4rem;
     padding: 1rem;
     margin-top: 2rem;
     align-items: center;
-    width: 15rem;
+    flex-basis: 100%;
     
   }
 
-  .registro-conteudo textarea {
+  textarea {
     display: flex;
     justify-content: center;
     margin: 0 auto;
   }
 
-  .registro-lateral.aberto {
-    width: 100%;
-    max-width: 100%;
-    height: 100dvh;
-    overflow-y: auto;
-  }
   .selecionar-emocao, .selecionar-causa{
     overflow-x: auto;
     justify-content: left;
   }
 
-  .registro-conteudo {
-    padding-bottom: 6rem; /* evita cortar o final */
+  .causa-historico-container {
+    width: fit-content;
+    max-width: 100%;
+    padding-right: 1.5rem;
   }
-}
 
+  .registro-lateral.aberto {
+    width: 100%;
+    margin-top: 0rem;
+  }
+
+  .registro-conteudo {
+    padding-bottom: 8rem;
+    height: 100vh;
+  }
+/* 
+  .historico-lateral {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    right: -100%;
+  } */
+  .historico-lateral.aberto{
+    width: 100%;
+    margin-top: 0rem;
+  }
+
+}
