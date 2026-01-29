@@ -3,32 +3,32 @@ let filtro = document.querySelector('.filter-up')
 let num = 0
 
 function filterModal() {
-const closeFilter = document.querySelector('.close-filter')
-const content = document.getElementById('content')
+    const closeFilter = document.querySelector('.close-filter')
+    const content = document.getElementById('content')
 
-filtro.classList.add('active')
-filtro.classList.remove('filter-up')
+    filtro.classList.add('active')
+    filtro.classList.remove('filter-up')
 
-content.addEventListener('click', (e) => {
-    if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
-        console.log('ola')
-        filtro.classList.remove('active')
-        filtro.classList.add('filter-up')
-    }
-    e.stopImmediatePropagation()
-})
+    content.addEventListener('click', (e) => {
+        if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
+            console.log('ola')
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
+        }
+        e.stopImmediatePropagation()
+    })
 
-closeFilter.addEventListener('click', (e) => {
-    if (filtro.getAttribute('class') == 'active') {
-        filtro.classList.remove('active')
-        filtro.classList.add('filter-up')
+    closeFilter.addEventListener('click', (e) => {
+        if (filtro.getAttribute('class') == 'active') {
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
 
-    } else {
-        filtro.classList.add('active')
-        filtro.classList.remove('filter-up')
-    }
-    e.stopImmediatePropagation()
-})
+        } else {
+            filtro.classList.add('active')
+            filtro.classList.remove('filter-up')
+        }
+        e.stopImmediatePropagation()
+    })
 }
 
 let periodoInicio = document.querySelector('.inicio')
@@ -38,25 +38,25 @@ let p1 = 0
 let p2 = 0
 
 periodoInicio.addEventListener('blur', () => {
-if (periodoInicio.value) {
-    periodo.classList.remove('periodo-active1')
-    p1 = 1
-} else {
-    if (p1===1) {
-        periodo.classList.add('periodo-active1')
+    if (periodoInicio.value) {
+        periodo.classList.remove('periodo-active1')
+        p1 = 1
+    } else {
+        if (p1===1) {
+            periodo.classList.add('periodo-active1')
+        }
     }
-}
 })
 
 periodoFim.addEventListener('blur', () => {
-if (periodoFim.value) {
-    periodo.classList.remove('periodo-active2')
-    p2 = 1
-} else {
-    if (p2===1) {
-        periodo.classList.add('periodo-active2')
+    if (periodoFim.value) {
+        periodo.classList.remove('periodo-active2')
+        p2 = 1
+    } else {
+        if (p2===1) {
+            periodo.classList.add('periodo-active2')
+        }
     }
-}
 })
 
 
@@ -388,36 +388,3 @@ datePicker.addEventListener('change', () => {
 }
 
 configurarDataOutro();
-
-function openButton() {
-    let containerButtons = document.querySelector('.buttons')
-    let floatButton = document.getElementById('float-button')
-    let addTransiction = document.getElementById('add-transaction')
-    let content = document.querySelector('.content')
-
-    containerButtons.classList.remove('buttons')
-    containerButtons.classList.add('open')
-    addTransiction.id = 'open-buttons'
-
-    content.addEventListener('click', (e) => {
-        console.log(e.target)
-        if (containerButtons.getAttribute('class') === 'open' && e.target !== floatButton) {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        }
-    })
-
-    addTransiction.addEventListener('click', () => {
-        if (containerButtons.id === 'open') {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        } else {
-            containerButtons.classList.remove('buttons')
-            containerButtons.classList.add('open')
-            addTransiction.id = 'open-buttons'
-        }
-    })
-
-}
