@@ -1,77 +1,398 @@
-.pai{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.Visão_Geral_Receitas{
-  margin-top: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+      font-size: 10px; /* 1rem = 10px */
+    }
+
+.painel {
+  background: #fff6e8;
+  min-height: 100vh;
+  padding: 4rem 2rem;
 }
 
-.titulo{
-  flex-basis: 100%;
-  font-size: 2rem;
-  font-weight: 700;
+.painel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1.6rem;
+  padding: 3rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.dashboard-grid section {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+
+.Despezas_e_Receitas{
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.top-despesas-section{
+  padding: 2rem;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background: #FFF6E8;
+}
+
+
+.Despezas_e_Receitas h1{
   margin-bottom: 2rem;
 }
 
-.pizza{
-  width: 40rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-}
-.rosquinha{
-  display: flex;
-  flex-flow: row;
-  gap: 3rem;
-}
-/* gráfico em rosca */
-.rosca{
-  background-image:
-    radial-gradient(
-      #fff 40%,
-      transparent 41%
-    ),
-    conic-gradient(
-      from -90deg,
-      #8e2a6a 0% 50%,
-      #2f8fbf 0 75%,
-      #f4a261 0
-);
+.barras-content {
+  margin-top: 21rem;
 }
 
-.legenda{
-  flex-basis: 100%;
+.barras-chart-container {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.barras-chart {
+  display: flex;
+}
+
+/* Eixo Y */
+.barras-y-axis {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+/* Área do gráfico */
+.barras-area {
+  position: relative;
+  width: 22rem;
+  height: 30rem;
+  border-left: 0.1rem solid #000;
+  border-bottom: 0.1rem solid #000;
+}
+
+/* Grids */
+.barras-grid-line {
+  position: absolute;
+  width: 100%;
+  height: 0.1rem;
+  background: #ccc;
+}
+
+.barras-grid-line:nth-child(1) { top: 0rem; }
+.barras-grid-line:nth-child(2) { top: 3.75rem; }
+.barras-grid-line:nth-child(3) { top: 7.5rem; }
+.barras-grid-line:nth-child(4) { top: 11.25rem; }
+.barras-grid-line:nth-child(5) { top: 15rem; }
+.barras-grid-line:nth-child(6) { top: 18.75rem; }
+.barras-grid-line:nth-child(7) { top: 22.5rem; }
+.barras-grid-line:nth-child(8) { top: 26.25rem; }
+.barras-grid-line:nth-child(9) { top: 30rem; }
+
+
+/* Barras */
+.barras-valores {
+  position: absolute;
+  bottom: 0;
+  left: 4rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-end;
+}
+
+.barras-bar {
+  width: 4.5rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+  position: relative;
+}
+
+.barras-bar.barras-receitas {
+  height: 25rem;
+  background: #1f5a92;
+}
+
+.barras-bar.barras-despesas {
+  height: 17rem;
+  background: #f4a300;
+}
+
+/* Valores */
+.barras-value {
+  position: absolute;
+  top: -2rem;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* Label X */
+.barras-x-label {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 9rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Legenda */
+.barras-legenda {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-  flex-flow: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-size: 1.4rem;
 }
 
-.legenda span{
+.barras-dot {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+.barras-dot.barras-receitas {
+  background: #1f5a92;
+}
+
+.barras-dot.barras-despesas {
+  background: #f4a300;
+}
+
+
+
+
+
+
+
+
+.receitas-wrapper {
+  background: #ffffff;
+  padding: 40px;
+  width: fit-content;
+  border-radius: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.receitas-visao-geral {
+  margin-top: 5rem;
+}
+
+.receitas-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.receitas-titulo {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Donut chart */
+.receitas-donut {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #8e2a6b 0% 50%,      /* Trabalho concursado 50% */
+    #2f8fbf 50% 85%,    /* Aluguel de casas 35% */
+    #f2a36b 85% 100%    /* Bolos caseiros 15% */
+  );
   position: relative;
-  padding-left: 2.3rem;
 }
 
-.legenda span::before{
+.receitas-donut::after {
   content: "";
+  width: 120px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50%;
   position: absolute;
-  left: 0rem;
-  top: 0.1rem;
-  width: 2rem;
-  height: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Legenda */
+.receitas-legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.receitas-legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.receitas-dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
-/* cores da legenda */
-.legenda span:nth-child(1)::before{
-  background: #8e2a6a;
+.receitas-dot-purple { background: #8e2a6b; }
+.receitas-dot-blue   { background: #2f8fbf; }
+.receitas-dot-orange { background: #f2a36b; }
+
+
+
+
+
+
+.despesas-visao-geral {
+  margin-top: 5rem;
 }
-.legenda span:nth-child(2)::before{
-  background: #2f8fbf;
+
+.despesas-wrapper {
+  background: #ffffff;
+  padding: 40px;
+  width: fit-content;
+  border-radius: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
-.legenda span:nth-child(3)::before{
-  background: #f4a261;
+
+.despesas-titulo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.despesas-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Donut */
+.despesas-donut {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #8e2a6b 0% 40%,     /* Alimentação 40% */
+    #2f8fbf 40% 65%,   /* Transporte 25% */
+    #f2a36b 65% 79%,   /* Entretenimento 14% */
+    #c96a52 79% 90%,   /* Saúde 11% */
+    #6ee3e3 90% 100%   /* Outros 10% */
+  );
+  position: relative;
+}
+
+.despesas-donut::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Legenda */
+.despesas-legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.despesas-legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.despesas-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.despesas-dot-alimentacao { background: #8e2a6b; }
+.despesas-dot-transporte  { background: #2f8fbf; }
+.despesas-dot-entretenimento { background: #f2a36b; }
+.despesas-dot-saude { background: #c96a52; }
+.despesas-dot-outros { background: #6ee3e3; }
+
+
+
+
+
+
+
+
+
+
+
+.top-despesas-wrapper {
+  margin-left: 2rem;
+  margin-top: 4rem;
+  background: #ffffff;
+  padding: 4rem;
+  width: 33rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-radius: 2rem;
+}
+
+.top-despesas-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.top-despesas-item {
+  margin-bottom: 18px;
+}
+
+.top-despesas-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.top-despesas-bar {
+  width: 100%;
+  height: 14px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.top-despesas-progress {
+  height: 100%;
+  background: #3c9a55;
+  border-radius: 2px 0 0 2px;
 }
