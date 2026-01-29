@@ -21,10 +21,11 @@ function EditPreco() {
 
 
 function configurarDataOutro() {
+
     const radioOutro = document.getElementById('outro');
     const datePicker = document.getElementById('datePicker');
     const textoOutro = document.getElementById('texto-outro');
-
+    
     radioOutro.addEventListener('change', () => {
         if (radioOutro.checked) {
             datePicker.showPicker();
@@ -41,6 +42,4 @@ function configurarDataOutro() {
         radioOutro.checked = true;
     });
 }
-
 configurarDataOutro();
-

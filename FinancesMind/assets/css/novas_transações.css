@@ -16,7 +16,9 @@ b {
     background: transparent;
     height: 100%;
     width: 100vw;
-    position: absolute;
+    position: absolute
+    
+
 }
 
 /* SÍMBOLOS */
@@ -37,8 +39,8 @@ b {
 .modal {
     width: 100%;
     max-width: 806px;
+    max-height: 754px;
     height: 100%;
-    max-height: 90vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -46,7 +48,6 @@ b {
     border-radius: 20px;
     color: white;   
     margin: auto; 
-    
 
 }
 
@@ -104,9 +105,9 @@ b {
 
 
 /* container das colunas */
-
 #container {
     width: 100%;
+    height: 100%;
     border-radius: 20px;
     background-color: #FFF6E8;
     color: black;
@@ -119,7 +120,7 @@ b {
 }
 
 .container-das-colunas {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-left: 50px;
     margin-right: 38px;
     display: flex;
@@ -139,8 +140,6 @@ b {
     padding: 14px 73px 14px 20px;
     font-size: 12px;
     font-weight: bold;
-    outline: none;
-
 
     option {
         font-size: 12px;
@@ -293,10 +292,11 @@ b {
     cursor: pointer; 
 
     img {
-        width: 52px;
+        width: 56px;
         scale: 1;
         transition-property: scale;
         transition-duration: .5s;
+        border: 0px;
     }
 }
 
@@ -307,7 +307,9 @@ b {
 #caras input:checked + label img {
     scale: 1.1;
     border-radius: 50%;
-    box-shadow: 0px 0px 5px #06254036 ;
+    filter: drop-shadow(0px 0px 5px #06254036); 
+    background-color: transparent;
+    
 }
 
 /* parte da descrição */
@@ -337,7 +339,7 @@ b {
     height: 40px;
     cursor: pointer;
     border-color: #1E5A8F;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 
