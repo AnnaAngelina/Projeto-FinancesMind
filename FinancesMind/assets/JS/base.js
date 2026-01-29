@@ -5,7 +5,6 @@ let close = document.querySelector('.close')
 
 menu.addEventListener('click', () => {
     if (nav.getAttribute('class') == 'nav-hidden') {
-        console.log('oi')
         nav.classList.add('nav-active')
         nav.classList.remove('nav-hidden')
     } else {
@@ -34,7 +33,6 @@ function openButton() {
     addTransiction.id = 'open-buttons'
 
     content.addEventListener('click', (e) => {
-        console.log('oii')
         console.log(e.target)
         if (containerButtons.getAttribute('class') === 'open' && e.target !== floatButton) {
             containerButtons.classList.remove('open')
@@ -44,7 +42,6 @@ function openButton() {
     })
 
     addTransiction.addEventListener('click', () => {
-        console.log('olaaaa')
         if (containerButtons.id === 'open') {
             containerButtons.classList.remove('open')
             containerButtons.classList.add('buttons')
