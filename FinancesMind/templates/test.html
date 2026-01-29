@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
+    <script>
+        const inputDinheiro = document.getElementById('valor-dinheiro');
+
+        inputDinheiro.addEventListener('input', function(e) {
+            let valor = e.target.value;
+
+            // Remove tudo que não for dígito
+            valor = valor.replace(/\D/g, '');
+
+            // Converte para número e divide por 100 para tratar os centavos
+            valor = (Number(valor) / 100).toFixed(2);
+
+            // Formata o número para o padrão monetário brasileiro
+            valor = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(valor);
+
+            e.target.value = valor;
+        });
+
+    </script>
+</body>
+</html>

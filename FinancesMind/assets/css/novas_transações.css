@@ -16,9 +16,7 @@ b {
     background: transparent;
     height: 100%;
     width: 100vw;
-    position: absolute
-    
-
+    position: absolute;
 }
 
 /* SÍMBOLOS */
@@ -48,6 +46,7 @@ b {
     border-radius: 20px;
     color: white;   
     margin: auto; 
+    
 
 }
 
@@ -120,7 +119,7 @@ b {
 }
 
 .container-das-colunas {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 50px;
     margin-right: 38px;
     display: flex;
@@ -140,6 +139,8 @@ b {
     padding: 14px 73px 14px 20px;
     font-size: 12px;
     font-weight: bold;
+    outline: none;
+
 
     option {
         font-size: 12px;
@@ -151,7 +152,7 @@ b {
 }
 
 .sessao-primeira-coluna {
-    margin-bottom: 3.8rem;
+    margin-bottom: 2.8rem;
     
     input {
         display: none;
@@ -171,7 +172,6 @@ b {
         background-color: white;
         color:#000000b7;
         margin-right: 20px;
-        margin-bottom: 20px;
         font-size: 12px;
     }
 
