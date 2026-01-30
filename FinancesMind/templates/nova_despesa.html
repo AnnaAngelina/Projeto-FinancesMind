@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/novas_transações.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <title>Adicionar Despesa</title>
+    <title>Adicionar Receita</title>
 </head>
 <body>
     <div class="overlay" onclick="fecharTela()">
@@ -13,8 +13,8 @@
             <form>
             <div id="adicionar-valor">
                 <button><span class="material-symbols-outlined">close</span></button>
-                <h1><b>Nova Despesa</b></h1>
-                <p>Valor da despesa</p>
+                <h2><b>Nova Receita</b></h2>
+                <p>Valor da receita</p>
                 <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
             </div>
             <div id="container">
@@ -75,7 +75,7 @@
                         </section>
                     </div>
                     <div class="segunda-coluna">
-                        <h3><b>Como você se sente com essa despesa?</b></h3>
+                        <h3><b>Como você se sente com essa receita?</b></h3>
                         <section id="caras">
                             <input type="radio" name="sentimento" id="feliz"  checked>
                                 <label for="feliz" class="caras_sentimentos">
@@ -115,12 +115,12 @@
 
                     </div>
                 </div>
-                <button type="submit" id="bnt-enviar"><b>Finalizar despesa</b></button>
+                <button type="submit" id="bnt-enviar"><b>Finalizar receita</b></button>
             </div>    
             </form>
         </div>  
 
-    <script src="../assets/JS/base.js" defer>
+    <script src="../assets/JS/transacao.js" defer>
     </script>
 
 </body>
