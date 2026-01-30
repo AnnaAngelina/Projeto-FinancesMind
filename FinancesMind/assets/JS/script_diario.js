@@ -1,5 +1,6 @@
 // ---------------- base JS -------------------------
 
+// nav e header
 
 let menu = document.querySelector('.menu-symbol')
 let nav = document.querySelector('.nav-hidden')
@@ -8,59 +9,49 @@ let close = document.querySelector('.close')
 
 menu.addEventListener('click', () => {
     if (nav.getAttribute('class') == 'nav-hidden') {
-        console.log('oi')
         nav.classList.add('nav-active')
         nav.classList.remove('nav-hidden')
     } else {
         nav.classList.remove('nav-active')
         nav.classList.add('nav-hidden')
     }
-
 })
 
 close.addEventListener('click', () => {
-    if (nav.getAttribute('class') == 'nav-active') {
-        nav.classList.remove('nav-active')
-        nav.classList.add('nav-hidden')
-    }
+if (nav.getAttribute('class') == 'nav-active') {
+    nav.classList.remove('nav-active')
+    nav.classList.add('nav-hidden')
+}
 
 })
 
-function openButton() {
-    let containerButtons = document.querySelector('.buttons')
-    let floatButton = document.getElementById('float-button')
-    let addTransiction = document.getElementById('add-transaction')
-    let content = document.querySelector('.content')
+// botao flutuante
 
+function openButton() {
+let containerButtons = document.getElementById('buttons')
+let addTransiction = document.querySelector('.add-transaction')
+const main = document.getElementById('content')
+
+if (containerButtons.getAttribute('class') === 'open') {
+    containerButtons.classList.remove('open')
+    containerButtons.classList.add('buttons')
+    addTransiction.id = 'add-transaction'
+} else {
     containerButtons.classList.remove('buttons')
     containerButtons.classList.add('open')
     addTransiction.id = 'open-buttons'
-
-    content.addEventListener('click', (e) => {
-        console.log('oii')
-        console.log(e.target)
-        if (containerButtons.getAttribute('class') === 'open' && e.target !== floatButton) {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        }
-    })
-
-    addTransiction.addEventListener('click', () => {
-        console.log('olaaaa')
-        if (containerButtons.id === 'open') {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        } else {
-            containerButtons.classList.remove('buttons')
-            containerButtons.classList.add('open')
-            addTransiction.id = 'open-buttons'
-        }
-    })
-
 }
 
+
+main.addEventListener('click', (e) => {
+    console.log(e.target)
+    if ((main.contains(e.target) || e.target == main) && addTransiction.id == 'open-buttons') {
+    containerButtons.classList.remove('open')
+    containerButtons.classList.add('buttons')
+    addTransiction.id = 'add-transaction'
+    }
+})
+}
 
 
 // ---------------- DIARIO JS --------------------------------------------------------------------------------------------
@@ -111,7 +102,7 @@ const meses = [
 const registros = {
   "2026-01-05": {
     texto: "Neste dia me senti triste pois eu não consegui realizar minhas atividades básicas por falta de motivação",
-    emoji: "/FinancesMind/assets/img/Triste.png",
+    emoji: "/FinancesMind/assets/img/sad_face.png",
     humor: "triste",
     causa: {
     texto: "Trabalho",
