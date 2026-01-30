@@ -456,6 +456,7 @@ footer {
 
   .painel {
     padding: 2rem 1rem;
+    margin-left: 0rem;
   }
 
   .painel-container {
@@ -538,6 +539,7 @@ footer {
 
   .painel {
     padding: 3rem 2rem;
+    margin-left: 0rem;
   }
 
   .painel-container {
@@ -623,7 +625,7 @@ footer {
 
   .painel-container {
     max-width: 112rem;
-    margin-left: 7rem;
+    margin-left: 0rem;
   }
 
   /* 🔥 2 gráficos lado a lado GARANTIDO */
