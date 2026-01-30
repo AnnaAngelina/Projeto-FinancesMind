@@ -14,12 +14,14 @@ b {
 /* fundo preto transparente */
 .overlay {
     background: transparent;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 0;
+    left: 0;
 }
 
 /* SÍMBOLOS */
