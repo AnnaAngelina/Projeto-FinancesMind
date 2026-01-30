@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.causa-opcao
+
+:root {
+  font-size: 10px; /* 1rem = 10px */
+  --main-color: #FFF6E8;
+  --secondary-color: #1E5A8F;
+  --secondary-color2: #FFA600;
+  --gray-color: #5d5d5d;
+  --black-color: #0e0e0e;
+  --white-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
+  min-height: 100vh;
+  background: #FFF6E8;
+}
+
+.wrapper{
+  min-height: 30rem;
+  max-width: 40rem;
+  width: 100%;
+  background: #fff;
+  border-radius: 5rem;
+  border: 0.1rem solid #5d5d5d;
+  margin-top: 10rem;
+}
+
+.cabecalho_calandario{
+  display: flex;
+  align-items: center;
+  padding: 3rem 3rem 1rem;
+  justify-content: space-between;
+}
+
+.cabecalho_calandario .icones{
+  display: flex;
+}
+
+.cabecalho_calandario .icones span{
+  height: 4.5rem;
+  width: 4.5rem;
+  margin: 0 0.1rem;
+  cursor: pointer;
+  color: black;
+  text-align: center;
+  line-height: 4.5rem;
+  font-size: 3rem;
+  user-select: none;
+  border-radius: 50%;
+}
+
+.icones span:last-child{
+  margin-right: -1rem;
+}
+
+.cabecalho_calandario .icones span:hover{
+  background: #f2f2f2;
+}
+
+
+.cabecalho_calandario .data_atual{
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.calendario{
+  padding: 0rem 2rem 1.5rem 2rem;
+}
+
+.calendario ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+
+.calendario .dias{
+  margin-bottom: 3rem;
+}
+
+.calendario li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.2rem;
+}
+
+.calendario .semanas li{
+  cursor: default;
+}
+
+.calendario .dias li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.dias li.inactive{
+  color: #aaa;
+}
+
+.dias li.active{
+  color: black;
+}
+
+.dias li::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%; /* 🔴 deixa redondo */
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.dias li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.diario-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.titulo-diario {
+  position: absolute;
+  top: -2.5rem; /* controla o quanto sobe */
+  left: -7rem;
+  width: 15.5rem;
+  height: 6rem;
+  background-color: #1E5A8F;
+  color: white;
+  padding: 1.8rem;
+  border-radius: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 10;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.btn-registrar {
+  background-color: #1E5A8F;
+  color: white;
+  border: none;
+  padding: 1.2rem 3.2rem;
+  border-radius: 1.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.btn-registrar:hover {
+  background-color: #164a78;
+}
+
+
+.registro-lateral {
+  position: fixed;
+  top: 0;
+  right: -42rem;
+  width: 42rem;
+  height: 100vh;
+  background: white;
+  transition: right 0.35s ease;
+  z-index: 100;
+  border-left: 0.1rem solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-lateral.aberto {
+  right: 0;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+
+.diario-fechado {
+    position: fixed;
+    top: 0;
+    right: -40rem; /* fica fora da tela */
+    width: 40rem;
+    height: 100vh;
+    background: white;
+    box-shadow: -0.5rem 0 2rem rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 50;
+}
+
+.diario-aberto {
+    right: 0; /* entra na tela */
+}
+
+.registro-conteudo {
+  flex: 1;
+  max-width: 100%;
+  padding: 2rem 1.6rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: auto;
+  max-height: none;
+  margin-top: 4rem;
+  max-height: none;
+  overflow-y: auto;
+}
+
+
+.registro-conteudo h2 {
+  font-size: 2.2rem;
+}
+
+.registro-conteudo textarea {
+  min-height: 18rem;  
+  resize: none;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  border: 0.1rem solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.btn-salvar {
+  background: #1E5A8F;
+  color: white;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin:auto;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 20rem;
+}
+.registro-conteudo::after {
+  content: "";
+  height: 4rem;
+}
+.historico-lateral {
+  position: fixed;
+  top: 0;
+  right: -42rem;          /* começa fora da tela */
+  width: 42rem;          /* igual ao registro */
+  height: 100vh;
+  background: white;
+  transition: right 0.35s ease;
+  z-index: 100;
+  border-left: 0.1rem solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.historico-lateral.aberto {
+  right: 0;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.data-registro, .data-historico{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.fechar-registro, .fechar-historico{
+    cursor: pointer;
+}
+
+.dias li.hoje::before {
+  border: 0.2rem dotted #1E5A8F;
+}
+
+.dias li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cada dia do calendário */
+.calendar .days li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Número do dia */
+.numero-dia {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+}
+
+/* Emoji sobreposto */
+.emoji-dia {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.emoji-historico {
+  width: 6rem;
+}
+
+.texto-humor {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.humor-historico {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem ;
+}
+
+.texto-historico{
+    border-top: 0.1rem solid #ccc;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    overflow: visible;
+    padding-bottom: 2rem;
+}
+
+.causa-historico-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 14rem;
+  gap: 1rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 5rem;
+  background: #fff;
+  padding: 0.7rem 0.7rem 1.5rem;
+  justify-content: center;
+}
+
+.causa-img-historico {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+
+.selecionar-emocao {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+  border: 0.15rem solid #ccc;
+  border-radius: 1.5rem;
+  margin: 1rem auto;
+  align-items: flex-start;
+  min-height: 6rem;
+  width: 100%;
+  max-width: 36rem;
+}
+
+/* cada opção */
+.opcao-emocao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 5rem;
+  transition: 0.2s;
+}
+
+/* esconde o radio */
+.opcao-emocao input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* emoji */
+.opcao-emocao .emocao {
+  width: 3.2rem;
+  height: 3.2rem;
+  transition: 0.2s;
+}
+
+/* texto */
+.opcao-emocao span {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ⭐ efeito ao selecionar */
+.opcao-emocao:has(input:checked) .emocao{
+  background: #F3F8FF;
+  border: 0.15rem solid #1E5A8F;
+  border-radius: 5rem;
+}
+
+/* aumenta o emoji selecionado */
+.opcao-emocao:has(input:checked) .emocao {
+  transform: scale(1.15);
+}
+
+
+.selecionar-causa {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+  max-width: 40rem;
+  margin: 1rem auto;
+}
+
+.causa-opcao {
+  width: 14rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 5rem;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  padding: 0.7rem 0.2rem ;
+  justify-content: center;
+  flex-direction: column;
+  flex-flow: row;
+}
+
+textarea{
+  width: 34rem;
+  margin-bottom: 1rem;
+}
+
+.causa-opcao span{
+  font-size: 1.2rem;
+}
+
+.causa-opcao input {
+  display: none;
+}
+
+.causa-opcao img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.causa-opcao input:checked ~ span {
+  font-weight: 700;
+}
+
+.causa-opcao:has(input:checked) {
+  border-color: #1E5A8F;
+  background: #F3F8FF;
+}
+
+.texto_mesenti{
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+
+@media (max-width: 480px) {
+
+  main {
+    padding: 0 1rem;
+    align-items: flex-start;
+  }
+
+  .titulo-diario {
+    position: static;
+    margin: 10rem 0rem -2rem -22rem;
+    width: fit-content;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .wrapper {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 2rem;
+  }
+
+  .btn-registrar {
+    max-width: 100%;
+  }
+
+  /* REGISTRO */
+  .registro-lateral {
+    width: 100%;
+    right: -100%;
+  }
+
+  .registro-lateral.aberto {
+    right: 0;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+
+  /* HISTÓRICO */
+  .historico-lateral {
+    width: 100%;
+    right: -100%;
+  }
+
+  .historico-lateral.aberto {
+    right: 0;
+    margin-top: 1rem;
+    z-index: 1;
+  }
+
+  .registro-conteudo {
+    height: 100dvh;
+    padding-bottom: 8rem;
+    margin-top: 6rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  main {
+    padding: 0 2rem;
+    align-items: flex-start;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 48rem;
+    margin-top: 2rem;
+    border-radius: 3rem;
+  }
+
+  .titulo-diario {
+    position: static;
+    margin: 10rem 0rem -5rem -30rem;
+    z-index: 0;
+  }
+
+  .btn-registrar {
+    max-width: 24rem;
+  }
+
+  /* REGISTRO */
+
+  .registro-lateral.aberto {
+    right: 0;
+    margin-top: 3rem;
+    z-index: 1;
+  }
+
+  /* HISTÓRICO */
+
+  .historico-lateral.aberto {
+    right: 0;
+    margin-top: 3rem;
+    z-index: 1;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+}
