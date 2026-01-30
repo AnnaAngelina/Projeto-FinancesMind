@@ -742,3 +742,12 @@ section.emocoes .flex {
         margin: auto;
     }
 }
+
+
+/* Telas muito grandes, TVs */
+
+@media (min-width: 1201px) {
+    .content {
+        width: 80%;
+    }
+}

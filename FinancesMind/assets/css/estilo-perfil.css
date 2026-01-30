@@ -275,7 +275,7 @@ form.periodo-dia-selecao fieldset input:focus + label {
 }
 
 .container-analise > div.flex{
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .container-analise .analise-card {
@@ -450,10 +450,170 @@ form.periodo-dia-selecao fieldset input:focus + label {
         width: 80%;
         margin: auto;
     }
+}
 
+/*
+=========================
+=  Dispositivos móveis  =
+=        TABLET         =
+=========================*/
+@media (min-width: 481px) and (max-width: 768px) { 
+    *{
+        font-size: 1.3rem;
+    }
 
-
-
-
+    h2 {
+        font-size: 1.7rem;
+    }
     
+    .title-2{
+        font-size: 1.7rem;
+    }
+
+    main{
+        padding: 64px 0 0 0;        
+    }
+    
+    .content {
+        width: 90%;
+    }
+
+    main .back-white {
+        padding: 2rem;
+    }
+
+    /*------------------
+        Seção inicial
+        Dados pessoais
+    -------------------*/
+    .perfil-info {
+        flex-direction: column;
+        
+    }
+
+    .perfil-info .user,
+    .perfil-info .perfil-edit{
+        width: 100%;
+        gap: 24px;
+    }
+
+    .perfil-info .user img{
+        width: 120px;
+        height: 120px;
+    }
+    
+    .perfil-info .btn-container {
+        gap: 4px;
+    }
+
+    .perfil-info .btn-container .btn {
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    .perfil-info .perfil-edit, section:not(:first-of-type) {
+        margin-top: 3rem;
+    }
+
+
+    /*-------------------
+     GAVETINHA DE PINS
+    ---------------------*/
+    #gaveta-pins > div {
+        min-width: 18rem;
+    }
+
+    /*--------------------
+       Seção de análise
+    --------------------*/
+    .analise-section .container-analise {
+        padding: 5rem 1rem 4rem;
+    }
+
+    .container-analise > div.flex {
+        gap: 16px;
+    }
+
+    .container-analise .analise-card {
+        width: 30vw;
+        margin: auto;
+    }
+
+    .container-analise a:has(.analise-card):last-child {
+        display: none;
+    }
+
+}
+
+
+/*
+=========================
+=        LAPTOPS        =
+=========================*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .perfil-info .user{
+        gap: 24px;
+    }
+
+    .perfil-info .user img{
+        width: 120px;
+        height: 120px;
+    }
+    
+    .perfil-info .btn-container {
+        gap: 4px;
+    }
+
+    .btn-container .btn {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    /*-------------------
+     GAVETINHA DE PINS
+    ---------------------*/
+    #gaveta-pins > div {
+        min-width: 18rem;
+    }
+
+    /*Seção de análise*/
+    form.periodo-dia-selecao fieldset {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    form.periodo-dia-selecao fieldset .back-white label {
+        padding: 1rem 2rem;
+        line-height: 4rem;
+    }
+    
+
+    /*cards de analise*/
+    .analise-section .container-analise {
+        padding: 5rem 1rem 4rem;
+    }
+
+    .container-analise > div.flex {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .container-analise .analise-card {
+        width: 70%;
+        margin: auto;
+    }
+
+    .container-analise a:has(.analise-card):last-child {
+        display: none;
+    }
+
+}
+
+
+/* Telas muito grandes, TVs */
+
+@media (min-width: 1201px) {
+    .content {
+        width: 80%;
+    }
 }

@@ -438,3 +438,11 @@ h3 + .container {
         width: 40%;
     }
 }
+
+
+/* Telas muito grandes, TVs */
+@media (min-width: 1201px) {
+    .content {
+        width: 80%;
+    }
+}
