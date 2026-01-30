@@ -19,9 +19,7 @@ function filterModal() {
     })
 
     closeFilter.addEventListener('click', (e) => {
-        console.log('oi')
         if (filtro.getAttribute('class') == 'active') {
-            console.log('oiiiii')
             filtro.classList.remove('active')
             filtro.classList.add('filter-up')
 
@@ -39,7 +37,6 @@ let periodo = document.getElementById('periodo-date')
 let p1 = 0
 let p2 = 0
 
-console.log(periodoInicio.value)
 periodoInicio.addEventListener('blur', () => {
     if (periodoInicio.value) {
         periodo.classList.remove('periodo-active1')
@@ -65,6 +62,7 @@ periodoFim.addEventListener('blur', () => {
 
 // ---------------- base JS -------------------------
 
+// nav e header
 
 let menu = document.querySelector('.menu-symbol')
 let nav = document.querySelector('.nav-hidden')
@@ -90,6 +88,33 @@ close.addEventListener('click', () => {
 
 })
 
+// botao flutuante
+
+function openButton() {
+    let containerButtons = document.getElementById('buttons')
+    let addTransiction = document.querySelector('.add-transaction')
+    const main = document.getElementById('content')
+
+    if (containerButtons.getAttribute('class') === 'open') {
+        containerButtons.classList.remove('open')
+        containerButtons.classList.add('buttons')
+        addTransiction.id = 'add-transaction'
+    } else {
+        containerButtons.classList.remove('buttons')
+        containerButtons.classList.add('open')
+        addTransiction.id = 'open-buttons'
+    }
+
+
+    main.addEventListener('click', (e) => {
+      console.log(e.target)
+      if ((main.contains(e.target) || e.target == main) && addTransiction.id == 'open-buttons') {
+        containerButtons.classList.remove('open')
+        containerButtons.classList.add('buttons')
+        addTransiction.id = 'add-transaction'
+      }
+    })
+}
 
 // ---------------- DIARIO JS --------------------------------------------------------------------------------------------
 
@@ -297,3 +322,20 @@ fecharRegistro.addEventListener("click", () => {
 fecharHistorico.addEventListener("click", () => {
   historicoLateral.classList.remove("aberto");
 });
+
+// botao flutuante
+
+let containerButtons = document.querySelector('.buttons')
+let addTransiction = document.getElementById('add-transaction')
+console.log(containerButtons)
+
+addTransiction.addEventListener('click', () => {
+    if (containerButtons.getAttribute('class') == 'open') {
+        containerButtons.classList.toggle = 'buttons'
+        addTransiction.id = 'add-transaction'
+    } else {
+        containerButtons.classList.toggle = 'open'
+        addTransiction.id = 'open-buttons'
+    }
+})
+
