@@ -20,7 +20,6 @@ b {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 /* SÍMBOLOS */
@@ -142,6 +141,7 @@ b {
     padding: 14px 73px 14px 20px;
     font-size: 12px;
     font-weight: bold;
+    outline: none;
 
     option {
         font-size: 12px;
