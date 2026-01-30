@@ -497,7 +497,7 @@
 /* ===============================
   TABLET — 481px até 76.8rem
    =============================== */
-@media (min-width: 481px) and (max-width: 76.8rem) {
+@media (min-width: 481px) and (max-width: 768px) {
 
 
   .dashboard-grid section {
