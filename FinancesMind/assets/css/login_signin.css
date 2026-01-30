@@ -38,7 +38,7 @@ h1 {
     background-color: var(--main_color);
 }
 
-.content > .container form {
+.content > .container form, .content > .container:has(.p-logout) {
     display: flex;
     width: 40vw;
     flex-direction: column;
@@ -113,7 +113,7 @@ h1 {
     filter: brightness(120%);
 }
 
-form fieldset > .btns {
+form fieldset > .btns, .content > .container:has(.p-logout) .btns {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -121,17 +121,17 @@ form fieldset > .btns {
     margin-top: 2rem;
 }
 
-form fieldset .btns button {
+form fieldset .btns button, .content > .container:has(.p-logout) .btns button {
     width: fit-content;
     padding: 0.7rem 3rem;
 }
 
-form fieldset .btns .back {
+form fieldset .btns .back, .content > .container:has(.p-logout) .btns .back {
     background-color: white;
     border: 0.1rem solid var(--gray_color);
 }
 
-form fieldset .btns .back #button {
+form fieldset .btns .back #button, .content > .container:has(.p-logout) .btns #button {
     color: black;
 }
 
@@ -199,7 +199,7 @@ form > fieldset .legend-saldo {
 /* Dispositivos móveis */
 
 @media (max-width: 480px) {
-    .content > .container form {
+    .content > .container form, .content > .container:has(.p-logout) {
         width: 90vw;
         padding: 8rem 4rem;
     }
@@ -238,7 +238,7 @@ form > fieldset .legend-saldo {
 /* Tablets */
 
 @media (min-width: 481px) and (max-width: 768px) {
-    .content > .container form {
+    .content > .container form, .content > .container:has(.p-logout) {
         width: 70vw;
         padding: 8rem 4rem;
     }
@@ -265,7 +265,7 @@ form > fieldset .legend-saldo {
 /* Laptops */
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .content > .container form {
+    .content > .container form, .content > .container:has(.p-logout) {
         width: 50vw;
         padding: 8rem 5rem;
     }
@@ -291,7 +291,7 @@ form > fieldset .legend-saldo {
 /* Telas muito grandes, TVs */
 
 @media (min-width: 1201px) {
-    .content > .container form {
+    .content > .container form, .content > .container:has(.p-logout) {
         width: 35vw;
         padding: 8rem 6rem;
     }

@@ -445,4 +445,12 @@ h3 + .container {
     .content {
         width: 80%;
     }
+
+    .back-blue{
+        width: 100%;
+    }
+
+    .back-blue section {
+        width: 80%;
+    }
 }

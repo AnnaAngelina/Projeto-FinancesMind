@@ -372,6 +372,10 @@ body:has(.show-edit)::before {
     right: 2rem;
 }
 
+.show-edit .close:hover {
+    cursor: pointer;
+}
+
 .show-edit > .header-edit {
     display: flex;
     flex-direction: column;
@@ -407,11 +411,15 @@ body:has(.show-edit)::before {
     width: 100%;
 }
 
+form > div {
+    gap: 1rem;
+}
+
 .show-edit form div > div input {
     border-radius: 1rem;
     border: 0.1rem solid var(--gray_color);
     padding: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     box-sizing: border-box;
 }
 
@@ -573,6 +581,11 @@ body:has(.show-edit)::before {
         width: 80%;
         margin: auto;
     }
+
+    .show-edit > form {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
 }
 
 /*
@@ -664,6 +677,11 @@ body:has(.show-edit)::before {
 
     .container-analise a:has(.analise-card):last-child {
         display: none;
+    }
+
+    .show-edit > form {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
     }
 
 }
