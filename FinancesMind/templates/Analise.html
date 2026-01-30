@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analise</title>
+    <link rel="stylesheet" href="../assets/css/analise.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+<body>
+    <div class="normal-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <div class="visual">
+                <p><b>Olá, Eduarda</b></p>
+                <a href="./perfil.html"><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+            </div>
+        </header>
+        <nav class="navegacao">
+            <ul>
+                <li><a id="menu-icon" href="./index.html"><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href="./Diario.html"><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href="./historico.html"><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">logout</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="small-screen">
+        <header>
+            <div class="visual">
+                <a href=""><img src="../assets/img/FMicon.jpg" class="img  iconFM" alt="" width="40px"></a>
+                <h1>Finances Mind</h1>
+            </div>
+            <span class="material-symbols-outlined menu-symbol">menu</span>
+        </header>
+        <nav class="nav-hidden">
+            <span class="material-symbols-outlined close">close</span>
+            <ul>
+                <li>
+                    <div class="visual">
+                        <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="30px"></a>
+                        <p>Perfil</p>
+                    </div>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span>Diário</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">currency_exchange</span>
+                        <span>Transações</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">chat</span>
+                        <span>Chat</span>
+                    </a>
+                </li>  
+                <li>
+                    <a id="menu-icon" href="">
+                        <span class="material-symbols-outlined">logout</span>
+                        <span>Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+<main class="painel" id="content">
+<div class="conteudo-analise">
+<h2 class="titulo_analise">Painel Financeiro</h2>
+<div class="painel-container">
+<div class="dashboard-grid">
+<section class="Despezas_e_Receitas">  
+  <div class="barras-chart-container">
+    <h1>Despesas e Receitas</h1>
+
+    <div class="barras-chart">
+      <!-- Eixo Y -->
+      <div class="barras-y-axis">
+        <span>4000</span>
+        <span>3000</span>
+        <span>2000</span>
+        <span>1000</span>
+        <span>0</span>
+      </div>
+
+      <!-- Área das barras -->
+      <div class="barras-area">
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+        <div class="barras-grid-line"></div>
+
+        <div class="barras-valores">
+          <div class="barras-bar barras-receitas">
+            <span class="barras-value">3.715,25</span>
+          </div>
+          <div class="barras-bar barras-despesas">
+            <span class="barras-value">2.897,47</span>
+          </div>
+        </div>
+
+        <div class="barras-x-label">Jan</div>
+      </div>
+    </div>
+
+    <!-- Legenda -->
+    <div class="barras-legenda">
+      <div><span class="barras-dot barras-receitas"></span> Receitas</div>
+      <div><span class="barras-dot barras-despesas"></span> Despesas</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="receitas-visao-geral">
+    <div class="receitas-wrapper">
+    <h2 class="receitas-titulo">Visão Geral das receitas</h2>
+
+    <div class="receitas-container">
+        <div class="receitas-donut"></div>
+
+        <div class="receitas-legenda">
+        <div class="receitas-legenda-item">
+            <span class="receitas-dot receitas-dot-purple"></span>
+            Trabalho concursado 50%
+        </div>
+
+        <div class="receitas-legenda-item">
+            <span class="receitas-dot receitas-dot-blue"></span>
+            Aluguel de casas 35%
+        </div>
+
+        <div class="receitas-legenda-item">
+            <span class="receitas-dot receitas-dot-orange"></span>
+            Bolos caseiros 15%
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<section class="despesas-visao-geral">
+  <div class="despp">
+  <div class="despesas-wrapper">
+    <div class="despesas-titulo">Visão Geral das despesas</div>
+
+    <div class="despesas-content">
+      <div class="despesas-donut"></div>
+
+      <div class="despesas-legenda">
+        <div class="despesas-legenda-item">
+          <span class="despesas-dot despesas-dot-alimentacao"></span>
+          Alimentação 40%
+        </div>
+
+        <div class="despesas-legenda-item">
+          <span class="despesas-dot despesas-dot-transporte"></span>
+          Transporte 25%
+        </div>
+
+        <div class="despesas-legenda-item">
+          <span class="despesas-dot despesas-dot-entretenimento"></span>
+          Entretenimento 14%
+        </div>
+
+        <div class="despesas-legenda-item">
+          <span class="despesas-dot despesas-dot-saude"></span>
+          Saúde 11%
+        </div>
+
+        <div class="despesas-legenda-item">
+          <span class="despesas-dot despesas-dot-outros"></span>
+          Outros 10%
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<section class="top-despesas-section">
+  <div class="top-despesas-wrapper">
+    <div class="top-despesas-title">Top 3 despesas</div>
+
+    <div class="top-despesas-item">
+      <div class="top-despesas-header">
+        <span>Alimentação</span>
+        <span>40%</span>
+      </div>
+      <div class="top-despesas-bar">
+        <div class="top-despesas-progress" style="width: 40%;"></div>
+      </div>
+    </div>
+
+    <div class="top-despesas-item">
+      <div class="top-despesas-header">
+        <span>Transporte</span>
+        <span>25%</span>
+      </div>
+      <div class="top-despesas-bar">
+        <div class="top-despesas-progress" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <div class="top-despesas-item">
+      <div class="top-despesas-header">
+        <span>Entretenimento</span>
+        <span>14%</span>
+      </div>
+      <div class="top-despesas-bar">
+        <div class="top-despesas-progress" style="width: 14%;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+</div>
+
+</main>
+
+<div id="float-button">
+  <span class="material-symbols-outlined add-transaction" onclick="openButton()" id="add-transaction">add</span>
+  <div class="buttons" id="buttons">
+      <a href="">
+          <span class="material-symbols-outlined despesa">trending_down</span>
+          <span class="description">Despesa</span>
+      </a>
+      <a href="">
+          <span class="material-symbols-outlined transacao">sync_alt</span>
+          <span class="description">Transações</span>
+      </a>
+      <a href="">
+          <span class="material-symbols-outlined receita">trending_up</span>
+          <span class="description">Receita</span>
+      </a>
+      <a href="./plan-financeiro.html">
+          <span class="material-symbols-outlined planejamento">event_note</span>
+          <span class="description">Planejamento</span>
+      </a>
+  </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Finances Mind | Todos os direitos reservados</p>
+</footer>
+
+</body>
+
+<script src="/FinancesMind/assets/JS/analise.js" defer></script>
+
+</html>

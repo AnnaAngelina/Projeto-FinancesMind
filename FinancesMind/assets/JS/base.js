@@ -3,32 +3,32 @@ let filtro = document.querySelector('.filter-up')
 let num = 0
 
 function filterModal() {
-const closeFilter = document.querySelector('.close-filter')
-const content = document.getElementById('content')
+    const closeFilter = document.querySelector('.close-filter')
+    const content = document.getElementById('content')
 
-filtro.classList.add('active')
-filtro.classList.remove('filter-up')
+    filtro.classList.add('active')
+    filtro.classList.remove('filter-up')
 
-content.addEventListener('click', (e) => {
-    if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
-        console.log('ola')
-        filtro.classList.remove('active')
-        filtro.classList.add('filter-up')
-    }
-    e.stopImmediatePropagation()
-})
+    content.addEventListener('click', (e) => {
+        if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
+            console.log('ola')
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
+        }
+        e.stopImmediatePropagation()
+    })
 
-closeFilter.addEventListener('click', (e) => {
-    if (filtro.getAttribute('class') == 'active') {
-        filtro.classList.remove('active')
-        filtro.classList.add('filter-up')
+    closeFilter.addEventListener('click', (e) => {
+        if (filtro.getAttribute('class') == 'active') {
+            filtro.classList.remove('active')
+            filtro.classList.add('filter-up')
 
-    } else {
-        filtro.classList.add('active')
-        filtro.classList.remove('filter-up')
-    }
-    e.stopImmediatePropagation()
-})
+        } else {
+            filtro.classList.add('active')
+            filtro.classList.remove('filter-up')
+        }
+        e.stopImmediatePropagation()
+    })
 }
 
 let periodoInicio = document.querySelector('.inicio')
@@ -38,25 +38,25 @@ let p1 = 0
 let p2 = 0
 
 periodoInicio.addEventListener('blur', () => {
-if (periodoInicio.value) {
-    periodo.classList.remove('periodo-active1')
-    p1 = 1
-} else {
-    if (p1===1) {
-        periodo.classList.add('periodo-active1')
+    if (periodoInicio.value) {
+        periodo.classList.remove('periodo-active1')
+        p1 = 1
+    } else {
+        if (p1===1) {
+            periodo.classList.add('periodo-active1')
+        }
     }
-}
 })
 
 periodoFim.addEventListener('blur', () => {
-if (periodoFim.value) {
-    periodo.classList.remove('periodo-active2')
-    p2 = 1
-} else {
-    if (p2===1) {
-        periodo.classList.add('periodo-active2')
+    if (periodoFim.value) {
+        periodo.classList.remove('periodo-active2')
+        p2 = 1
+    } else {
+        if (p2===1) {
+            periodo.classList.add('periodo-active2')
+        }
     }
-}
 })
 
 
@@ -70,14 +70,13 @@ let smallScreen = document.querySelector('.small-screen')
 let close = document.querySelector('.close')
 
 menu.addEventListener('click', () => {
-if (nav.getAttribute('class') == 'nav-hidden') {
-    nav.classList.add('nav-active')
-    nav.classList.remove('nav-hidden')
-} else {
-    nav.classList.remove('nav-active')
-    nav.classList.add('nav-hidden')
-}
-
+    if (nav.getAttribute('class') == 'nav-hidden') {
+        nav.classList.add('nav-active')
+        nav.classList.remove('nav-hidden')
+    } else {
+        nav.classList.remove('nav-active')
+        nav.classList.add('nav-hidden')
+    }
 })
 
 close.addEventListener('click', () => {
@@ -327,41 +326,40 @@ if (registros[data]) {
 // BOTÕES
 // ====================
 btnRegistrar.addEventListener("click", () => {
-if (!dataSelecionada) {
-    const hoje = new Date();
-    dataSelecionada = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}-${String(hoje.getDate()).padStart(2, "0")}`;
-}
+    if (!dataSelecionada) {
+        const hoje = new Date();
+        dataSelecionada = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}-${String(hoje.getDate()).padStart(2, "0")}`;
+    }
 
 abrirRegistro(dataSelecionada);
 });
 
 fecharRegistro.addEventListener("click", () => {
-registroLateral.classList.remove("aberto");
+    registroLateral.classList.remove("aberto");
 });
 
 fecharHistorico.addEventListener("click", () => {
-historicoLateral.classList.remove("aberto");
+    historicoLateral.classList.remove("aberto");
 });
 
 
 function EditPreco() {
-const inputDinheiro = document.getElementById('valor-dinheiro');
+    const inputDinheiro = document.getElementById('valor-dinheiro');
 
+    inputDinheiro.addEventListener('input', function(e) {
+        let valor = e.target.value;
 
-inputDinheiro.addEventListener('input', function(e) {
-    let valor = e.target.value;
+        valor = valor.replace(/\D/g, '');
 
-    valor = valor.replace(/\D/g, '');
+        valor = (Number(valor) / 100).toFixed(2);
+        
+        valor = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(valor);
 
-    valor = (Number(valor) / 100).toFixed(2);
-    
-    valor = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(valor);
-
-    e.target.value = valor;
-});
+        e.target.value = valor;
+    });
 
 }
 
@@ -371,54 +369,21 @@ const textoOutro = document.getElementById('texto-outro');
 
 function configurarDataOutro() {
 
-radioOutro.addEventListener('change', () => {
-    if (radioOutro.checked) {
-        datePicker.showPicker();
-    }
-});
+    radioOutro.addEventListener('change', () => {
+        if (radioOutro.checked) {
+            datePicker.showPicker();
+        }
+    });
 
-datePicker.addEventListener('change', () => {
-    const data = datePicker.value;
-    if (!data) return;
+    datePicker.addEventListener('change', () => {
+        const data = datePicker.value;
+        if (!data) return;
 
-    const dataFormatada = new Date(data).toLocaleDateString('pt-BR');
+        const dataFormatada = new Date(data).toLocaleDateString('pt-BR');
 
-    textoOutro.textContent = dataFormatada;
-    radioOutro.checked = true;
-});
+        textoOutro.textContent = dataFormatada;
+        radioOutro.checked = true;
+    });
 }
 
 configurarDataOutro();
-
-function openButton() {
-    let containerButtons = document.querySelector('.buttons')
-    let floatButton = document.getElementById('float-button')
-    let addTransiction = document.getElementById('add-transaction')
-    let content = document.querySelector('.content')
-
-    containerButtons.classList.remove('buttons')
-    containerButtons.classList.add('open')
-    addTransiction.id = 'open-buttons'
-
-    content.addEventListener('click', (e) => {
-        console.log(e.target)
-        if (containerButtons.getAttribute('class') === 'open' && e.target !== floatButton) {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        }
-    })
-
-    addTransiction.addEventListener('click', () => {
-        if (containerButtons.id === 'open') {
-            containerButtons.classList.remove('open')
-            containerButtons.classList.add('buttons')
-            addTransiction.id = 'add-transaction'
-        } else {
-            containerButtons.classList.remove('buttons')
-            containerButtons.classList.add('open')
-            addTransiction.id = 'open-buttons'
-        }
-    })
-
-}

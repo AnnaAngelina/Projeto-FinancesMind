@@ -22,14 +22,14 @@
             </div>
             <div class="visual">
                 <p><b>Olá, Eduarda</b></p>
-                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+                <a href="./perfil.html"><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
             </div>
         </header>
         <nav class="navegacao">
             <ul>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href="./index.html"><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href="./Diario.html"><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href="./historico.html"><span class="material-symbols-outlined">currency_exchange</span></a></li>
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
                 <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">logout</span></a></li>
             </ul>
@@ -87,7 +87,7 @@
         </nav>
     </div>
 
-    <main>
+    <main id="content">
         <div class="content">
 
             <section class="flex align-center present-graphic">
@@ -257,8 +257,8 @@
     </main>
 
     <div id="float-button">
-        <span class="material-symbols-outlined" onclick="openButton()" id="add-transaction">add</span>
-        <div class="buttons">
+        <span class="material-symbols-outlined add-transaction" onclick="openButton()" id="add-transaction">add</span>
+        <div class="buttons" id="buttons">
             <a href="">
                 <span class="material-symbols-outlined despesa">trending_down</span>
                 <span class="description">Despesa</span>
@@ -271,7 +271,7 @@
                 <span class="material-symbols-outlined receita">trending_up</span>
                 <span class="description">Receita</span>
             </a>
-            <a href="">
+            <a href="./plan-financeiro.html">
                 <span class="material-symbols-outlined planejamento">event_note</span>
                 <span class="description">Planejamento</span>
             </a>

@@ -22,16 +22,16 @@
             </div>
             <div class="visual">
                 <p><b>Olá, Eduarda</b></p>
-                <a href=""><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
+                <a href="./perfil.html"><img src="../assets/img/profile_icon.jpg" class="img" alt="" width="40px"></a>
             </div>
         </header>
         <nav class="navegacao">
             <ul>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
-                <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">chat</span></a></li>  
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
+                <li><a id="menu-icon" href="./index.html"><span class="material-symbols-outlined">home</span></a></li>
+                <li><a id="menu-icon" href="./Diario.html"><span class="material-symbols-outlined">menu_book</span></a></li>
+                <li><a id="menu-icon" href="./historico.html"><span class="material-symbols-outlined">currency_exchange</span></a></li>
+                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">logout</span></a></li>
             </ul>
         </nav>
     </div>
@@ -88,7 +88,7 @@
     </div>
 
 
-    <main>
+    <main id="content">
         <div class="content back-bege">
             <section class="back-white shadow saldo-atual-secao">
                 <div class="line-flex ">
@@ -105,12 +105,12 @@
             <form action="" method="get" class="periodo-dia-selecao tela-menor">
                 <fieldset class="shadow">
                     <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
-                    <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
-                    <label for="item1-periodo">7 dias</label>
-                    <input type="radio" name="periodo-grafico" id="item2-periodo" value="15-dias" checked>
-                    <label for="item2-periodo">15 dias</label>
-                    <input type="radio" name="periodo-grafico" id="item3-periodo" value="30-dias">
-                    <label for="item3-periodo">30 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item1-periodo-p" value="7-dias">
+                    <label for="item1-periodo-p">7 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item2-periodo-p" value="15-dias" checked>
+                    <label for="item2-periodo-p">15 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item3-periodo-p" value="30-dias">
+                    <label for="item3-periodo-p">30 dias</label>
                 </fieldset>
             </form>
 
@@ -204,22 +204,22 @@
                 <div class="flex">
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                     
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                     
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
 
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                 </div>
 
@@ -284,8 +284,8 @@
     </main>
 
     <div id="float-button">
-        <span class="material-symbols-outlined" onclick="openButton()" id="add-transaction">add</span>
-        <div class="buttons">
+        <span class="material-symbols-outlined add-transaction" onclick="openButton()" id="add-transaction">add</span>
+        <div class="buttons" id="buttons">
             <a href="">
                 <span class="material-symbols-outlined despesa">trending_down</span>
                 <span class="description">Despesa</span>
@@ -298,7 +298,7 @@
                 <span class="material-symbols-outlined receita">trending_up</span>
                 <span class="description">Receita</span>
             </a>
-            <a href="">
+            <a href="./plan-financeiro.html">
                 <span class="material-symbols-outlined planejamento">event_note</span>
                 <span class="description">Planejamento</span>
             </a>
@@ -314,7 +314,7 @@
     
 </body>
 
-<script src="../assets/JS/base.js">
+<script src="../assets/JS/home.js">
 </script>
 
 </html>
