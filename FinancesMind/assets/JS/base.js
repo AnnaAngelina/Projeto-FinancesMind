@@ -326,41 +326,40 @@ if (registros[data]) {
 // BOTÕES
 // ====================
 btnRegistrar.addEventListener("click", () => {
-if (!dataSelecionada) {
-    const hoje = new Date();
-    dataSelecionada = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}-${String(hoje.getDate()).padStart(2, "0")}`;
-}
+    if (!dataSelecionada) {
+        const hoje = new Date();
+        dataSelecionada = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, "0")}-${String(hoje.getDate()).padStart(2, "0")}`;
+    }
 
 abrirRegistro(dataSelecionada);
 });
 
 fecharRegistro.addEventListener("click", () => {
-registroLateral.classList.remove("aberto");
+    registroLateral.classList.remove("aberto");
 });
 
 fecharHistorico.addEventListener("click", () => {
-historicoLateral.classList.remove("aberto");
+    historicoLateral.classList.remove("aberto");
 });
 
 
 function EditPreco() {
-const inputDinheiro = document.getElementById('valor-dinheiro');
+    const inputDinheiro = document.getElementById('valor-dinheiro');
 
+    inputDinheiro.addEventListener('input', function(e) {
+        let valor = e.target.value;
 
-inputDinheiro.addEventListener('input', function(e) {
-    let valor = e.target.value;
+        valor = valor.replace(/\D/g, '');
 
-    valor = valor.replace(/\D/g, '');
+        valor = (Number(valor) / 100).toFixed(2);
+        
+        valor = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(valor);
 
-    valor = (Number(valor) / 100).toFixed(2);
-    
-    valor = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(valor);
-
-    e.target.value = valor;
-});
+        e.target.value = valor;
+    });
 
 }
 
@@ -370,21 +369,21 @@ const textoOutro = document.getElementById('texto-outro');
 
 function configurarDataOutro() {
 
-radioOutro.addEventListener('change', () => {
-    if (radioOutro.checked) {
-        datePicker.showPicker();
-    }
-});
+    radioOutro.addEventListener('change', () => {
+        if (radioOutro.checked) {
+            datePicker.showPicker();
+        }
+    });
 
-datePicker.addEventListener('change', () => {
-    const data = datePicker.value;
-    if (!data) return;
+    datePicker.addEventListener('change', () => {
+        const data = datePicker.value;
+        if (!data) return;
 
-    const dataFormatada = new Date(data).toLocaleDateString('pt-BR');
+        const dataFormatada = new Date(data).toLocaleDateString('pt-BR');
 
-    textoOutro.textContent = dataFormatada;
-    radioOutro.checked = true;
-});
+        textoOutro.textContent = dataFormatada;
+        radioOutro.checked = true;
+    });
 }
 
 configurarDataOutro();

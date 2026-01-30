@@ -237,6 +237,7 @@ form.periodo-dia-selecao fieldset input[type="radio"] {
 form.periodo-dia-selecao fieldset input:checked + label {
     background-color: var(--secondary_color);
     color: white;
+    border: 0;
 }
 
 form.periodo-dia-selecao fieldset input:focus + label {
@@ -341,7 +342,11 @@ section.emocoes .flex {
     font-size: 1.8rem;
 }
 
-.back-blue section blockquote.card + .clicado {
+.back-blue section blockquote.card + .coracao:hover {
+    cursor: pointer;
+}
+
+.back-blue section blockquote.card + .curtido {
     color: #B10101;
     font-variation-settings:
         'FILL' 1,
