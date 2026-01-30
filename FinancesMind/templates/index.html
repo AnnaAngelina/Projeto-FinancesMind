@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     
     <link rel="stylesheet" href="../assets/css/home.css">
+
+    <link rel="stylesheet" href="../assets/css/novas_transações.css">
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--This link is for the symbols-->
@@ -286,26 +288,359 @@
     <div id="float-button">
         <span class="material-symbols-outlined add-transaction" onclick="openButton()" id="add-transaction">add</span>
         <div class="buttons" id="buttons">
-            <a href="">
+            <button type="button" onclick="abrirModalDespesa()" style="background: none; border: none; cursor: pointer;">
                 <span class="material-symbols-outlined despesa">trending_down</span>
                 <span class="description">Despesa</span>
-            </a>
-            <a href="">
+            </button>
+            <button type="button" onclick="abrirModalTransacao()" style="background: none; border: none; cursor: pointer;">
                 <span class="material-symbols-outlined transacao">sync_alt</span>
                 <span class="description">Transações</span>
-            </a>
-            <a href="">
-                <span class="material-symbols-outlined receita">trending_up</span>
+            </button>
+            <button type="button" onclick="abrirModalReceita()" style="background: none; border: none; cursor: pointer;">
+                <span class="material-symbols-outlined receita" >trending_up</span>
                 <span class="description">Receita</span>
-            </a>
-            <a href="./plan-financeiro.html">
+            </button>
+
+            <button type="button" onclick="window.location.href='./plan-financeiro.html'" style="background: none; border: none; cursor: pointer;">
                 <span class="material-symbols-outlined planejamento">event_note</span>
                 <span class="description">Planejamento</span>
-            </a>
+            </button>
         </div>
     </div>
 
-    
+ <!-- telas modais -->
+    <div class="modal-receita" id="modal-receita">
+        <div class="modal">
+            <form>
+            <div id="adicionar-valor">
+                <button><span class="material-symbols-outlined" id="fechar-transacao">close</span></button>
+                <h2><b class="titulo-modal-transacao">Nova Receita</b></h2>
+                <p>Valor da receita</p>
+                <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
+            </div>
+            <div id="container">
+                <div class="container-das-colunas">
+                    <div class="primeira-coluna">
+                        
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Categoria</b></h3> 
+                            <select class="botao_categoria" name="rental-option">
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Assinaturas">Assinaturas</option>
+                                <option value="Contas fixas">Contas fixas</option>
+                                <option value="Impostos">Impostos</option>
+                                <option value="Dívidas">Dívidas</option>
+                                <option value="Investimentos">Investimentos</option>
+                                <option value="Poupança">Poupança</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="Doações">Doações</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Lançamento*</b></h3>
+                            <div class="lancamento">
+                                <input type="radio" name="tipo_lancamento_rec" id="unico" value="unico" checked>
+                                <label for="unico" class="botao">Único</label>
+
+                                <input type="radio" name="tipo_lancamento_rec" id="recorrente" value="recorrente">
+                                <label for="recorrente" class="botao">Recorrente</label>
+
+                                <input type="radio" name="tipo_lancamento_rec" id="parcelado" value="parcelado">
+                                <label for="parcelado" class="botao">Parcelado</label>
+                                
+                            </div>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Data</b></h3>
+                            <div class="data-selecao">
+                                <input type="radio" name="data-lancamento-rec" id="hoje" checked>
+                                <label for="hoje" class="botao">Hoje</label>
+
+                                <input type="radio" name="data-lancamento-rec" id="Ontem">
+                                <label for="Ontem" class="botao">Ontem</label>
+
+                                <input type="radio" name="data-lancamento-rec" id="outro">
+                                <label for="outro" id="label-bnt-outro">
+                                    <span id="texto-outro">Outro</span>
+                                    <span class="material-symbols-outlined">calendar_month</span>
+                                </label>
+                                <input type="date" id="datePicker">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="segunda-coluna">
+                        <h3 class="tituloh3"><b>Como você se sente com essa receita?</b></h3>
+                        <section id="caras">
+                            <input type="radio" name="sentimento-rec" id="feliz"  checked>
+                                <label for="feliz" class="caras_sentimentos">
+                                <img src="../assets/img/happy_smille.png">
+                                <p>Feliz</p>
+                                </label>
+                                
+                            <input type="radio" name="sentimento-rec" id="triste">
+                                <label for="triste" class="caras_sentimentos">
+                                <img src="../assets/img/sad_face.png"><p>Triste</p>
+                                </label>
+                                
+                    
+                            <input type="radio" name="sentimento-rec" id="ansioso" >
+                                <label for="ansioso" class="caras_sentimentos">
+                                <img src="../assets/img/anciety_face.png"><p>Ancioso</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento-rec" id="zangado">
+                                <label for="zangado" class="caras_sentimentos">
+                                <img src="../assets/img/angry_face.png"><p>Zangado</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento-rec" id="paz">
+                                <label for="paz" class="caras_sentimentos">
+                                <img src="../assets/img/normal_face.png"><p>Paz</p>
+                                </label>
+                            
+                        </section>
+
+                        <section class="descricao">
+                            <h3 class="tituloh3"><b>Descrição</b></h3>
+                            <textarea rows="10" cols="30" name="comment"></textarea>
+                        </section>
+
+                    </div>
+                </div>
+                <button type="submit" id="bnt-enviar"><b>Finalizar receita</b></button>
+            </div>    
+            </form>
+        </div>   
+    </div>
+    <div class="modal-despesa" id="modal-despesa">
+        <div class="modal">
+            <form>
+            <div id="adicionar-valor">
+                <button><span class="material-symbols-outlined" id="fechar-transacao">close</span></button>
+                <h2><b class="titulo-modal-transacao">Nova Despesa</b></h2>
+                <p>Valor da despesa</p>
+                <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
+            </div>
+            <div id="container">
+                <div class="container-das-colunas">
+                    <div class="primeira-coluna">
+                        
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Categoria</b></h3> 
+                            <select class="botao_categoria" name="rental-option">
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Assinaturas">Assinaturas</option>
+                                <option value="Contas fixas">Contas fixas</option>
+                                <option value="Impostos">Impostos</option>
+                                <option value="Dívidas">Dívidas</option>
+                                <option value="Investimentos">Investimentos</option>
+                                <option value="Poupança">Poupança</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="Doações">Doações</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Lançamento*</b></h3>
+                            <div class="lancamento">
+                                <input type="radio" name="tipo_lancamento_des" id="unico" value="unico" checked>
+                                <label for="unico" class="botao">Único</label>
+
+                                <input type="radio" name="tipo_lancamento_des" id="recorrente" value="recorrente">
+                                <label for="recorrente" class="botao">Recorrente</label>
+
+                                <input type="radio" name="tipo_lancamento_des" id="parcelado" value="parcelado">
+                                <label for="parcelado" class="botao">Parcelado</label>
+                                
+                            </div>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Data</b></h3>
+                            <div class="data-selecao">
+                                <input type="radio" name="data-lancamento-des" id="hoje" checked>
+                                <label for="hoje" class="botao">Hoje</label>
+
+                                <input type="radio" name="data-lancamento-des" id="Ontem">
+                                <label for="Ontem" class="botao">Ontem</label>
+
+                                <input type="radio" name="data-lancamento-des" id="outro">
+                                <label for="outro" id="label-bnt-outro">
+                                    <span id="texto-outro">Outro</span>
+                                    <span class="material-symbols-outlined">calendar_month</span>
+                                </label>
+                                <input type="date" id="datePicker">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="segunda-coluna">
+                        <h3 class="tituloh3"><b>Como você se sente com essa despesa?</b></h3>
+                        <section id="caras">
+                            <input type="radio" name="sentimento-des" id="feliz"  checked>
+                                <label for="feliz" class="caras_sentimentos">
+                                <img src="../assets/img/happy_smille.png">
+                                <p>Feliz</p>
+                                </label>
+                                
+                            <input type="radio" name="sentimento-des" id="triste">
+                                <label for="triste" class="caras_sentimentos">
+                                <img src="../assets/img/sad_face.png"><p>Triste</p>
+                                </label>
+                                
+                    
+                            <input type="radio" name="sentimento-des" id="ansioso" >
+                                <label for="ansioso" class="caras_sentimentos">
+                                <img src="../assets/img/anciety_face.png"><p>Ancioso</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento-des" id="zangado">
+                                <label for="zangado" class="caras_sentimentos">
+                                <img src="../assets/img/angry_face.png"><p>Zangado</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento-des" id="paz">
+                                <label for="paz" class="caras_sentimentos">
+                                <img src="../assets/img/normal_face.png"><p>Paz</p>
+                                </label>
+                            
+                        </section>
+
+                        <section class="descricao">
+                            <h3 class="tituloh3"><b>Descrição</b></h3>
+                            <textarea rows="10" cols="30" name="comment"></textarea>
+                        </section>
+
+                    </div>
+                </div>
+                <button type="submit" id="bnt-enviar"><b>Finalizar despesa</b></button>
+            </div>    
+            </form>
+        </div>   
+    </div>
+
+    <div class="modal-transacao" id="modal-transacao">
+        <div class="modal">
+            <form>
+            <div id="adicionar-valor">
+                <button><span class="material-symbols-outlined" id="fechar-transacao">close</span></button>
+                <h2><b class="titulo-modal-transacao">Nova Transação</b></h2>
+                <p>Valor da transação</p>
+                <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
+            </div>
+            <div id="container">
+                <div class="container-das-colunas">
+                    <div class="primeira-coluna">
+                        
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Categoria</b></h3> 
+                            <select class="botao_categoria" name="rental-option">
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Assinaturas">Assinaturas</option>
+                                <option value="Contas fixas">Contas fixas</option>
+                                <option value="Impostos">Impostos</option>
+                                <option value="Dívidas">Dívidas</option>
+                                <option value="Investimentos">Investimentos</option>
+                                <option value="Poupança">Poupança</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="Doações">Doações</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Conta de destino</b></h3> 
+                            <select class="botao_categoria" name="rental-option">
+                                <option value="Nubank">Nubank</option>
+                                <option value="Inter">Inter</option>
+                                <option value="Conta1">Conta1</option>
+                                <option value="Conta2">Conta2</option>
+                            </select>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3 class="tituloh3"><b>Data</b></h3>
+                            <div class="data-selecao">
+                                <input type="radio" name="data-lancamento" id="hoje" checked>
+                                <label for="hoje" class="botao">Hoje</label>
+
+                                <input type="radio" name="data-lancamento" id="Ontem">
+                                <label for="Ontem" class="botao">Ontem</label>
+
+                                <input type="radio" name="data-lancamento" id="outro">
+                                <label for="outro" id="label-bnt-outro">
+                                    <span id="texto-outro">Outro</span>
+                                    <span class="material-symbols-outlined">calendar_month</span>
+                                </label>
+                                <input type="date" id="datePicker">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="segunda-coluna">
+                        <h3 class="tituloh3"><b>Como você se sente com essa despesa?</b></h3>
+                        <section id="caras">
+                            <input type="radio" name="sentimento" id="feliz"  checked>
+                                <label for="feliz" class="caras_sentimentos">
+                                <img src="../assets/img/happy_smille.png">
+                                <p>Feliz</p>
+                                </label>
+                                
+                            <input type="radio" name="sentimento" id="triste">
+                                <label for="triste" class="caras_sentimentos">
+                                <img src="../assets/img/sad_face.png"><p>Triste</p>
+                                </label>
+                                
+                    
+                            <input type="radio" name="sentimento" id="ansioso" >
+                                <label for="ansioso" class="caras_sentimentos">
+                                <img src="../assets/img/anciety_face.png"><p>Ancioso</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento" id="zangado">
+                                <label for="zangado" class="caras_sentimentos">
+                                <img src="../assets/img/angry_face.png"><p>Zangado</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento" id="paz">
+                                <label for="paz" class="caras_sentimentos">
+                                <img src="../assets/img/normal_face.png"><p>Paz</p>
+                                </label>
+                            
+                        </section>
+
+                        <section class="descricao">
+                            <h3 class="tituloh3"><b>Descrição</b></h3>
+                            <textarea rows="10" cols="30" name="comment"></textarea>
+                        </section>
+
+                    </div>
+                </div>
+                <button type="submit" id="bnt-enviar"><b>Finalizar despesa</b></button>
+            </div>    
+            </form>
+        </div>   
+    </div>
 
 
     <footer>

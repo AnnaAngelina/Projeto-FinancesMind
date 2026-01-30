@@ -158,7 +158,8 @@ header {
     gap: 2rem;
 }
 
-#float-button > .open a {
+#float-button > .open a,
+#float-button > .open button {
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -166,12 +167,14 @@ header {
     justify-content: center
 }
 
-#float-button > .open a > .description {
+#float-button > .open a > .description,
+#float-button > .open button > .description {
     color: var(--secondary_color);
     font-size: 1.2rem;
 }
 
-#float-button > .open a > .material-symbols-outlined {
+#float-button > .open a > .material-symbols-outlined,
+#float-button > .open button > .material-symbols-outlined {
     display: block;
     width: fit-content;
     background-color: white;
@@ -181,15 +184,19 @@ header {
     font-size: 3rem;
 }
 
-.open a > .receita {
+.open a > .receita,
+.open button > .receita {
     color: green;
 }
 
-.open a > .despesa {
+.open a > .despesa,
+.open button > .despesa {
     color: darkred;
 }
 
-.open a > .transacao, .planejamento {
+.open a > .transacao, .planejamento,
+.open button > .transacao, 
+.open button > .planejamento {
     color: var(--secondary_color);
     font-weight: 700;
 }
