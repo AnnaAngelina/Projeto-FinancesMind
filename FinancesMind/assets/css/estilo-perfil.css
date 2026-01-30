@@ -178,47 +178,18 @@ section:nth-child(2) .coracao {
     Seção de análise
 -----------------------*/
 .analise-section > div{
-
+    gap: 32px;
 }
+
 /*Seleção "radio"*/
 /*O de telas menores*/
-form.periodo-dia-selecao.tela-menor {
-    display: none;
-}
-
-form.periodo-dia-selecao.tela-menor fieldset{
-    margin: 2rem auto -2.6rem auto;
-    padding: 0;
-    width: fit-content;
-    height: fit-content;
-
-    background-color: white;
-    border: none;
-    border-radius: 50px;
-    
-    display: flex;
-    justify-content: space-between;
-}
-
-form.periodo-dia-selecao.tela-menor fieldset label {
-    margin: 0;
-    padding: 1rem 1rem;
-    width: 7rem;
-
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 50px;
-}
-
-
-/*O radio de telas maiores*/
-.despesa-receita > .line-flex > form {
+form {
     height: fit-content;
 }
 
-form.periodo-dia-selecao.tela-maior fieldset {
+form.periodo-dia-selecao fieldset {
     width: 20rem;
-    height: fit-content;
+    height: 300px;
     border: none;
     border-radius: 20px;
 
@@ -227,14 +198,23 @@ form.periodo-dia-selecao.tela-maior fieldset {
     justify-content: space-between;
 }
 
-form.periodo-dia-selecao.tela-maior fieldset label {
-    margin: 15px 10px;
-    padding: 10px 10px;
+form.periodo-dia-selecao fieldset .back-white label {
+    margin: 30px 10px;
+    padding: 10px 15px;
     text-align: center;
     border-radius: 50px;
 }
 
 /*configurações gerais entre o radio de telas menores e o de maiores*/
+form.periodo-dia-selecao fieldset > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    height:100%;
+}
+
+
 form.periodo-dia-selecao fieldset input[type="radio"] {
     opacity: 0%;
     width: 0.1px;
@@ -243,8 +223,8 @@ form.periodo-dia-selecao fieldset input[type="radio"] {
 }
 
 form.periodo-dia-selecao fieldset input:checked + label {
-    background-color: var(--secondary_color);
-    color: white;
+    border: 2px solid var(--secondary_color);
+    color: var(--secondary_color);
 }
 
 form.periodo-dia-selecao fieldset input:focus + label {
