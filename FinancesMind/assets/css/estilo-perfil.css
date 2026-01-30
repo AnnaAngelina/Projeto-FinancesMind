@@ -9,10 +9,26 @@
     --black_color: #0e0e0e;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     width: 100%;
     margin: 0;
-    padding: 64px 0 0 64px;
+    padding: 64px 0 0 64px; 
+
+    flex: 1 0;
+    min-height: 100vh;
+}
+
+section {
+    margin: 4rem auto;
 }
 
 h2 {
@@ -179,28 +195,50 @@ section:nth-child(2) .coracao {
 -----------------------*/
 .analise-section > div{
     gap: 32px;
+    margin-top: 1.6rem;
 }
 
 /*Seleção "radio"*/
-/*O de telas menores*/
 form {
     height: fit-content;
 }
 
 form.periodo-dia-selecao fieldset {
-    width: 20rem;
-    height: 300px;
+    width: 16rem;
+    height: fit-content;
     border: none;
     border-radius: 20px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+
+form.periodo-dia-selecao fieldset .back-white {
+    padding: 1rem 0.5rem;
+    width: 100%;
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form.periodo-dia-selecao fieldset .back-white > div {
+    width: fit-content;
+    height: fit-content;
 }
 
 form.periodo-dia-selecao fieldset .back-white label {
-    margin: 30px 10px;
-    padding: 10px 15px;
+    display: block;
+    margin: 0;
+    padding: 10px 40px;
+
+    width: 100%;
+
     text-align: center;
     border-radius: 50px;
 }
@@ -211,7 +249,6 @@ form.periodo-dia-selecao fieldset > div{
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    height:100%;
 }
 
 
@@ -222,12 +259,83 @@ form.periodo-dia-selecao fieldset input[type="radio"] {
     overflow: hidden;
 }
 
-form.periodo-dia-selecao fieldset input:checked + label {
+form.periodo-dia-selecao fieldset input:checked + label, 
+form.periodo-dia-selecao fieldset input:focus + label {
     border: 2px solid var(--secondary_color);
     color: var(--secondary_color);
 }
 
-form.periodo-dia-selecao fieldset input:focus + label {
-    outline: 1px solid black;
-    border: 1px solid white;
+
+
+/*Parte do container com os cards de análise*/
+.container-analise {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.container-analise > div.flex{
+    justify-content: space-between;
+}
+
+.container-analise .analise-card {
+    width: 245px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    padding: 2rem 1rem;
+
+    border-radius: 10px;
+
+    box-shadow: 2px 2px 8px 0.1px var(--gray_color);
+}
+
+.container-analise .analise-card .image {
+    padding: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--gray_color);
+}
+
+.container-analise .analise-card .image span {
+    font-size: 3.5rem;
+    color: var(--gray_color);
+}
+
+.container-analise .analise-card .image + div > span {
+    font-size: 1.2rem;
+}
+
+.container-analise .analise-card .image + div > span b {
+    font-size: 2.5rem;
+}
+
+.container-analise .analise-card .seta-card {
+    font-size: 2rem;
+    align-self: flex-end;
+}
+
+
+.container-analise .setas {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.container-analise .setas span {
+    font-size: 4rem;
+    color: var(--gray_color);
+}
+
+.container-analise .left-arrow{
+    rotate: 180deg;
+}
+
+@media (max-width: 480px) {
+
 }
