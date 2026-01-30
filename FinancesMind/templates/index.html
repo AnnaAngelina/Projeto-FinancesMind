@@ -30,7 +30,7 @@
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">chat</span></a></li>  
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
             </ul>
         </nav>
@@ -136,7 +136,7 @@
                         <div class="orange-rect rectangle"></div>
                     </div>
                     <form action="" method="get" class="periodo-dia-selecao tela-maior">
-                        <fieldset class="back- shadow">
+                        <fieldset class="shadow">
                             <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
                             <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
                             <label for="item1-periodo">7 dias</label>
@@ -283,9 +283,34 @@
         </div>
     </main>
 
+    <div id="float-button">
+        <span class="material-symbols-outlined" onclick="openButton()" id="add-transaction">add</span>
+        <div class="buttons">
+            <a href="">
+                <span class="material-symbols-outlined despesa">trending_down</span>
+                <span class="description">Despesa</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined transacao">sync_alt</span>
+                <span class="description">Transações</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined receita">trending_up</span>
+                <span class="description">Receita</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined planejamento">event_note</span>
+                <span class="description">Planejamento</span>
+            </a>
+        </div>
+    </div>
+
+
     <footer>
         <p>&copy; 2025 Finances Mind | Todos os direitos reservados</p>
     </footer>
+
+    <!-- <div id="botao-adicionar-transacoes"></div> -->
     
 </body>
 
