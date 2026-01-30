@@ -11,7 +11,6 @@ function filterModal() {
 
     content.addEventListener('click', (e) => {
         if (content.contains(e.target) && filtro.getAttribute('class') == 'active') {
-            console.log('ola')
             filtro.classList.remove('active')
             filtro.classList.add('filter-up')
         }
