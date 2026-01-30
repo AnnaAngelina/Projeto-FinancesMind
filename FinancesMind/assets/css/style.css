@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+footer {
+    display: flex;
+    background-image:linear-gradient(#1E5A8F, #1A466D) ;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
 
+    p{
+        font-size: 1rem;
+        color: white;
+    }
+}
 :root {
     font-size: 62.5%;
     --main_color: #FFF6E8;
