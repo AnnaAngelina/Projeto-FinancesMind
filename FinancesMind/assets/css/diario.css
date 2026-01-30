@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.causa-opcao
-
 :root {
-  font-size: 10px; /* 1rem = 10px */
+  font-size: 62.5%;
   --main-color: #FFF6E8;
   --secondary-color: #1E5A8F;
   --secondary-color2: #FFA600;
@@ -364,7 +362,7 @@ main{
   border: 0.1rem solid #ccc;
   border-radius: 5rem;
   background: #fff;
-  padding: 0.7rem 0.7rem 1.5rem;
+  padding: 0.7rem;
   justify-content: center;
 }
 
@@ -451,7 +449,7 @@ main{
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
-  padding: 0.7rem 0.2rem ;
+  padding: 0.7rem ;
   justify-content: center;
   flex-direction: column;
   flex-flow: row;
