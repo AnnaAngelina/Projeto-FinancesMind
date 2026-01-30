@@ -30,7 +30,7 @@
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">home</span></a></li>
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">menu_book</span></a></li>
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">currency_exchange</span></a></li>
-                <li><a id="menu-icon" href=""><span class="material-symbols-outlined">chat</span></a></li>  
+                <li><a id="menu-icon" href="./logout.html"><span class="material-symbols-outlined">chat</span></a></li>  
                 <li><a id="menu-icon" href=""><span class="material-symbols-outlined">logout</span></a></li>
             </ul>
         </nav>
@@ -105,12 +105,12 @@
             <form action="" method="get" class="periodo-dia-selecao tela-menor">
                 <fieldset class="shadow">
                     <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
-                    <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
-                    <label for="item1-periodo">7 dias</label>
-                    <input type="radio" name="periodo-grafico" id="item2-periodo" value="15-dias" checked>
-                    <label for="item2-periodo">15 dias</label>
-                    <input type="radio" name="periodo-grafico" id="item3-periodo" value="30-dias">
-                    <label for="item3-periodo">30 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item1-periodo-p" value="7-dias">
+                    <label for="item1-periodo-p">7 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item2-periodo-p" value="15-dias" checked>
+                    <label for="item2-periodo-p">15 dias</label>
+                    <input type="radio" name="periodo-grafico" id="item3-periodo-p" value="30-dias">
+                    <label for="item3-periodo-p">30 dias</label>
                 </fieldset>
             </form>
 
@@ -136,7 +136,7 @@
                         <div class="orange-rect rectangle"></div>
                     </div>
                     <form action="" method="get" class="periodo-dia-selecao tela-maior">
-                        <fieldset class="back- shadow">
+                        <fieldset class="shadow">
                             <legend class="leitor-de-tela-apenas">Selecione o período dos dias para gráfico:</legend>
                             <input type="radio" name="periodo-grafico" id="item1-periodo" value="7-dias">
                             <label for="item1-periodo">7 dias</label>
@@ -204,22 +204,22 @@
                 <div class="flex">
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                     
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                     
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
 
                     <div>
                         <blockquote class="card shadow" cite="">Nada funciona se você se dedicar só as vezes</blockquote>
-                        <span class="material-symbols-outlined coracao nao-clicado">favorite</span>
+                        <span class="material-symbols-outlined coracao nao-curtido">favorite</span>
                     </div>
                 </div>
 
@@ -283,13 +283,38 @@
         </div>
     </main>
 
+    <div id="float-button">
+        <span class="material-symbols-outlined" onclick="openButton()" id="add-transaction">add</span>
+        <div class="buttons">
+            <a href="">
+                <span class="material-symbols-outlined despesa">trending_down</span>
+                <span class="description">Despesa</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined transacao">sync_alt</span>
+                <span class="description">Transações</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined receita">trending_up</span>
+                <span class="description">Receita</span>
+            </a>
+            <a href="">
+                <span class="material-symbols-outlined planejamento">event_note</span>
+                <span class="description">Planejamento</span>
+            </a>
+        </div>
+    </div>
+
+
     <footer>
         <p>&copy; 2025 Finances Mind | Todos os direitos reservados</p>
     </footer>
+
+    <!-- <div id="botao-adicionar-transacoes"></div> -->
     
 </body>
 
-<script src="../assets/JS/base.js">
+<script src="../assets/JS/home.js">
 </script>
 
 </html>

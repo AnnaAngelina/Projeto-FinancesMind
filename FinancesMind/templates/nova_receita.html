@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/novas_transações.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Adicionar Receita</title>
+</head>
+<body>
+    <div class="overlay" onclick="fecharTela()">
+        <div class="modal">
+            <form>
+            <div id="adicionar-valor">
+                <button><span class="material-symbols-outlined">close</span></button>
+                <h1><b>Nova Receita</b></h1>
+                <p>Valor da receita</p>
+                <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
+            </div>
+            <div id="container">
+                <div class="container-das-colunas">
+                    <div class="primeira-coluna">
+                        
+                        <section class="sessao-primeira-coluna">
+                            <h3><b>Categoria</b></h3> 
+                            <select class="botao_categoria" name="rental-option">
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Compras">Compras</option>
+                                <option value="Assinaturas">Assinaturas</option>
+                                <option value="Contas fixas">Contas fixas</option>
+                                <option value="Impostos">Impostos</option>
+                                <option value="Dívidas">Dívidas</option>
+                                <option value="Investimentos">Investimentos</option>
+                                <option value="Poupança">Poupança</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="Doações">Doações</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3><b>Lançamento*</b></h3>
+                            <div class="lancamento">
+                                <input type="radio" name="tipo_lancamento" id="unico" value="unico" checked>
+                                <label for="unico" class="botao">Único</label>
+
+                                <input type="radio" name="tipo_lancamento" id="recorrente" value="recorrente">
+                                <label for="recorrente" class="botao">Recorrente</label>
+
+                                <input type="radio" name="tipo_lancamento" id="parcelado" value="parcelado">
+                                <label for="parcelado" class="botao">Parcelado</label>
+                                
+                            </div>
+                        </section>
+                        <section class="sessao-primeira-coluna">
+                            <h3><b>Data</b></h3>
+                            <div class="data-selecao">
+                                <input type="radio" name="data-lancamento" id="hoje" checked>
+                                <label for="hoje" class="botao">Hoje</label>
+
+                                <input type="radio" name="data-lancamento" id="Ontem">
+                                <label for="Ontem" class="botao">Ontem</label>
+
+                                <input type="radio" name="data-lancamento" id="outro">
+                                <label for="outro" id="label-bnt-outro">
+                                    <span id="texto-outro">Outro</span>
+                                    <span class="material-symbols-outlined">calendar_month</span>
+                                </label>
+                                <input type="date" id="datePicker">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="segunda-coluna">
+                        <h3><b>Como você se sente com essa receita?</b></h3>
+                        <section id="caras">
+                            <input type="radio" name="sentimento" id="feliz"  checked>
+                                <label for="feliz" class="caras_sentimentos">
+                                <img src="../assets/img/happy_smille.png">
+                                <p>Feliz</p>
+                                </label>
+                                
+                            <input type="radio" name="sentimento" id="triste">
+                                <label for="triste" class="caras_sentimentos">
+                                <img src="../assets/img/sad_face.png"><p>Triste</p>
+                                </label>
+                                
+                    
+                            <input type="radio" name="sentimento" id="ansioso" >
+                                <label for="ansioso" class="caras_sentimentos">
+                                <img src="../assets/img/anciety_face.png"><p>Ancioso</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento" id="zangado">
+                                <label for="zangado" class="caras_sentimentos">
+                                <img src="../assets/img/angry_face.png"><p>Zangado</p>
+                                </label>
+                                
+                            
+                            <input type="radio" name="sentimento" id="paz">
+                                <label for="paz" class="caras_sentimentos">
+                                <img src="../assets/img/normal_face.png"><p>Paz</p>
+                                </label>
+                            
+                        </section>
+
+                        <section class="descricao">
+                            <h3><b>Descrição</b></h3>
+                            <textarea rows="10" cols="30" name="comment"></textarea>
+                        </section>
+
+                    </div>
+                </div>
+                <button type="submit" id="bnt-enviar"><b>Finalizar receita</b></button>
+            </div>    
+            </form>
+        </div>  
+
+    <script src="../assets/JS/transacao.js" defer>
+    </script>
+
+</body>
+</html>
