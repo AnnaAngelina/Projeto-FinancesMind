@@ -94,7 +94,7 @@
                         <h2>Nome</h2>
                         <p>eduarda@gmail.com</p>
                         <div class="flex btn-container">
-                            <button type="button" class="btn">Editar perfil</button>
+                            <button type="button" onclick="editModal(); event.stopImmediatePropagation()" class="btn">Editar perfil</button>
                             <button type="button" class="btn">Editar foto</button>
                         </div>
                     </div>
@@ -246,11 +246,44 @@
         </div>
     </div>
 
+    <div class="hidden-edit" id="edit-perfil">
+        <span class="material-symbols-outlined close">close</span>
+        <div class="header-edit">
+            <h2>Editar Perfil</h2>
+            <img src="../assets/img/profile_icon.jpg" alt="">
+        </div>
+        <form action="">
+            <div class="col1">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email">
+                </div>
+            </div>
+            <div class="col2">
+                <div>
+                    <label for="profissao">Profissão:</label>
+                    <input type="text" name="profissao" id="profissao">
+                </div>
+                <div>
+                    <label for="renda">Renda:</label>
+                    <input type="number" name="renda" id="renda">
+                </div>
+            </div>
+            <div class="btns">
+                <button type="submit">Salvar</button>
+                <button class="back" type="submit"><a id="button" href="">Voltar</a></button>
+            </div>
+        </form>
+    </div>
 
     <footer>
         <p>&copy; 2025 Finances Mind | Todos os direitos reservados</p>
     </footer>
 </body>
-<script src="../assets/JS/base.js">
+<script src="../assets/JS/perfil.js">
 </script>
 </html>
