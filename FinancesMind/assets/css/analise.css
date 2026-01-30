@@ -235,6 +235,8 @@ footer {
   width: 22rem;
   height: 22rem;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   background: conic-gradient(
     #8e2a6b 0% 50%,      /* Trabalho concursado 50% */
     #2f8fbf 50% 85%,    /* Aluguel de casas 35% */
@@ -245,6 +247,7 @@ footer {
 
 .receitas-donut::after {
   content: "";
+  position: absolute;
   width: 12rem;
   height: 12rem;
   background: #ffffff;
@@ -302,10 +305,11 @@ footer {
   margin-bottom: 2rem;
 }
 
-.despesas-content {
+.despesas-content,.receitas-donut {
   display: flex;
   align-items: center;
   gap: 4rem;
+  justify-content: flex-start;
 }
 
 /* Donut */
@@ -313,6 +317,8 @@ footer {
   width: 22rem;
   height: 22rem;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
   background: conic-gradient(
     #8e2a6b 0% 40%,     /* Alimentação 40% */
     #2f8fbf 40% 65%,   /* Transporte 25% */
@@ -406,7 +412,7 @@ footer {
 /* ===============================
   MOBILE — até 481px
    =============================== */
-@media (max-width: 481px) {
+@media (max-width: 480px) {
 
   .Despezas_e_Receitas {
     padding-top: 2rem;
@@ -509,13 +515,14 @@ footer {
 
 
 /* ===============================
-  TABLET — 481px até 76.8rem
+  TABLET — 481px até 768px (FIX)
    =============================== */
 @media (min-width: 481px) and (max-width: 768px) {
 
-
-  .dashboard-grid section {
-    margin-top: 0.5rem;
+  .titulo_analise{
+    margin: 7rem auto 3rem;
+    text-align: center;
+    font-size: 2.4rem;
   }
 
   .barras-grid-line:nth-child(1) { top: 0rem; }
@@ -528,41 +535,51 @@ footer {
   .barras-grid-line:nth-child(8) { top: 22.75rem; }
   .barras-grid-line:nth-child(9) { top: 26rem; }
 
-  .barras-bar.barras-receitas {
-    height: 22rem;
-  }
-
-  .barras-bar.barras-despesas {
-    height: 15.5rem;
-  }
-
-  .titulo_analise{
-    margin: 8rem 0 2rem 4rem;
-  }
 
   .painel {
     padding: 3rem 2rem;
   }
 
-  /* 👇 GRÁFICOS LADO A LADO NO TABLET */
+  .painel-container {
+    padding: 3rem;
+  }
+
+  /* 🔥 TABLET = 1 COLUNA */
   .dashboard-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 2.5rem;
     align-items: start;
   }
 
-  /* Mantém donut organizado */
-  .receitas-container,
-  .despesas-content {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
+  /* Cards ocupam toda a largura */
   .receitas-wrapper,
   .despesas-wrapper,
   .top-despesas-wrapper {
     width: 100%;
     padding: 3rem;
+    margin: 0;
+  }
+
+  /* Donut + legenda em coluna */
+  .receitas-container,
+  .despesas-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  /* Donuts menores */
+  .receitas-donut,
+  .despesas-donut {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .receitas-donut::after,
+  .despesas-donut::after {
+    width: 11rem;
+    height: 11rem;
   }
 
   /* Gráfico de barras */
@@ -571,20 +588,121 @@ footer {
   }
 
   .barras-area {
+    width: 100%;
     max-width: 28rem;
     height: 26rem;
+    margin: 0 auto;
   }
 
   .barras-y-axis {
-    font-size: 1rem;
+    height: 26rem;
+    font-size: 1.1rem;
+  }
+
+  .barras-valores {
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 4rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
   }
 
   .despp {
     margin-left: 0rem;
+  }
+
 }
 
-.barras-y-axis{
-  height: 26rem;
+/* ===============================
+  LAPTOP — 769px até 1024px
+   =============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .painel-container {
+    max-width: 112rem;
+    margin-left: 7rem;
+  }
+
+  /* 🔥 2 gráficos lado a lado GARANTIDO */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    align-items: stretch;
+  }
+
+  /* cards ocupam toda a coluna */
+  .receitas-wrapper,
+  .despesas-wrapper,
+  .top-despesas-wrapper {
+    width: 100%;
+  }
+
+  /* Donuts proporcionais ao laptop */
+  .receitas-donut,
+  .despesas-donut {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  .receitas-donut::after,
+  .despesas-donut::after {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  /* Gráfico de barras centralizado */
+  .barras-area {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .barras-y-axis {
+    height: 28rem;
+  }
+
+  .barras-valores {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* donut + legenda em coluna */
+  .receitas-container,
+  .despesas-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* legenda abaixo do donut */
+  .receitas-legenda,
+  .despesas-legenda {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .receitas-legenda-item,
+  .despesas-legenda-item {
+    justify-content: center;
+  }
+
+  /* reduz levemente o donut */
+  .receitas-donut,
+  .despesas-donut {
+    width: 21rem;
+    height: 21rem;
+  }
+
+  .receitas-donut::after,
+  .despesas-donut::after {
+    width: 11.5rem;
+    height: 11.5rem;
+  }
 }
