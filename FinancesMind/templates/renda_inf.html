@@ -10,22 +10,23 @@
 <body>
     <div class="content">
         <div class="container">
-            <form action="" method="post">
+            <form id="formRenda" onsubmit="validarRendaESeguir(event)">
                 <fieldset>
                     <legend><h1 class="title">Informações de renda</h1></legend>
                     <div>
                         <label for="profissão">Qual sua profissão?</label>
-                        <input type="number" name="profissão" id="profissão">
+                        <input type="text" name="profissão" id="profissão" required>
                     </div>
 
                     <div>
                         <label for="renda">Qual sua renda mensal?</label>
-                        <input type="number" name="renda" id="renda">
+                        <input type="number" name="renda" id="renda" required>
                     </div>
 
                     <div>
                         <label for="fonte-renda">Qual sua fonte de renda?</label>
-                        <select id="fonte-renda" name="fonte-renda">
+                        <select id="fonte-renda" name="fonte-renda" required>
+                            <option value="">Selecione uma opção</option>
                             <option value="Salário">Salário</option>
                             <option value="Freelances">Freelances</option>
                             <option value="Comissões">Comissões</option>
@@ -33,10 +34,11 @@
                         </select>
                     </div>
 
-                    <button type="submit"><a id="button" href="./index.html">Criar conta</a></button> 
+                    <button type="submit" id="button">Criar conta</button> 
                 </fieldset>
             </form>
         </div>
     </div>  
 </body>
+<script src="../assets/JS/form-validacao.js"></script>
 </html>
