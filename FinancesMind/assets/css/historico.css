@@ -254,7 +254,7 @@ body .active {
     font-size: 1rem;
 }
 
-.active select, .active input[type="date" i] {
+.active select, .active input[type="date" i], .active > .content-filter > form .fim, .active > .content-filter > form .inicio {
     border-radius: 1rem;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -268,26 +268,8 @@ body .active {
     cursor: pointer;
 }
 
-.active > .content-filter > form .periodo-active1 {
-    content: 'Início';
-    position: absolute;
-    background-color: white;
-    width: 25%;
-    top: 1.2rem;
-    left: 0.4%;
-    padding: 0 1.5rem;
-    font-size: 1.4rem;
-}
-
-.active > .content-filter > form .periodo-active2 {
-    content: 'fim';
-    position: absolute;
-    background-color: white;
-    width: 35%;
-    top: 1.2rem;
-    left: 52%;
-    padding: 0 1.5rem;
-    font-size: 1.4rem;
+.active > .content-filter > form .inative {
+    display: none;
 }
 
 .active > .content-filter > .close-filter {

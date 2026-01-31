@@ -30,32 +30,28 @@ function filterModal() {
     })
 }
 
-let periodoInicio = document.querySelector('.inicio')
-let periodoFim = document.querySelector('.fim')
+let periodoInicioInput = document.getElementById('inicio')
+let periodoFimInput = document.getElementById('fim')
+const periodoFimLabel = document.querySelector('.fim')
+const periodoInicioLabel = document.querySelector('.inicio')
 let periodo = document.getElementById('periodo-date')
 let p1 = 0
 let p2 = 0
 
-periodoInicio.addEventListener('blur', () => {
-    if (periodoInicio.value) {
-        periodo.classList.remove('periodo-active1')
-        p1 = 1
-    } else {
-        if (p1===1) {
-            periodo.classList.add('periodo-active1')
-        }
+periodoInicioLabel.addEventListener('click', () => {
+    if (periodoInicioInput.getAttribute('class') === 'inative') {
+        periodoInicioLabel.classList.remove('inicio')
+        periodoInicioLabel.classList.add('inative')
+        periodoInicioInput.classList.remove('inative')
     }
 })
 
-periodoFim.addEventListener('blur', () => {
-    if (periodoFim.value) {
-        periodo.classList.remove('periodo-active2')
-        p2 = 1
-    } else {
-        if (p2===1) {
-            periodo.classList.add('periodo-active2')
-        }
-    }
+periodoFimLabel.addEventListener('click', () => {
+    if (periodoFimInput.getAttribute('class') === 'inative') {
+        periodoFimLabel.classList.remove('inicio')
+        periodoFimLabel.classList.add('inative')
+        periodoFimInput.classList.remove('inative')
+    } 
 })
 
 
