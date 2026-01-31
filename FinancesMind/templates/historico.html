@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de transações</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/historico.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="normal-screen">
@@ -251,10 +250,10 @@
                 <div>
                     <p>Customizar período</p>
                     <div id="periodo-date">
-                        <label class="periodo-active1" for="inicio">inicio</label>
-                        <input type="date" name="periodo" id="inicio" class="inicio">
-                        <label class="periodo-active2" for="fim">fim</label>
-                        <input type="date" name="periodo" id="fim" class="fim">
+                        <label class="inicio" for="inicio">inicio</label>
+                        <input type="date" class="inative" name="periodo" id="inicio" class="inicio">
+                        <label class="fim" for="fim">fim</label>
+                        <input type="date" class="inative" name="periodo" id="fim" class="fim">
                     </div>
                 </div>
                 <div>
@@ -316,7 +315,7 @@
 
 </body>
 
-<script src="../assets/JS/base.js">
+<script src="../assets/JS/historico.js">
 </script>
 
 </html>
