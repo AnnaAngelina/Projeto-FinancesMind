@@ -14,3 +14,18 @@ function inserirSaldo() {
         e.target.value = valor
     })
 }
+
+function validarESeguir(event) {
+    event.preventDefault();
+    
+    const saldo = document.getElementById('saldo').value.trim();
+    
+    // Validar se o campo não está vazio
+    if (!saldo || saldo === '') {
+        alert('Por favor, insira seu saldo bancário');
+        return false;
+    }
+    
+    // Se passou na validação, navegar para a próxima página
+    window.location.href = './renda_inf.html';
+}

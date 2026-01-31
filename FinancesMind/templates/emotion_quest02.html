@@ -10,7 +10,7 @@
 <body>
     <div class="content">
         <div class="container quest02">
-            <form action="" method="post">
+            <form id="formEmocao02" onsubmit="validarEmocao02ESeguir(event)">
                 <fieldset>
                     <legend><h1 class="title">"Não me sinto bem comigo mesma não importa o que eu faça"</h1></legend>
                     <div class="range">
@@ -21,7 +21,7 @@
                                 <span>me identifico parcialmente</span>
                                 <span>me identifico</span>
                             </div>
-                            <input type="range" name="frase" id="frase" min="0" step="5" max="10" list="answer">
+                            <input type="range" name="frase" id="frase" min="0" step="5" max="10" list="answer" required>
                             <datalist id="answer">
                                 <option value="0">não me identifico</option>
                                 <option value="5">me identifico parcialmente</option>
@@ -31,10 +31,11 @@
                         
                     </div>
 
-                    <button type="submit"><a id="button" href="./saldo.html">Continuar</a></button> 
+                    <button type="submit" id="button">Continuar</button> 
                 </fieldset>
             </form>
         </div>
     </div>    
 </body>
+<script src="../assets/JS/form-validacao.js"></script>
 </html>

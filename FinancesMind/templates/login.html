@@ -13,25 +13,26 @@
 <body>
     <div class="content">
         <div class="container">
-            <form action="" method="post">
+            <form id="formLogin" onsubmit="validarLoginESeguir(event)">
                 <fieldset>
                     <legend><h1 class="title">Entrar</h1></legend>
                     <div>
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                     </div>
                     
                     <div>
                         <label for="senha">Senha:</label>
-                        <input type="password" name="email" id="senha">
-                        <a href="" class="forgot-password">Esqueci minha senha</a>
+                        <input type="password" name="senha" id="senha" required>
+                        <a href="./reset_password.html" class="forgot-password">Esqueci minha senha</a>
                     </div>
                     
-                    <button type="submit"><a id="button" href="./index.html">Continuar</a></button>
+                    <button type="submit" id="button">Continuar</button>
 
                 </fieldset>
             </form>
         </div>
     </div>
 </body>
+<script src="../assets/JS/form-validacao.js"></script>
 </html>

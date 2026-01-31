@@ -14,20 +14,21 @@
 <body>
     <div class="content">
         <div class="container">
-            <form action="" method="post">
+            <form id="formSaldo" onsubmit="validarESeguir(event)">
                 <fieldset>
                     <legend><h1 class="title">Seu saldo</h1></legend>
                     <div>
                         <label for="saldo">Insira seu saldo bancário atual:</label>
-                        <input type="text" name="saldo" id="saldo" onclick="inserirSaldo()" placeholder="R$ 0.00">
+                        <input type="text" name="saldo" id="saldo" onclick="inserirSaldo()" placeholder="R$ 0.00" required>
                     </div>
                     <p class="legend-saldo">Este saldo será o valor inicial da sua conta no app.</p>
 
-                    <button type="submit"><a id="button" href="./renda_inf.html">Continuar</a></button> 
+                    <button type="submit" id="button">Continuar</button> 
                 </fieldset>
             </form>
         </div>
     </div>  
 </body>
 <script src="../assets/JS/saldo.js"></script>
+<script src="../assets/JS/form-validacao.js"></script>
 </html>
