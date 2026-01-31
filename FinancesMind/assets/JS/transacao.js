@@ -99,3 +99,55 @@ function configurarDataOutro() {
     });
 }
 configurarDataOutro();
+
+// ===== VALIDAÇÕES DE TRANSAÇÕES =====
+
+function validarTransacaoESeguir(event) {
+    event.preventDefault();
+    
+    const valor = document.getElementById('valor-dinheiro').value.trim();
+    
+    if (!valor || valor === 'R$ 0,00') {
+        alert('Por favor, insira um valor válido');
+        return false;
+    }
+    
+    // Se passou na validação, salvar dados
+    console.log('Transação válida:', valor);
+    fecharTela();
+}
+
+function validarDespesaESeguir(event) {
+    event.preventDefault();
+    
+    const valor = document.getElementById('valor-dinheiro').value.trim();
+    
+    if (!valor || valor === 'R$ 0,00') {
+        alert('Por favor, insira um valor válido para a despesa');
+        return false;
+    }
+    
+    console.log('Despesa válida:', valor);
+    fecharTela();
+}
+
+function validarReceitaESeguir(event) {
+    event.preventDefault();
+    
+    const valor = document.getElementById('valor-dinheiro').value.trim();
+    
+    if (!valor || valor === 'R$ 0,00') {
+        alert('Por favor, insira um valor válido para a receita');
+        return false;
+    }
+    
+    console.log('Receita válida:', valor);
+    fecharTela();
+}
+
+function fecharTela() {
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}

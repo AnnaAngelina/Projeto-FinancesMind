@@ -15,35 +15,35 @@
     <div class="content">
         <div class="container signin">
 
-            <form action="" method="post">
+            <form id="formSignin" onsubmit="validarSigninESeguir(event)">
                 
                 <fieldset>
                     <legend><h1 class="title">Cadastre-se</h1></legend>
                     <div>
                         <label for="nome">Nome completo:</label>
-                        <input type="text" name="nome" id="nome">
+                        <input type="text" name="nome" id="nome" required>
                     </div>
 
                     <div>
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                     </div>
 
                     <div>
                         <label for="nascimento">Insira sua data de nascimento:</label>
-                        <input type="date" name="nascimento" id="nascimento">
+                        <input type="date" name="nascimento" id="nascimento" required>
                     </div>
                     
                     <div>
                         <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="senha">
+                        <input type="password" name="senha" id="senha" required>
                     </div>
                     
                     <div>
                         <label for="confirm_password">Confirme a senha:</label>
-                        <input type="password" name="confirm_password" id="confirm_password">
+                        <input type="password" name="confirm_password" id="confirm_password" required>
                     </div>
-                    <button type="submit"><a id="button" href="./emotion_quest01.html">Continuar</a></button>
+                    <button type="submit" id="button">Continuar</button>
 
                 </fieldset>
 
@@ -51,4 +51,5 @@
         </div>
     </div>
 </body>
+<script src="../assets/JS/form-validacao.js"></script>
 </html>

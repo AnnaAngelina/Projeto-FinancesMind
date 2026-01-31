@@ -10,9 +10,9 @@
 <body>
     <div class="overlay" onclick="fecharTela()">
         <div class="modal">
-            <form>
+            <form id="formNovaTransacao" onsubmit="validarTransacaoESeguir(event)">
             <div id="adicionar-valor">
-                <button><span class="material-symbols-outlined">close</span></button>
+                <button type="button" onclick="fecharTela()"><span class="material-symbols-outlined">close</span></button>
                 <h2><b>Nova Receita</b></h2>
                 <p>Valor da receita</p>
                 <input onclick="EditPreco()" type="text" id="valor-dinheiro" placeholder="R$ 0,00" />
