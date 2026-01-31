@@ -108,20 +108,3 @@ function openButton() {
       }
     })
 }
-
-// botao flutuante
-
-let containerButtons = document.querySelector('.buttons')
-let addTransiction = document.getElementById('add-transaction')
-console.log(containerButtons)
-
-addTransiction.addEventListener('click', () => {
-    if (containerButtons.getAttribute('class') == 'open') {
-        containerButtons.classList.toggle = 'buttons'
-        addTransiction.id = 'add-transaction'
-    } else {
-        containerButtons.classList.toggle = 'open'
-        addTransiction.id = 'open-buttons'
-    }
-})
-
