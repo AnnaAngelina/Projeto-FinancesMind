@@ -81,6 +81,7 @@ b {
     background-color: #1E5A8F;
     border-radius: 20px;
     color: white;
+    overflow-y: auto;
 }
 
 .mudar .modal {
